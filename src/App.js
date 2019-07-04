@@ -1,12 +1,14 @@
-import React from 'react';
-import './App.css';
+import React from 'react'
+import './App.css'
+
+import AbilityList from './components/AbilityList'
 
 function App() {
   return (
     <div className="App">
-      <h1>Pereger Wiki</h1>
+      <AbilityList />
     </div>
   );
 }
 
-export default App;
+export default App

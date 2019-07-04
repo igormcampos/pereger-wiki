@@ -1,0 +1,30 @@
+// 
+// Values: id, className, name, desc, category, maxValue, value, passive, stackable
+//---------------------------------------------------------------------------
+
+[
+// General
+//---------------------------------------------------------------------------
+{ id: 1, className: "Pvp", name: "Pvp", desc: "This is a player versus player area.", category: "Map", value: 1, maxValue: 1, passive: true, stackable: false},
+
+{ id: 8001, className: "BleedingCondition", name: "Bleeding", desc: "Causes loss of HP each round.", category: "Physical", value: .02, maxValue: .2, passive: true, stackable: true},
+{ id: 8002, className: "FractureCondition",name: "Fracture", desc: "Lowers attack rate and speed.", category: "Physical", value: .1, maxValue: .9, passive: true, stackable: true },
+{ id: 8003, className: "ConcussionCondition", name: "Concussion", desc: "Causes immobility for a duration.", category: "Mental", value: 1000, maxValue: 5000, passive: true, stackable: false},
+{ id: 8004, className: "DrowningCondition", name: "Drowning", desc: "Shortness of breath causes loss of HP every round.", category: "Physical", value: 25, maxValue: 25, passive: true, stackable: false},
+{ id: 8005, className: "HpRegen1Condition", name: "HpRegen", desc: "Regenerates 2 HP every 3 seconds for 1 minute.", category: "Physical", value: 2, maxValue: 2, passive: true, stackable: false},
+{ id: 8006, className: "Rage", name: "Rage", desc: "Decreases hit chance by 50% for each level.", category: "Mental", value: 1, maxValue: 10, passive: true, stackable: false},
+{ id: 8007, className: "Confusion", name: "Confusion", desc: "Causes the player to stumble about randomly.", category: "Mental", value: 1, maxValue: 1, passive: true, stackable: false},
+{ id: 8008, className: "GodMode", name: "God Mode", desc: "Increases health to an unhealthy level.", category: "None", value: 1, maxValue: 1, passive: true, stackable: false},
+{ id: 8009, className: "HulkMode", name: "Hulk Mode", desc: "Increases attack stat and defense.", category: "None", value: 1, maxValue: 1, passive: true, stackable: false},
+{ id: 8010, className: "Luck", name: "Luck", desc: "Increases drop chance to 100%.", category: "None", value: 1, maxValue: 1, passive: true, stackable: false},
+{ id: 8011, className: "SecondChance", name: "Second Chance", desc: "Increases accuracy and agility.", category: "None", value: 1, maxValue: 1, passive: true, stackable: false},
+{ id: 8012, className: "Overload", name: "Overload", desc: "Causes the inability to heal, and slowness.", category: "None", value: 1, maxValue: 1, passive: true, stackable: false},
+{ id: 8013, className: "Fatigue", name: "Fatigue", desc: "Causes loss of accuracy, loss of attack rate, and slowness.", category: "None", value: 1, maxValue: 50, passive: true, stackable: true},
+{ id: 8014, className: "Safe", name: "Safe", desc: "Area where you cannot be attacked.", category: "None", value: 1, maxValue: 1, passive: true, stackable: false},
+{ id: 8015, className: "DizzinessCondition", name: "Dizziness", desc: "Causes random movement and loss of accuracy and agility", category: "Mental", value: 1, maxValue: 10, passive: true, stackable: true},
+{ id: 8016, className: "BurnCondition", name: "Burn", desc: "Causes loss of HP each round.", category: "Elemental", value: .01, maxValue: .1, passive: true, stackable: true},
+{ id: 8017, className: "FreezeCondition", name: "Freeze", desc: "Causes walking and attacking slowness.", category: "Elemental", value: 1, maxValue: 10, passive: true, stackable: true},
+{ id: 8018, className: "WeaknessCondition", name: "Weakness", desc: "Causes loss of defense and armor", category: "Physical", value: 1, maxValue: 10, passive: true, stackable: false},
+{ id: 8019, className: "ImmobilizeCondition", name: "Immobilize", desc: "Innability to move or attack due to constriction from roots.", category: "Physical", value: 1, maxValue: 10, passive: true, stackable: false},
+
+]
