@@ -1,11 +1,11 @@
 import React from 'react'
+import {connect} from 'react-redux'
 
 import AbilityItem from './AbilityItem'
-import {abilities} from './../json/abilities'
 
 class AbilityList extends React.Component {
     render() {
-        const ab = abilities.map(ability => {
+        const ab = this.props.abilities.map(ability => {
             return (<AbilityItem key={ability.id} data={ability}/>)
         });
 
@@ -29,4 +29,10 @@ class AbilityList extends React.Component {
     }
 }
 
-export default AbilityList
+const mapStateToProps = (state) => {
+    return {
+        abilities: state.abilities
+    }
+};
+
+export default connect(mapStateToProps)(AbilityList)

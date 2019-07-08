@@ -1,23 +1,10 @@
 import React from 'react'
-import {abilities} from "../json/abilities";
+import {connect} from 'react-redux'
 
 class AbilityItem extends React.Component {
-    state = {
-        ability: null
-    };
-
-    componentDidMount() {
-        let abilityClass = this.props.match.params.ability_class;
-        this.setState({
-            ability: abilities.find(ability => {
-                return ability.className === abilityClass
-            })
-        })
-    }
-
     render() {
-        const ab = this.state.ability ? (
-            <h4>{this.state.ability.name}</h4>
+        const ab = this.props.ability ? (
+            <h4>{this.props.ability.name}</h4>
         ) : (
             <h4>Loading Ability...</h4>
         );
@@ -30,4 +17,11 @@ class AbilityItem extends React.Component {
     }
 }
 
-export default AbilityItem
+const mapStateToProps = (state, ownProps) => {
+    let abilityClass = ownProps.match.params.ability_class;
+    return {
+        ability: state.abilities.find(ability => ability.className === abilityClass)
+    }
+};
+
+export default connect(mapStateToProps)(AbilityItem)
