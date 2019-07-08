@@ -1,5 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
+import {deleteAbility} from "../actions/abilityActions";
 
 class AbilityItem extends React.Component {
     handleClick = () => {
@@ -33,7 +34,7 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         deleteAbility: (id) => {
-            dispatch({type: 'DELETE_ABILITY', id: id})
+            dispatch(deleteAbility(id))
         }
     }
 };
