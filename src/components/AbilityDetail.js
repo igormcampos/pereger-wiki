@@ -2,6 +2,11 @@ import React from 'react'
 import {connect} from 'react-redux'
 
 class AbilityItem extends React.Component {
+    handleClick = () => {
+        this.props.deleteAbility(this.props.ability.id);
+        this.props.history.push('/abilities')
+    };
+
     render() {
         const ab = this.props.ability ? (
             <h4>{this.props.ability.name}</h4>
@@ -12,6 +17,7 @@ class AbilityItem extends React.Component {
         return (
             <div>
                 {ab}
+                <button className="btn blue" onClick={this.handleClick}>Delete Me</button>
             </div>
         )
     }
@@ -24,4 +30,12 @@ const mapStateToProps = (state, ownProps) => {
     }
 };
 
-export default connect(mapStateToProps)(AbilityItem)
+const mapDispatchToProps = (dispatch) => {
+    return {
+        deleteAbility: (id) => {
+            dispatch({type: 'DELETE_ABILITY', id: id})
+        }
+    }
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(AbilityItem)

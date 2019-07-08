@@ -39,6 +39,14 @@ const initState = {
 };
 
 const rootReducer = (state = initState, action) => {
+    if (action.type === 'DELETE_ABILITY') {
+        return {
+            ...state,
+            abilities: state.abilities.filter(ability => {
+                return action.id !== ability.id
+            })
+        }
+    }
     return state;
 };
 
