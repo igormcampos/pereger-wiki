@@ -57,7 +57,7 @@ class AbilityList extends React.Component {
 
         return (
             <div>
-                <h4>Abilities</h4>
+                <h4 className="center">Abilities</h4>
                 {tables}
             </div>
         )

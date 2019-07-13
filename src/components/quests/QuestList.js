@@ -11,7 +11,7 @@ class QuestList extends React.Component {
 
         return (
             <div>
-                <h4>Quests</h4>
+                <h4 className="center">Quests</h4>
                 <table className="highlight responsive-table">
                     <thead>
                     <tr>

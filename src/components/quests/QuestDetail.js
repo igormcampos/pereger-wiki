@@ -3,33 +3,31 @@ import {connect} from 'react-redux'
 
 class AbilityItem extends React.Component {
     render() {
-        const {name, category, value, passive, desc, equip} = this.props.ability;
+        const {title, desc, target, amount, reward, rewardAmt} = this.props.quest;
 
-        const ab = this.props.ability ? (
+        const quest = this.props.quest ? (
             <div>
-                <h4>{name}</h4>
-                <p>Category: {category}</p>
-                <p>Per Level: {value}</p>
-                <p>Passive? {passive ? 'True' : 'False'}</p>
-                <p>Description: {desc}</p>
-                <p>Equipment: {equip}</p>
+                <h4>{title}</h4>
+                <p>{desc}</p>
+                <p>Requirement: {target} x {amount}</p>
+                <p>Rewards: {reward} x {rewardAmt}</p>
             </div>
         ) : (
-            <h4>Loading Ability...</h4>
+            <h4>Loading Quest...</h4>
         );
 
         return (
             <div>
-                {ab}
+                {quest}
             </div>
         )
     }
 }
 
 const mapStateToProps = (state, ownProps) => {
-    let abilityClass = ownProps.match.params.ability_class;
+    let questName = ownProps.match.params.quest_name;
     return {
-        ability: state.abilities.find(ability => ability.className === abilityClass)
+        quest: state.quests.find(quest => quest.name === questName)
     }
 };
 

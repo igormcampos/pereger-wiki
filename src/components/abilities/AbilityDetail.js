@@ -8,10 +8,10 @@ class AbilityItem extends React.Component {
         const ab = this.props.ability ? (
             <div>
                 <h4>{name}</h4>
+                <p>{desc}</p>
                 <p>Category: {category}</p>
                 <p>Per Level: {value}</p>
                 <p>Passive? {passive ? 'True' : 'False'}</p>
-                <p>Description: {desc}</p>
                 <p>Equipment: {equip}</p>
             </div>
         ) : (

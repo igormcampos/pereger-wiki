@@ -24,7 +24,7 @@ function App() {
                     <Route exact path="/abilities" component={AbilityList}/>
                     <Route path="/abilities/:ability_class" component={AbilityDetail}/>
                     <Route exact path="/quests" component={QuestList}/>
-                    <Route path="/abilities/:quest_name" component={QuestDetail}/>
+                    <Route path="/quests/:quest_name" component={QuestDetail}/>
                     <Route path="/about" component={About}/>
                 </ContentContainer>
             </div>
