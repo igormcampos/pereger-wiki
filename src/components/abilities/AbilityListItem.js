@@ -1,19 +1,13 @@
 import React from 'react'
 import {withRouter} from "react-router-dom";
 
-class AbilityItem extends React.Component {
+class AbilityListItem extends React.Component {
     handleDetail = () => {
         this.props.history.push('/abilities/' + this.props.data.className)
     };
 
     render() {
-        const {id, name, className, category, passive, desc, equip} = this.props.data;
-        let {value} = this.props.data;
-        if (className === 'BetterBows') {
-            value += 'ms'
-        } else if (className !== 'Paramedic') {
-            value = (value * 100) + '%'
-        }
+        const {id, name, value, category, passive, desc, equip} = this.props.data;
 
         return (
             <tr key={id} onClick={this.handleDetail}>
@@ -28,4 +22,4 @@ class AbilityItem extends React.Component {
     }
 }
 
-export default withRouter(AbilityItem)
+export default withRouter(AbilityListItem)

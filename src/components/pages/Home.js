@@ -62,6 +62,7 @@ class Home extends React.Component {
                     <li>Change IDs into human readable text everywhere</li>
                     <li>Search bar fuzzy</li>
                     <li>Update world map</li>
+                    <li>Link items to quests</li>
                 </ul>
             </div>
         )

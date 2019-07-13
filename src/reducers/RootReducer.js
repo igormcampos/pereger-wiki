@@ -1,5 +1,5 @@
 import abilities from './../json/abilities'
-import quests from './../json/quests.txt'
+import quests from '../json/quests'
 
 const initState = {
     abilities: abilities.data.map(ability => {
@@ -12,9 +12,14 @@ const initState = {
         } else {
             ability.geralCategory = 'Active Skills'
         }
+        if (ability.className === 'BetterBows') {
+            ability.value += 'ms'
+        } else if (ability.className !== 'Paramedic') {
+            ability.value = (ability.value * 100) + '%'
+        }
         return ability
     }),
-    quests: JSON.stringify(quests)
+    quests: quests.data
 };
 
 const rootReducer = (state = initState, action) => {

@@ -1,7 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 
-import AbilityItem from './AbilityItem'
+import AbilityItem from './AbilityListItem'
 
 class AbilityList extends React.Component {
     render() {
