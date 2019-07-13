@@ -1,0 +1,104 @@
+{
+  "data": [
+    {
+      "id": 0,
+      "type": "None"
+    },
+    {
+      "id": 1,
+      "type": "Sword"
+    },
+    {
+      "id": 2,
+      "type": "ThrowingKnife"
+    },
+    {
+      "id": 3,
+      "type": "Quiver"
+    },
+    {
+      "id": 4,
+      "type": "Wand"
+    },
+    {
+      "id": 5,
+      "type": "Bow"
+    },
+    {
+      "id": 6,
+      "type": "Axe"
+    },
+    {
+      "id": 7,
+      "type": "Spear"
+    },
+    {
+      "id": 8,
+      "type": "Shield"
+    },
+    {
+      "id": 9,
+      "type": "Book"
+    },
+    {
+      "id": 10,
+      "type": "Gloves"
+    },
+    {
+      "id": 11,
+      "type": "Boots"
+    },
+    {
+      "id": 12,
+      "type": "LightArmor"
+    },
+    {
+      "id": 13,
+      "type": "MediumArmor"
+    },
+    {
+      "id": 14,
+      "type": "HeavyArmor"
+    },
+    {
+      "id": 15,
+      "type": "Helmet"
+    },
+    {
+      "id": 16,
+      "type": "Hat"
+    },
+    {
+      "id": 17,
+      "type": "Necklace"
+    },
+    {
+      "id": 18,
+      "type": "Ring"
+    },
+    {
+      "id": 19,
+      "type": "Lens"
+    },
+    {
+      "id": 20,
+      "type": "Wing"
+    },
+    {
+      "id": 21,
+      "type": "SlingShot"
+    },
+    {
+      "id": 22,
+      "type": "HandMagic"
+    },
+    {
+      "id": 23,
+      "type": "Crossbow"
+    },
+    {
+      "id": 24,
+      "type": "Orb"
+    }
+  ]
+}
