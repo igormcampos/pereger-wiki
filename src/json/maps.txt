@@ -1,0 +1,52 @@
+// Pereger
+// Database file
+//---------------------------------------------------------------------------
+
+[
+{ mapId: 1, className: "karabrathOrchard", engName: "Karabranth Orchard" },
+{ mapId: 2, className: "karabrathRiver", engName: "karabrath River" },
+{ mapId: 3, className: "northShore", engName: "North Shore" },
+{ mapId: 4, className: "roshinShop", engName: "Roshin's Shop" },
+{ mapId: 5, className: "flynShop", engName: "Flyn's Shop" },
+{ mapId: 6, className: "keltetShop", engName: "Keltet's Shop" },
+{ mapId: 7, className: "devHome", engName: "DevHome" },
+{ mapId: 8, className: "wolfDen1", engName: "WolfDen1" },
+{ mapId: 9, className: "wolfDen2", engName: "WolfDen2" },
+{ mapId: 10, className: "karabranthEast", engName: "Karabranth East" },
+{ mapId: 11, className: "karabranthField", engName: "Karabranth Fields" },
+{ mapId: 12, className: "karabranthFarmer", engName: "Karabranth Farmer" },
+{ mapId: 13, className: "karabranth", engName: "Karabranth" },
+{ mapId: 14, className: "gregoShop", engName: "Grego Shop" },
+{ mapId: 15, className: "jacquelineShop", engName: "Jacqueline Shop" },
+//{ mapId: 16, className: "hiddenBeach", engName: "Hidden Beach" },
+{ mapId: 17, className: "karabranthBridge", engName: "Karabranth Bridge" },
+{ mapId: 18, className: "bearForest", engName: "Bear Forest" },
+{ mapId: 19, className: "golemMountain", engName: "Golem Mountain" },
+{ mapId: 20, className: "targinEntrance", engName: "Taragin Entrance" },
+{ mapId: 21, className: "northGolems", engName: "North Golems" },
+{ mapId: 22, className: "taragin", engName: "Taragin" },
+{ mapId: 23, className: "underwaterLair", engName: "Underwater Lair" },
+{ mapId: 24, className: "targinMineEntrace", engName: "Taragin Mine Entrance" },
+{ mapId: 25, className: "mineLevel1", engName: "Mine Level 1" },
+{ mapId: 26, className: "mineLevel2", engName: "Mine Level 2" },
+{ mapId: 27, className: "mineLevel3", engName: "Mine Level 4" },
+{ mapId: 28, className: "mineLevel4", engName: "Mine Level 4" },
+{ mapId: 29, className: "mineLevel5", engName: "Mine Level 5" },
+{ mapId: 30, className: "mineLevel6", engName: "Mine Level 6" },
+{ mapId: 31, className: "aegonShop", engName: "Aegon's Shop" },
+{ mapId: 32, className: "meeraShop", engName: "Meera's Shop" },
+{ mapId: 33, className: "forestboss", engName: "Forest Boss" },
+{ mapId: 34, className: "mountainboss", engName: "Mountain Boss" },
+
+
+{ mapId: 1001, className: "AlphaBoss", engName: "Alpha Boss" },
+{ mapId: 1002, className: "OctoBoss", engName: "Octo Boss" },
+{ mapId: 1003, className: "VisiusEntBoss", engName: "Visius Ent Boss" },
+{ mapId: 1004, className: "GoemBoss", engName: "Golem Boss" },
+
+
+{ mapId: 2001, className: "PortalWorld", engName: "portal World" },
+{ mapId: 2002, className: "PvpArena", engName: "Pvp Arena" },
+{ mapId: 2003, className: "FederationIsland", engName: "Federation Island" },
+
+]

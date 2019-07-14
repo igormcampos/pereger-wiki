@@ -14,7 +14,50 @@ export const fetchItems = () => {
         if (!getState().items) {
             fetch(itemsTXT)
                 .then((r) => r.text()).then(text => {
-                    dispatch({type: FETCH_ITEMS, items: JSON5.parse(text)});
+                let items = JSON5.parse(text);
+
+                items = items.map(item => {
+                    switch (item.category) {
+                        case 1:
+                            item.geralCategory = 'Weapons';
+                            break;
+                        case 2:
+                            item.geralCategory = 'Armors';
+                            break;
+                        case 3:
+                            item.geralCategory = 'Secondary';
+                            break;
+                        case 4:
+                            item.geralCategory = 'Boots';
+                            break;
+                        case 5:
+                            item.geralCategory = 'Gloves';
+                            break;
+                        case 6:
+                            item.geralCategory = 'Helmet';
+                            break;
+                        case 7:
+                            item.geralCategory = 'Rings';
+                            break;
+                        case 8:
+                            item.geralCategory = 'Necklaces';
+                            break;
+                        case 9:
+                            item.geralCategory = 'Consumables';
+                            break;
+                        case 10:
+                            item.geralCategory = 'Materials';
+                            break;
+                        case 16:
+                            item.geralCategory = 'Money';
+                            break;
+                        default:
+                            item.geralCategory = 'None'
+                    }
+                    return item
+                });
+
+                dispatch({type: FETCH_ITEMS, items: items});
                 }
             );
         }

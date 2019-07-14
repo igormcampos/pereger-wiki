@@ -165,8 +165,8 @@
 { itemId: 18002, className: "Medium HP Potion", desc: "Restores 100 HP", name: "medium-hp-potion", category: 9, maxStack: 32767, price: 100, sellPrice: 25, time: 5 },
 { itemId: 18003, className: "Large HP Potion", desc: "Restores 200 HP", name: "large-hp-potion", category: 9, maxStack: 32767, price: 500, sellPrice: 200, time: 5 },
 { itemId: 18004, className: "Revive Potion", desc: "Revives upon death", name: "revive-potion", category: 9, maxStack: 32767, price: 500, sellPrice: 100 },
-{ itemId: 18005, className: "Reset Stats", desc: "Clears hero's stats and returns the points", name: "scroll-stat-reset", category: 9, maxStack: 32767, price: 50000, sellPrice: 0, tradable: false },
-{ itemId: 18006, className: "Reset Abilities", desc: "Clears hero's abilities and returns the points", name: "scroll-ability-reset", category: 9, maxStack: 32767, price: 50000, sellPrice: 0, tradable: false},
+{ itemId: 18005, className: "Reset Stats", desc: "Clears hero's stats and returns the points", name: "scroll-stat-reset", category: 9, maxStack: 32767, price: 25, sellPrice: 0,currency: "nummus", tradable: false },
+{ itemId: 18006, className: "Reset Abilities", desc: "Clears hero's abilities and returns the points", name: "scroll-ability-reset", category: 9, maxStack: 32767, price: 25, sellPrice: 0, currency: "nummus", tradable: false},
 { itemId: 18007, className: "Armageddon Scroll", desc: "Insta-death to everyone on the map except the beholder of this scroll", name: "scroll-red", category: 9, maxStack: 32767, price: 0, sellPrice: 0 },
 { itemId: 18008, className: "Apple", desc: "An apple a day keeps the doctor away", name: "apple", category: 9, maxStack: 32767, price: 5, sellPrice: 2 },
 { itemId: 18009, className: "God Mode Scroll", desc: "Increases health to an unhealthy level for a duration", name: "scroll-blue", category: 9, maxStack: 32767, price: 0, sellPrice: 0 },
@@ -179,7 +179,11 @@
 { itemId: 18016, className: "Medium MP Potion", desc: "Restores 100 MP", name: "medium-mp-potion", category: 9, maxStack: 32767, price: 100, sellPrice: 25, time: 5 },
 { itemId: 18017, className: "Large MP Potion", desc: "Restores 200 MP", name: "large-mp-potion", category: 9, maxStack: 32767, price: 500, sellPrice: 200, time: 5 },
 { itemId: 18018, className: "Save Point Scroll", desc: "Warps your hero back to the last save point", name: "scroll-brown", category: 9, maxStack: 32767, price: 100, sellPrice: 50 },
-
+{ itemId: 18019, className: "Name Change Scroll", desc: "Change your hero's name", name: "scroll-purple", category: 9, maxStack: 32767, price: 50, sellPrice: 0, currency: "nummus", tradable:false },
+{ itemId: 18020, className: "Realm XP Event", desc: "Boosts experience in the realm by 150% for [x] hour/s.", name: "ticket-red", category: 9, maxStack: 24, price: 25, sellPrice: 0, currency: "nummus", tradable:false },
+{ itemId: 18021, className: "Realm Legendary Drop Event", desc: "Boosts legendary drop rates in the realm by 200% for [x] hour/s.", name: "ticket-purple", category: 9, maxStack: 24, price: 25, sellPrice: 0, currency: "nummus", tradable:false },
+{ itemId: 18022, className: "Realm Normal Drop Event", desc: "Boosts drops by normal mobs in the realm by 200% for [x] hour/s.", name: "ticket-blue", category: 9, maxStack: 24, price: 25, sellPrice: 0, currency: "nummus", tradable:false },
+//tickets -18023 - 18025
 
 // Materials 20001-22000
 //---------------------------------------------------------------------------

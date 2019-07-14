@@ -17,8 +17,8 @@
 { shopOwner: "Flyn", name: "Karabranth Potion Shop", productId: 152, itemId: 18003, priceMultiplier: 1 },
 { shopOwner: "Flyn", name: "Karabranth Potion Shop", productId: 153, itemId: 18004, priceMultiplier: 1 },
 { shopOwner: "Flyn", name: "Karabranth Potion Shop", productId: 154, itemId: 18008, priceMultiplier: 1 },
-{ shopOwner: "Flyn", name: "Karabranth Potion Shop", productId: 155, itemId: 18005, priceMultiplier: 1 },
-{ shopOwner: "Flyn", name: "Karabranth Potion Shop", productId: 156, itemId: 18006, priceMultiplier: 1 },
+//{ shopOwner: "Flyn", name: "Karabranth Potion Shop", productId: 155, itemId: 18005, priceMultiplier: 1 },
+//{ shopOwner: "Flyn", name: "Karabranth Potion Shop", productId: 156, itemId: 18006, priceMultiplier: 1 },
 { shopOwner: "Flyn", name: "Karabranth Potion Shop", productId: 157, itemId: 18015, priceMultiplier: 1 },
 { shopOwner: "Flyn", name: "Karabranth Potion Shop", productId: 158, itemId: 18016, priceMultiplier: 1 },
 { shopOwner: "Flyn", name: "Karabranth Potion Shop", productId: 159, itemId: 18017, priceMultiplier: 1 },
@@ -46,6 +46,12 @@
 { shopOwner: "Meera", name: "Taragin Potion Shop", productId: 209, itemId: 18017, priceMultiplier: 1 },
 { shopOwner: "Meera", name: "Taragin Potion Shop", productId: 210, itemId: 18018, priceMultiplier: 1 },
 
+{ shopOwner: "Jacqueline", name: "Jacqueline Premium Shop", productId: 220, itemId: 18005, priceMultiplier: 1 },
+{ shopOwner: "Jacqueline", name: "Jacqueline Premium Shop", productId: 221, itemId: 18006, priceMultiplier: 1 },
+{ shopOwner: "Jacqueline", name: "Jacqueline Premium Shop", productId: 222, itemId: 18019, priceMultiplier: 1 },
+{ shopOwner: "Jacqueline", name: "Jacqueline Premium Shop", productId: 223, itemId: 18020, priceMultiplier: 1 },
+{ shopOwner: "Jacqueline", name: "Jacqueline Premium Shop", productId: 224, itemId: 18021, priceMultiplier: 1 },
+{ shopOwner: "Jacqueline", name: "Jacqueline Premium Shop", productId: 225, itemId: 18022, priceMultiplier: 1 },
 
 
 ]
