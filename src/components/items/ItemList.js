@@ -1,7 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 
-import AbilityItem from './ItemListItem'
+import ItemListItem from './ItemListItem'
 
 class ItemList extends React.Component {
     render() {
@@ -32,23 +32,26 @@ class ItemList extends React.Component {
             };
 
             const tables = allAbilities.data.map(category => {
+                const responsiveTable = category.type !== 'Enemy Skills' ? 'responsive-table' : '';
+                const hideDescription = category.type !== 'Enemy Skills' ? 'hide-on-med-and-down' : '';
                 return (
                     <div key={category.type}>
                         <h5>{category.type}</h5>
-                        <table className="highlight responsive-table">
+                        <table className={'highlight ' + responsiveTable}>
                             <thead>
                             <tr>
                                 <th>Name</th>
-                                <th>Category</th>
-                                {category.type !== 'Enemy Skills' && <th>Per Level</th>}
-                                <th>Passive?</th>
-                                <th>Description</th>
+                                {category.type !== 'Enemy Skills' && <th>Category</th>}
+                                {category.type !== 'Enemy Skills' && category.type !== 'Active Skills' && <th>Per Level</th>}
+                                {category.type === 'Active Skills' && category !== 'Enemy Skills' && <th>Mana</th>}
+                                {category.type !== 'Active Skills' && category.type !== 'Enemy Skills' && <th>Passive?</th>}
+                                <th className={hideDescription}>Description</th>
                                 {category.type !== 'Enemy Skills' && <th>Equipment</th>}
                             </tr>
                             </thead>
                             <tbody>
                             {category.abilities.map(ability => {
-                                return (<AbilityItem key={ability.id} data={ability}/>)
+                                return (<ItemListItem key={ability.id} data={ability}/>)
                             })}
                             </tbody>
                         </table>

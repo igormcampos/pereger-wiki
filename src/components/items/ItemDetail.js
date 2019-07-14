@@ -1,19 +1,20 @@
 import React from 'react'
 import {connect} from 'react-redux'
 
-class AbilityItem extends React.Component {
+class ItemDetail extends React.Component {
     render() {
         if (this.props.ability) {
-            const {name, category, value, passive, desc, equip} = this.props.ability;
+            const {name, category, value, passive, desc, geralCategory, mana, equip} = this.props.ability;
 
             const ab = (
                 <div>
                     <h4>{name}</h4>
                     <p>{desc}</p>
-                    <p>Category: {category}</p>
-                    <p>Per Level: {value}</p>
-                    <p>Passive? {passive ? 'True' : 'False'}</p>
-                    <p>Equipment: {equip}</p>
+                    <p>{passive ? "Is a passive skill." : "Is an active skill."}</p>
+                    {category !== 'Enemy' && <p>Category: {category}</p>}
+                    {category !== 'Enemy' && geralCategory !== "Active Skills" && <p>Per Level: {value}</p>}
+                    {!passive && category !== 'Enemy' && <p>Mana: {mana}</p>}
+                    {category !== 'Enemy' && <p>Equipment: {equip}</p>}
                 </div>
             );
 
@@ -38,4 +39,4 @@ const mapStateToProps = (state, ownProps) => {
     }
 };
 
-export default connect(mapStateToProps)(AbilityItem)
+export default connect(mapStateToProps)(ItemDetail)

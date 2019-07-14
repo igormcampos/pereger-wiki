@@ -1,7 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 
-class AbilityItem extends React.Component {
+class QuestDetail extends React.Component {
     render() {
         if (this.props.quest) {
             const {title, desc, target, amount, reward, rewardAmt} = this.props.quest;
@@ -36,4 +36,4 @@ const mapStateToProps = (state, ownProps) => {
     }
 };
 
-export default connect(mapStateToProps)(AbilityItem)
+export default connect(mapStateToProps)(QuestDetail)

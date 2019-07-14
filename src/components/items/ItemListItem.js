@@ -7,15 +7,17 @@ class ItemListItem extends React.Component {
     };
 
     render() {
-        const {id, name, value, category, passive, desc, equip} = this.props.data;
+        const {id, name, value, category, mana, passive, geralCategory, desc, equip} = this.props.data;
+        const hideDescription = category !== 'Enemy' ? 'hide-on-med-and-down' : '';
 
         return (
             <tr key={id} onClick={this.handleDetail}>
                 <td>{name}</td>
-                <td>{category}</td>
-                {category !== 'Enemy' && <td>{value}</td>}
-                <td>{passive ? "Yes" : "No"}</td>
-                <td>{desc}</td>
+                {category !== 'Enemy' && <td>{category}</td>}
+                {category !== 'Enemy' && geralCategory !== "Active Skills" && <td>{value}</td>}
+                {!passive && category !== 'Enemy' && <td>{mana}</td>}
+                {geralCategory !== "Active Skills" && geralCategory !== "Enemy Skills" && <td>{passive ? "Yes" : "No"}</td>}
+                <td className={hideDescription}>{desc}</td>
                 {category !== 'Enemy' && <td>{equip}</td>}
             </tr>
         )
