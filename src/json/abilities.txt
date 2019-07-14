@@ -4,6 +4,16 @@
 //---------------------------------------------------------------------------
 
 [
+
+// Spells
+//---------------------------------------------------------------------------
+{ id: 12001, className: "Fireball",image:"fireballSpell", name: "Fireball", helpLine: "Cast a deadly fireball", category: "Mage", value: 1, maxLevel: 10, passive: false, mana:30, desc: "Casts a fireball at the enemy. Has small chance to cause burn condition equal to the level of the spell.",cool:5, equip: [4]  },
+{ id: 12002, className: "Tornado",image:"tornadoSpell", name: "Tornado", helpLine: "Summons a tornado", category: "Mage", value: 1, maxLevel: 10, passive: false, mana:30, desc: "Summons a tornado on the victim causing dizziness condition. Each level up increases the damage of the tornado and the duration of the dizziness.",cool:5, equip: [4] },
+{ id: 12003, className: "IceSpike",image:"iceSpikeSpell", name: "Ice Spike", helpLine: "Casts an ice spike", category: "Mage", value: 1, maxLevel: 10, passive: false, mana:30, desc: "Casts an ice spike at the enemy. The spell will do half the damage, but 50% chance of freezing the enemy. Freeze duration will increase with higher levels.",cool:5, equip: [4] },
+{ id: 12004, className: "Avalanche",image:"avalancheSpell", name: "Avalanche", helpLine: "Watch for falling rocks", category: "Mage", value: 1, maxLevel: 10, passive: false, mana:30, desc: "Creates an avalanche on the unsuspecting victim, which deals damage and has a small chance to cause a concussion. Each level up increases the damage of the spell.",cool:5, equip: [4] },
+{ id: 12005, className: "ShieldBash",image:"shieldBashSpell", name: "Shield Bash", helpLine: "Stun enemies with your shield", category: "Knight", value: .25, maxLevel: 10, passive: false, mana:30, desc: "Bash your enemies with your shield from close distance. Causes low damage and has a 50% chance to stun your enemy.",cool:5, equip: [8] },
+{ id: 12006, className: "DoubleShot",image:"doubleShotSpell", name: "Double Shot", helpLine: "Fires two arrows at once", category: "Hunter", value: 1, maxLevel: 10, passive: false, mana:25, desc: "Deal extra damage by firing two arrows simutaneously", cool:5, equip: [5] },
+
 // General
 //---------------------------------------------------------------------------
 { id: 10001, className: "HandCombat", name: "Hand Combat", helpLine: "Hand-to-hand Combat", category: "Fighter", value: .015, maxLevel: 10, passive: true, desc: "When no weapon is equipped, the player's damage is increased as the player's life increases.", equip: [0] },
@@ -73,16 +83,5 @@
 { id: 5020, className: "BellatorBlackHole", name: "Black Hole", helpLine: "A deep, dark force", category: "Enemy", value: 1, maxLevel: 10, passive: false, desc: "Sucks the player into a black hole", cool:8},
 { id: 5021, className: "BellHop", name: "Bell Hop", helpLine: "A powerful jump", category: "Enemy", value: 1, maxLevel: 10, passive: false, desc: "A powerful jump causing great damage upon landing", cool:8},
 { id: 5022, className: "BellatorNuke", name: "Nuke", helpLine: "A nuclear Bomb", category: "Enemy", value: 1, maxLevel: 10, passive: false, desc: "A nuclear bomb emanating outward from the boss.", cool:8},
-
-
-
-// Spells 
-//---------------------------------------------------------------------------
-{ id: 12001, className: "Fireball",image:"fireballSpell", name: "Fireball", helpLine: "Cast a deadly fireball", category: "Mage", value: 1, maxLevel: 10, passive: false, mana:30, desc: "Casts a fireball at the enemy. Has small chance to cause burn condition equal to the level of the spell.",cool:5, equip: [4]  },
-{ id: 12002, className: "Tornado",image:"tornadoSpell", name: "Tornado", helpLine: "Summons a tornado", category: "Mage", value: 1, maxLevel: 10, passive: false, mana:30, desc: "Summons a tornado on the victim causing dizziness condition. Each level up increases the damage of the tornado and the duration of the dizziness.",cool:5, equip: [4] },
-{ id: 12003, className: "IceSpike",image:"iceSpikeSpell", name: "Ice Spike", helpLine: "Casts an ice spike", category: "Mage", value: 1, maxLevel: 10, passive: false, mana:30, desc: "Casts an ice spike at the enemy. The spell will do half the damage, but 50% chance of freezing the enemy. Freeze duration will increase with higher levels.",cool:5, equip: [4] },
-{ id: 12004, className: "Avalanche",image:"avalancheSpell", name: "Avalanche", helpLine: "Watch for falling rocks", category: "Mage", value: 1, maxLevel: 10, passive: false, mana:30, desc: "Creates an avalanche on the unsuspecting victim, which deals damage and has a small chance to cause a concussion. Each level up increases the damage of the spell.",cool:5, equip: [4] },
-{ id: 12005, className: "ShieldBash",image:"shieldBashSpell", name: "Shield Bash", helpLine: "Stun enemies with your shield", category: "Knight", value: .25, maxLevel: 10, passive: false, mana:30, desc: "Bash your enemies with your shield from close distance. Causes low damage and has a 50% chance to stun your enemy.",cool:5, equip: [8] },
-{ id: 12006, className: "DoubleShot",image:"doubleShotSpell", name: "Double Shot", helpLine: "Fires two arrows at once", category: "Hunter", value: 1, maxLevel: 10, passive: false, mana:25, desc: "Deal extra damage by firing two arrows simutaneously", cool:5, equip: [5] },
 
 ]

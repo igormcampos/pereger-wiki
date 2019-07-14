@@ -25,7 +25,7 @@ class Navbar extends React.Component {
     };
 
     goAbilities = () => {
-        this.props.history.push('/items')
+        this.props.history.push('/abilities')
     };
 
     goQuests = () => {

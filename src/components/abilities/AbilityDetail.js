@@ -3,8 +3,8 @@ import {connect} from 'react-redux'
 
 class AbilityDetail extends React.Component {
     render() {
-        if (this.props.monster) {
-            const {name, category, value, passive, desc, generalCategory, mana, equip} = this.props.monster;
+        if (this.props.ability) {
+            const {name, category, value, passive, desc, generalCategory, mana, equip} = this.props.ability;
 
             return (
                 <div>
@@ -12,9 +12,9 @@ class AbilityDetail extends React.Component {
                     <p>{desc}</p>
                     <p>{passive ? "Is a passive skill." : "Is an active skill."}</p>
                     {category !== 'Enemy' && <p>Category: {category}</p>}
-                    {category !== 'Enemy' && generalCategory !== "Active Skills" && <p>Per Level: {value}</p>}
+                    {category !== 'Enemy' && value && generalCategory !== "Active Skills" && <p>Per Level: {value}</p>}
                     {!passive && category !== 'Enemy' && <p>Mana: {mana}</p>}
-                    {category !== 'Enemy' && <p>Equipment: {equip}</p>}
+                    {category !== 'Enemy' && equip && <p>Equipment: {equip}</p>}
                 </div>
             )
         }
@@ -29,7 +29,7 @@ class AbilityDetail extends React.Component {
 const mapStateToProps = (state, ownProps) => {
     let abilityClass = ownProps.match.params.ability_class;
     return {
-        monster: state.items && state.items.find(ability => ability.className === abilityClass)
+        ability: state.abilities && state.abilities.find(ability => ability.className === abilityClass)
     }
 };
 

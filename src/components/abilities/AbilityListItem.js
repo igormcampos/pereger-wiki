@@ -3,7 +3,7 @@ import {withRouter} from "react-router-dom";
 
 class AbilityListItem extends React.Component {
     handleDetail = () => {
-        this.props.history.push('/items/' + this.props.data.className)
+        this.props.history.push('/abilities/' + this.props.data.className)
     };
 
     render() {
