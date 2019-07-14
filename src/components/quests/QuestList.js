@@ -5,26 +5,33 @@ import QuestListItem from './QuestListItem'
 
 class QuestList extends React.Component {
     render() {
-        const quests = this.props.quests.map(quest => {
-            return (<QuestListItem key={quest.id} data={quest}/>)
-        });
+        if (this.props.quests) {
+            const quests = this.props.quests.map(quest => {
+                return (<QuestListItem key={quest.id} data={quest}/>)
+            });
 
+            return (
+                <div>
+                    <h4 className="center">Quests</h4>
+                    <table className="highlight responsive-table">
+                        <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Description</th>
+                            <th>Requirement</th>
+                            <th>Reward</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {quests}
+                        </tbody>
+                    </table>
+                </div>
+            )
+        }
         return (
             <div>
-                <h4 className="center">Quests</h4>
-                <table className="highlight responsive-table">
-                    <thead>
-                    <tr>
-                        <th>Title</th>
-                        <th>Description</th>
-                        <th>Requirement</th>
-                        <th>Reward</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    {quests}
-                    </tbody>
-                </table>
+                <h4>Loading quests...</h4>
             </div>
         )
     }

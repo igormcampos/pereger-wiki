@@ -1,9 +1,9 @@
 import React from 'react'
 import {connect} from 'react-redux'
 
-import AbilityItem from './AbilityListItem'
+import AbilityItem from './ItemListItem'
 
-class AbilityList extends React.Component {
+class ItemList extends React.Component {
     render() {
         if (this.props.abilities) {
             const allAbilities = {
@@ -77,4 +77,4 @@ const mapStateToProps = (state) => {
     }
 };
 
-export default connect(mapStateToProps)(AbilityList)
+export default connect(mapStateToProps)(ItemList)

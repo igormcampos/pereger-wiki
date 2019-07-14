@@ -1,0 +1,8 @@
+export const FETCH_ITEMS = "FETCH_ITEMS";
+export const FETCH_ABILITIES = "FETCH_ABILITIES";
+export const FETCH_CONDITIONS = "FETCH_CONDITIONS";
+export const FETCH_EXP_TABLE = "FETCH_EXP_TABLE";
+export const FETCH_LOOT = "FETCH_LOOT";
+export const FETCH_MONSTERS = "FETCH_MONSTERS";
+export const FETCH_QUESTS = "FETCH_QUESTS";
+export const FETCH_SHOPS = "FETCH_SHOPS";

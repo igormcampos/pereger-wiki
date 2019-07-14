@@ -54,8 +54,7 @@
 { itemId: 4005, className: "Stone Skin", name: "stone-skin-chest", category: 2, maxStack: 1, price: 50, sellPrice: 40, equipType1: "HeavyArmor", req:{def:40}, bonus:{armor:6}, matReq:"b:200;m:150;a:1000" },
 { itemId: 4006, className: "Kado Armor", name: "alpha-heavyArmor", category: 2, maxStack: 1, price: 0, sellPrice: 120, equipType1: "HeavyArmor", req:{def:20}, bonus:{armor:7}, matReq:"c:60;b:60;p:30;l:4;a:300" },
 { itemId: 4007, className: "Shadow Armor", name: "alpha-lightArmor", category: 2, maxStack: 1, price: 0, sellPrice: 300, equipType1: "LightArmor", req:{hp:400}, bonus:{armor:6, speed:1}, matReq:"c:200;b:175;p:175;l:10;a:1700" },
-{ itemId: 4008, className: "Fumetsu Armor", name: "bellator-knightArmor", category: 2, maxStack: 1, price: 0, sellPrice: 420, equipType1: "HeavyArmor", req:{def:70}, bonus:{armor:11, hp:25}, matReq:"m:500;b:250;c:150
-;l:14;a:3250" },
+{ itemId: 4008, className: "Fumetsu Armor", name: "bellator-knightArmor", category: 2, maxStack: 1, price: 0, sellPrice: 420, equipType1: "HeavyArmor", req:{def:70}, bonus:{armor:11, hp:25}, matReq:"m:500;b:250;c:150;l:14;a:3250" },
 { itemId: 4009, className: "Kyori Armor", name: "bellator-archerArmor", category: 2, maxStack: 1, price: 0, sellPrice: 480, equipType1: "LightArmor", req:{hp:425}, bonus:{armor:9, "critX":.02}, matReq:"m:350;c:300;b:300;l:16;a:4200" },
 { itemId: 4010, className: "Nensho Robe", name: "bellator-mageArmor", category: 2, maxStack: 1, price: 0, sellPrice: 240, equipType1: "LightArmor", req:{hp:250}, bonus:{armor:6, "critY":.2}, matReq:"c:150;m:150;p:100;l:8;a:1100" },
 { itemId: 4011, className: "Fulgum Armor", name: "vibro-heavyArmor", category: 2, maxStack: 1, price: 0, sellPrice: 480, equipType1: "HeavyArmor", req:{def:80}, bonus:{armor:11, hp:30}, matReq:"m:500;b:350;p:100;l:16;a:4200" },

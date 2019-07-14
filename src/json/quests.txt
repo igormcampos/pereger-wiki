@@ -1,0 +1,12 @@
+// Quests
+// 
+// Values: id, title, name, desc, next, pass, fail, objective, target, amount, RT, RA
+//---------------------------------------------------------------------------
+
+[
+
+//----------------------WIDOW QUESTS-------------------------------
+{ id: 10, title: "Help an old widow 1", name: "WIDOW1", desc: "Collect 12 spuds for Ida from the farm north of Karabranth", next: [0], pass:[5006], fail :5005, objective:0, amount: 12, target: 20003, reward: 18005, rewardAmt:1},
+{ id: 11, title: "Help an old widow 2", name: "WIDOW2", desc: "Acquire a revive potion for Ida in Karabranth", next: [0], pass:[5011], fail :5010, objective:0, amount: 1, target: 18004,reward: 18006, rewardAmt:1},
+
+]

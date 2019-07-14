@@ -1,0 +1,88 @@
+// Abilities
+// 
+// Values: id, className, name, helpLine, category maxLevel, value, passive, desc, req, equip, build, cooldown, mana
+//---------------------------------------------------------------------------
+
+[
+// General
+//---------------------------------------------------------------------------
+{ id: 10001, className: "HandCombat", name: "Hand Combat", helpLine: "Hand-to-hand Combat", category: "Fighter", value: .015, maxLevel: 10, passive: true, desc: "When no weapon is equipped, the player's damage is increased as the player's life increases.", equip: [0] },
+{ id: 10002, className: "WandCaster",name: "Wand Caster", helpLine: "Improves Wand Stats", category: "Mage", value: .05, maxLevel: 10, passive: true, desc: "Improves the stats of wands.",equip: [4] },
+{ id: 10003, className: "NoArmor", name: "No Armor", helpLine: "Master the Birthday Suit", category: "Defence", value: .05, maxLevel: 10, passive: true, desc: "Improves the agility when no chest armor is equipped." },
+{ id: 10004, className: "LightArmor", name: "Light Armor", helpLine: "Light Armor Mastery", category: "Defence", value: .025, maxLevel: 10, passive: true, desc: "Improves agility and defence when light armors (shirts and leather armor) are equipped." },
+{ id: 10005, className: "HeavyArmor", name: "Heavy Armor", helpLine: "Heavy Armor Mastery", category: "Defence", value: .05, maxLevel: 10, passive: true, desc: "Improves defence when heavy armors (chain mail and plate armors) are equipped." },
+{ id: 10006, className: "Daggers", name: "Daggers", helpLine: "Use Daggers", category: "Knight", value: .05, maxLevel: 10, passive: true, desc: "Ability to throw weapons such as daggers when a melee weapon is equipped. Each level increases the output damage.", anim:[4]},
+{ id: 10007, className: "Turbo", name: "Turbo", helpLine: "Increased walking speed", category: "Miscellaneous", value: .01, maxLevel: 10, passive: true, desc: "Increases walking speed." },
+{ id: 10008, className: "TakeAim", name: "Take Aim", helpLine: "Increase Hit Accuracy", category: "Buff", maxLevel: 10, value: .05, passive: true, desc: "Increases player's accuracy." },
+{ id: 10009, className: "CleanupHitter", name: "Cleanup Hitter", helpLine: "Increased Damage", category: "Buff", value: .025, maxLevel: 10, passive: true, desc: "Increases player's attack damage." },
+{ id: 10010, className: "Dodge", name: "Dodge", helpLine: "Dodge, Duck, Dip, Dive, and Dodge", category: "Buff", value: .05, maxLevel: 10, passive: true, desc: "Increases player's agility." },
+{ id: 10011, className: "CantTouchThis", name: "Can't Touch This", helpLine: "Increase Block/Parry", category: "Buff", maxLevel: 10, value: .025, passive: true, desc: "Increases player's block chance when a shield is equipped." },
+{ id: 10012, className: "ResistPhysicals", name: "Resist Physicals", helpLine: "Resistant Physical Abnormalities", category: "Defence", value: .1, maxLevel: 10, passive: true, desc: "Increases player's ability to resist physical conditions such as poisoning and bleeding." },
+{ id: 10013, className: "ResistMentals", name: "Resist Mental", helpLine: "Resist Mental Abnormalities", category: "Defence", value: .1, maxLevel: 10, passive: true, desc: "Increases player's ability to resist mental conditions such as confusion and concussion." },
+{ id: 10014, className: "ResistElementals", name: "Resist Elementals", helpLine: "Resist Elemental Abnormalities", category: "Defence", value: .1, maxLevel: 10, passive: true, desc: "Increases player's ability to resist elemental conditions such as Burn and Freeze."  },
+{ id: 10015, className: "ThickSkin", name: "Thick Skin", helpLine: "Increase Defence", category: "Buff", value: .025, maxLevel: 10, passive: true, desc: "Increases player's defence." },
+{ id: 10016, className: "MoreCrits", name: "More Crits",  helpLine: "Increase Critical Rate", category: "Buff", maxLevel: 10, value: .05, passive: true, desc: "Increases the critical rate." },
+{ id: 10017, className: "GildTheLily", name: "Gild The Lily", helpLine: "Increase Critical Multiplier", category: "Buff", maxLevel: 10, value: .025, passive: true, desc: "Increases the critical multiplier." },
+{ id: 10018, className: "LuckyDog", name: "Lucky Dog", helpLine: "Increase Chances to Find Rare Items", category: "Miscellaneous", value: .1, maxLevel: 10, passive: true, desc: "Increase the chance of finding rare items." },
+{ id: 10019, className: "Nerd", name: "Nerd", helpLine: "More Experience per Level", category: "Miscellaneous", value: .01, maxLevel: 10, passive: true, desc: "Increase experienced gained from kills." },
+{ id: 10020, className: "Scavenger", name: "Scavenger", helpLine: "Regain HP on Kill", category: "Survival", value: .05, maxLevel: 10, passive: true, desc: "Regain HP from the damage you inflicted." },
+{ id: 10021, className: "Detritivore", name: "Detritivore", helpLine: "Regain SP on Kill", category: "Survival", value: .05, maxLevel: 10, passive: true, desc: "Regain MP from the damage you inflicted." },
+{ id: 10022, className: "DefyDeath", name: "DefyDeath", helpLine: "Decrease Losses after Death", category: "Survival", value: .01, maxLevel: 10, passive: true, desc: "Chance to lose experience and/or items upon death decreases." },
+{ id: 10023, className: "BetterBows",name: "Better Bows", helpLine: "Quicker with bows", category: "Hunter", value: 50, maxLevel: 10, passive: true, desc: "Faster attack when using bows.", equip: [5]   },
+
+
+{ id: 10028, className: "TwoHandMelee", name: "2 Hand Melee", helpLine: "Improve 2 Handed Melee Attacks", category: "Knight", value: .05,  maxLevel: 10, passive: true, desc: "Improves the stats of two handed melee weapons.", equip: [1,2,6,7]  },
+{ id: 10029, className: "DualWielding", name: "Dual Weilding", helpLine: "Use Two 1-Handed Weapons", category: "Knight",value: .05, maxLevel: 10, passive: true, desc: "Provides the ability to equip one handed melee weapons in each hand. Subsequent levels will improve the stats for each weapon.", equip: [1,2,6,7] },
+{ id: 10030, className: "WeaponAndShield", name: "Weapon And Shield", helpLine: "Improve 1 Handed Weapon and a Shield", category: "Knight", value: .05, maxLevel: 10, passive: true, desc: "Improves the stats of one handed melee weapons and shields when both are equipped.", equip: [1,2,6,7,8]  },
+{ id: 10031, className: "Paramedic", name: "Paramedic",  helpLine: "Revive Other Players", category: "Support", maxLevel: 1, passive: true, desc: "Provides the ability to revive comrades when they have fallen with one of your own potions. A small, medium, and large HP potion will shorten the revive time by 30, 60, and 90 seconds respectively. A revive potion will fully restore a fallen player."  },
+{ id: 10032, className: "Penetrate", name: "Penetrate", helpLine: "Penetrate Enemy Armor", category: "Buff", value: .05, maxLevel: 10, passive: true, desc: "Lowers the defense of the target."  },
+
+
+// Conditions Abilities
+//---------------------------------------------------------------------------
+{ id: 8001, className: "Bleeding", name: "Bleeding", helpLine: "Chance Cause Bleeding", category: "Offense", value: .02, maxLevel: 10, passive: true, desc: "Chance of causing bleeding condition upon the target. Bleeding causes the target to lose HP each round. Bleeding effects can stack up to 10% HP loss.", req: "10009,5;10032,5", equip: [1,2,5,6,7] },
+{ id: 8002, className: "Fracture", name: "Fracture", helpLine: "Chance Cause Fracture", category: "Offense", value: .03, maxLevel: 10, passive: true, desc: "For each critical hit, there is a chance of fracturing the target's bones. Fracture lowers the rate of attack and speed of the target by 10%. Fracture abnormalities can stack, which causes greater loss of attack rate and speed.", req: "10016,5;10017,5;8001,5", equip: [1,2,6,7]},
+{ id: 8003, className: "KnockOut", name: "Knock Out", helpLine: "Chance to Cause Concussion", category: "Offense", value: .03, maxLevel: 10, passive: true, desc: "For each critical hit, there is a chance of causing concussion to the target. Concussion causes the target to not be able to attack for a duration. Each level up of this ability increases the chance inflict concussion. Concussion abnormalities do not stack for each subsequent hit.", req: "10016,5;10017,5;10009,5", equip: [1,2,6,7] },
+{ id: 8004, className: "Taunt", name: "Taunt", helpLine: "Chance to Cause Rage", category: "Defence", value: .05, maxLevel: 10, passive: true, desc: "Each time an enemy misses or you block an attack, there is a chance to cause rage condition. Rage will decrease the enemy's accuracy by half.", req: "10010,5;10011,5" },
+
+
+// Enemy Abilities
+//---------------------------------------------------------------------------
+{ id: 5001, className: "RockGolem", name: "RockGolem", helpLine: "Throw rocks at a distance", category: "Enemy", value: 1, maxLevel: 1, passive: true, desc: "Ability to throw rocks at a distance.", anim:[8,9]},
+{ id: 5002, className: "VoltaBolt", name: "VoltaBolt", helpLine: "Bolt of lightning", category: "Enemy", value: 1, maxLevel: 10, passive: false, desc: "Sends a bolt of lightning at surrounding enemies.", anim:[10], cool:5},
+{ id: 5003, className: "MagicAOE", name: "MagicAOE", helpLine: "Normal Magic AOE spell", category: "Enemy", value: 1, maxLevel: 10, passive: false, desc: "Sends a magic attack at surrounding enemies.", anim:[3], cool:5},
+{ id: 5004, className: "PearlAOE", name: "PearlAOE", helpLine: "Normal Pearl AOE spell", category: "Enemy", value: 1, maxLevel: 10, passive: false, desc: "Sends a Pearl attack at surrounding enemies.", anim:[7], cool:5},
+{ id: 5005, className: "WolfBite", name: "WolfBite", helpLine: "Normal Wolf AOE spell", category: "Enemy", value: 1, maxLevel: 10, passive: false, desc: "Sends a melee attack at surrounding enemies.", anim:[1], cool:5},
+
+{ id: 5006, className: "WolfHowl", name: "Wolf Howl", helpLine: "Wolf Howl", category: "Enemy", value: 1, maxLevel: 10, passive: false, desc: "Wolf holw calls wolves to help.", cool:8},
+{ id: 5007, className: "WolfImpact", name: "Wolf Impact", helpLine: "Wolf Impact at close distance", category: "Enemy", value: 1, maxLevel: 10, passive: false, desc: "Wolf lunges at the enemy from close range", cool:8},
+{ id: 5008, className: "WolfCharge", name: "Wolf Charge", helpLine: "Wolf Charges", category: "Enemy", value: 1, maxLevel: 10, passive: false, desc: "Wolf charges at an enemy for extra damage", cool:8},
+{ id: 5009, className: "OctoWhirlpool", name: "Octo Whirlpool", helpLine: "Generates a deadly whirlpool", category: "Enemy", value: 1, maxLevel: 10, passive: false, desc: "Generates a deadly whirlpool that sucks you in and causes damage", cool:8},
+{ id: 5010, className: "OctoTidalWave", name: "Octo TidalWave", helpLine: "Generates a tidal wave", category: "Enemy", value: 1, maxLevel: 10, passive: false, desc: "Generates a deadly tidal wave in all directions", cool:8},
+{ id: 5011, className: "OctoInk", name: "Octo Ink", helpLine: "You made me ink", category: "Enemy", value: 1, maxLevel: 10, passive: false, desc: "Shoots out ink which causes weakness condition", cool:8},
+
+{ id: 5012, className: "SilvaWisp", name: "SilvaWisp", helpLine: "Special Silva Wisp Attack", category: "Enemy", value: 1, maxLevel: 1, passive: true, desc: "Throws a silvery green ball at the enemy.", anim:[19,20]},
+{ id: 5013, className: "SilvaWispAOE", name: "SilvaWispAOE", helpLine: "Special Silva Wisp Attack AOE", category: "Enemy", value: 1, maxLevel: 1, passive: true, desc: "Throws a silvery green ball at all the enemies.", anim:[19,20]},
+
+{ id: 5014, className: "EntLeafCut", name: "Ent Leaf Cut", helpLine: "Leaves can cut", category: "Enemy", value: 1, maxLevel: 10, passive: false, desc: "Sends a deadly leaf spiral at the enemies", cool:8},
+{ id: 5015, className: "EntRootGrab", name: "Ent Root Grab", helpLine: "Snaggled by Roots", category: "Enemy", value: 1, maxLevel: 10, passive: false, desc: "Roots emenate from the ground and grab the enemy", cool:8},
+{ id: 5016, className: "EntPunch", name: "Ent Punch", helpLine: "Punched by a tree", category: "Enemy", value: 1, maxLevel: 10, passive: false, desc: "Powerful punch in the face from a tree at close range.", cool:8},
+{ id: 5017, className: "VibroChainLightning", name: "Chain Lightning", helpLine: "A wave of chain lightning", category: "Enemy", value: 1, maxLevel: 10, passive: false, desc: "A wave of chain lightning emanates from Vibro", cool:8},
+{ id: 5018, className: "VibroEarthQuake", name: "Vibro Earthquake", helpLine: "An miniture earthquake", category: "Enemy", value: 1, maxLevel: 10, passive: false, desc: "A focused earthquake around Virbo Mons", cool:8},
+{ id: 5019, className: "VibroLightningStrike", name: "Lightning Strike", helpLine: "A power bolt of lightning", category: "Enemy", value: 1, maxLevel: 10, passive: false, desc: "Calling a powerful lightning strike that causes massive damage to those in its path.", cool:8},
+{ id: 5020, className: "BellatorBlackHole", name: "Black Hole", helpLine: "A deep, dark force", category: "Enemy", value: 1, maxLevel: 10, passive: false, desc: "Sucks the player into a black hole", cool:8},
+{ id: 5021, className: "BellHop", name: "Bell Hop", helpLine: "A powerful jump", category: "Enemy", value: 1, maxLevel: 10, passive: false, desc: "A powerful jump causing great damage upon landing", cool:8},
+{ id: 5022, className: "BellatorNuke", name: "Nuke", helpLine: "A nuclear Bomb", category: "Enemy", value: 1, maxLevel: 10, passive: false, desc: "A nuclear bomb emanating outward from the boss.", cool:8},
+
+
+
+// Spells 
+//---------------------------------------------------------------------------
+{ id: 12001, className: "Fireball",image:"fireballSpell", name: "Fireball", helpLine: "Cast a deadly fireball", category: "Mage", value: 1, maxLevel: 10, passive: false, mana:30, desc: "Casts a fireball at the enemy. Has small chance to cause burn condition equal to the level of the spell.",cool:5, equip: [4]  },
+{ id: 12002, className: "Tornado",image:"tornadoSpell", name: "Tornado", helpLine: "Summons a tornado", category: "Mage", value: 1, maxLevel: 10, passive: false, mana:30, desc: "Summons a tornado on the victim causing dizziness condition. Each level up increases the damage of the tornado and the duration of the dizziness.",cool:5, equip: [4] },
+{ id: 12003, className: "IceSpike",image:"iceSpikeSpell", name: "Ice Spike", helpLine: "Casts an ice spike", category: "Mage", value: 1, maxLevel: 10, passive: false, mana:30, desc: "Casts an ice spike at the enemy. The spell will do half the damage, but 50% chance of freezing the enemy. Freeze duration will increase with higher levels.",cool:5, equip: [4] },
+{ id: 12004, className: "Avalanche",image:"avalancheSpell", name: "Avalanche", helpLine: "Watch for falling rocks", category: "Mage", value: 1, maxLevel: 10, passive: false, mana:30, desc: "Creates an avalanche on the unsuspecting victim, which deals damage and has a small chance to cause a concussion. Each level up increases the damage of the spell.",cool:5, equip: [4] },
+{ id: 12005, className: "ShieldBash",image:"shieldBashSpell", name: "Shield Bash", helpLine: "Stun enemies with your shield", category: "Knight", value: .25, maxLevel: 10, passive: false, mana:30, desc: "Bash your enemies with your shield from close distance. Causes low damage and has a 50% chance to stun your enemy.",cool:5, equip: [8] },
+{ id: 12006, className: "DoubleShot",image:"doubleShotSpell", name: "Double Shot", helpLine: "Fires two arrows at once", category: "Hunter", value: 1, maxLevel: 10, passive: false, mana:25, desc: "Deal extra damage by firing two arrows simutaneously", cool:5, equip: [5] },
+
+]

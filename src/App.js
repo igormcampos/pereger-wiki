@@ -8,28 +8,73 @@ import AbilityDetail from './components/abilities/AbilityDetail'
 import Navbar from "./components/pages/Navbar";
 import Home from "./components/pages/Home";
 import About from "./components/pages/About";
-import styled from "styled-components";
 import QuestList from "./components/quests/QuestList";
 import QuestDetail from "./components/quests/QuestDetail";
+import ItemDetail from "./components/items/ItemDetail";
+import ItemList from "./components/items/ItemList";
+import {fetchAbilities, fetchConditions, fetchExpTable, fetchItems, fetchLoot, fetchMonsters, fetchQuests, fetchShops} from "./actions/rootActions";
+import {connect} from "react-redux";
 
-const ContentContainer = styled.div({});
+class App extends React.Component {
+    componentDidMount() {
+        this.props.fetchItems();
+        this.props.fetchAbilities();
+        this.props.fetchConditions();
+        this.props.fetchExpTable();
+        this.props.fetchLoot();
+        this.props.fetchMonsters();
+        this.props.fetchQuests();
+        this.props.fetchShops();
+    }
 
-function App() {
-    return (
-        <BrowserRouter>
-            <div className="App">
-                <Navbar/>
-                <ContentContainer className="container">
-                    <Route exact path="/" component={Home}/>
-                    <Route exact path="/abilities" component={AbilityList}/>
-                    <Route path="/abilities/:ability_class" component={AbilityDetail}/>
-                    <Route exact path="/quests" component={QuestList}/>
-                    <Route path="/quests/:quest_name" component={QuestDetail}/>
-                    <Route path="/about" component={About}/>
-                </ContentContainer>
-            </div>
-        </BrowserRouter>
-    );
+    render() {
+        return (
+            <BrowserRouter>
+                <div className="App">
+                    <Navbar/>
+                    <div className="container">
+                        <Route exact path="/" component={Home}/>
+                        <Route exact path="/abilities" component={AbilityList}/>
+                        <Route path="/abilities/:ability_class" component={AbilityDetail}/>
+                        <Route exact path="/quests" component={QuestList}/>
+                        <Route path="/quests/:quest_name" component={QuestDetail}/>
+                        <Route exact path="/items" component={ItemList}/>
+                        <Route path="/items/:item_name" component={ItemDetail}/>
+                        <Route path="/about" component={About}/>
+                    </div>
+                </div>
+            </BrowserRouter>
+        )
+    }
 }
 
-export default App
+const mapDispatchToProps = (dispatch) => {
+    return {
+        fetchItems: () => {
+            dispatch(fetchItems())
+        },
+        fetchAbilities: () => {
+            dispatch(fetchAbilities())
+        },
+        fetchConditions: () => {
+            dispatch(fetchConditions())
+        },
+        fetchExpTable: () => {
+            dispatch(fetchExpTable())
+        },
+        fetchLoot: () => {
+            dispatch(fetchLoot())
+        },
+        fetchMonsters: () => {
+            dispatch(fetchMonsters())
+        },
+        fetchQuests: () => {
+            dispatch(fetchQuests())
+        },
+        fetchShops: () => {
+            dispatch(fetchShops())
+        }
+    }
+};
+
+export default connect(null, mapDispatchToProps)(App)
