@@ -1,57 +1,39 @@
 import React from 'react'
 import {connect} from 'react-redux'
+import _ from 'underscore'
 
 import ItemListItem from './ItemListItem'
 
 class ItemList extends React.Component {
     render() {
-        if (this.props.abilities) {
-            const allAbilities = {
-                data: [
-                    {
-                        type: 'Active Skills', abilities: this.props.abilities.filter(ability => {
-                            return ability.geralCategory === "Active Skills"
-                        })
-                    },
-                    {
-                        type: 'Passive Skills', abilities: this.props.abilities.filter(ability => {
-                            return ability.geralCategory === "Passive Skills"
-                        })
-                    },
-                    {
-                        type: 'Condition Skills', abilities: this.props.abilities.filter(ability => {
-                            return ability.geralCategory === "Condition Skills"
-                        })
-                    },
-                    {
-                        type: 'Enemy Skills', abilities: this.props.abilities.filter(ability => {
-                            return ability.geralCategory === "Enemy Skills"
-                        })
-                    }
-                ]
-            };
+        if (this.props.items) {
+            const allItems = _.groupBy(this.props.items, "generalCategory");
 
-            const tables = allAbilities.data.map(category => {
-                const responsiveTable = category.type !== 'Enemy Skills' ? 'responsive-table' : '';
-                const hideDescription = category.type !== 'Enemy Skills' ? 'hide-on-med-and-down' : '';
+            const tables = Object.values(allItems).map(category => {
+                const ct = category[0].generalCategory;
+                const isEquipment = ct !== 'Consumables' && ct !== 'Materials' && ct !== 'Money' && ct !== 'None';
+                const isUpgradeable = isEquipment && ct !== 'Necklaces' && ct !== 'Rings';
+
                 return (
-                    <div key={category.type}>
-                        <h5>{category.type}</h5>
-                        <table className={'highlight ' + responsiveTable}>
+                    <div key={ct}>
+                        <h5>{ct}</h5>
+                        <table className='highlight responsive-table'>
                             <thead>
                             <tr>
                                 <th>Name</th>
-                                {category.type !== 'Enemy Skills' && <th>Category</th>}
-                                {category.type !== 'Enemy Skills' && category.type !== 'Active Skills' && <th>Per Level</th>}
-                                {category.type === 'Active Skills' && category !== 'Enemy Skills' && <th>Mana</th>}
-                                {category.type !== 'Active Skills' && category.type !== 'Enemy Skills' && <th>Passive?</th>}
-                                <th className={hideDescription}>Description</th>
-                                {category.type !== 'Enemy Skills' && <th>Equipment</th>}
+                                {isEquipment && <th>Bonus</th>}
+                                {isEquipment && <th>Requirements</th>}
+                                {ct === 'Materials' && <th>Category</th>}
+                                {ct === 'Materials' && <th>Minae</th>}
+                                {ct === 'Consumables' && <th>Buy</th>}
+                                {ct !== 'Money' && <th>Sell</th>}
+                                {isUpgradeable && <th>Upgrade</th>}
+                                {ct === 'Consumables' && <th>Tradable</th>}
                             </tr>
                             </thead>
                             <tbody>
-                            {category.abilities.map(ability => {
-                                return (<ItemListItem key={ability.id} data={ability}/>)
+                            {category.map(item => {
+                                return (<ItemListItem key={item.id} data={item}/>)
                             })}
                             </tbody>
                         </table>
@@ -61,14 +43,14 @@ class ItemList extends React.Component {
 
             return (
                 <div>
-                    <h4 className="center">Abilities</h4>
+                    <h4 className="center">Items</h4>
                     {tables}
                 </div>
             )
         }
         return (
             <div>
-                <h4>Loading abilities...</h4>
+                <h4>Loading items...</h4>
             </div>
         )
     }
@@ -76,7 +58,7 @@ class ItemList extends React.Component {
 
 const mapStateToProps = (state) => {
     return {
-        abilities: state.abilities
+        items: state.items
     }
 };
 

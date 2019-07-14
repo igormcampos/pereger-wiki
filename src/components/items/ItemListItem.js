@@ -3,22 +3,29 @@ import {withRouter} from "react-router-dom";
 
 class ItemListItem extends React.Component {
     handleDetail = () => {
-        this.props.history.push('/abilities/' + this.props.data.className)
+        if (this.props.data.generalCategory === 'Materials') {
+            this.props.history.push('/items/' + this.props.data.className)
+        } else {
+            this.props.history.push('/items/' + this.props.data.name)
+        }
     };
 
     render() {
-        const {id, name, value, category, mana, passive, geralCategory, desc, equip} = this.props.data;
-        const hideDescription = category !== 'Enemy' ? 'hide-on-med-and-down' : '';
+        const {id, className, bonus, req, name, currency, sellPrice, price, tradable, matReq, points, generalCategory} = this.props.data;
+        const isEquipment = generalCategory !== 'Consumables' && generalCategory !== 'Materials' && generalCategory !== 'Money' && generalCategory !== 'None';
+        const isUpgradeable = isEquipment && generalCategory !== 'Necklaces' && generalCategory !== 'Rings';
 
         return (
             <tr key={id} onClick={this.handleDetail}>
-                <td>{name}</td>
-                {category !== 'Enemy' && <td>{category}</td>}
-                {category !== 'Enemy' && geralCategory !== "Active Skills" && <td>{value}</td>}
-                {!passive && category !== 'Enemy' && <td>{mana}</td>}
-                {geralCategory !== "Active Skills" && geralCategory !== "Enemy Skills" && <td>{passive ? "Yes" : "No"}</td>}
-                <td className={hideDescription}>{desc}</td>
-                {category !== 'Enemy' && <td>{equip}</td>}
+                <td>{className}</td>
+                {isEquipment && <td className="upper">{bonus}</td>}
+                {isEquipment && <td className="upper">{req}</td>}
+                {generalCategory === 'Materials' && <td className="capital">{name}</td>}
+                {generalCategory === 'Materials' && <td>{points}</td>}
+                {generalCategory === 'Consumables' && <td>{price} {currency === 'nummus' && currency}</td>}
+                {generalCategory !== 'Money' && <td>{sellPrice}</td>}
+                {isUpgradeable && <td>{matReq}</td>}
+                {generalCategory === 'Consumables' && <td>{tradable === false ? "No" : "Yes"}</td>}
             </tr>
         )
     }

@@ -5,27 +5,27 @@ import AbilityListItem from './AbilityListItem'
 
 class AbilityList extends React.Component {
     render() {
-        if (this.props.abilities) {
+        if (this.props.items) {
             const allAbilities = {
                 data: [
                     {
-                        type: 'Active Skills', abilities: this.props.abilities.filter(ability => {
-                            return ability.geralCategory === "Active Skills"
+                        type: 'Active Skills', items: this.props.items.filter(ability => {
+                            return ability.generalCategory === "Active Skills"
                         })
                     },
                     {
-                        type: 'Passive Skills', abilities: this.props.abilities.filter(ability => {
-                            return ability.geralCategory === "Passive Skills"
+                        type: 'Passive Skills', items: this.props.items.filter(ability => {
+                            return ability.generalCategory === "Passive Skills"
                         })
                     },
                     {
-                        type: 'Condition Skills', abilities: this.props.abilities.filter(ability => {
-                            return ability.geralCategory === "Condition Skills"
+                        type: 'Condition Skills', items: this.props.items.filter(ability => {
+                            return ability.generalCategory === "Condition Skills"
                         })
                     },
                     {
-                        type: 'Enemy Skills', abilities: this.props.abilities.filter(ability => {
-                            return ability.geralCategory === "Enemy Skills"
+                        type: 'Enemy Skills', items: this.props.items.filter(ability => {
+                            return ability.generalCategory === "Enemy Skills"
                         })
                     }
                 ]
@@ -50,7 +50,7 @@ class AbilityList extends React.Component {
                             </tr>
                             </thead>
                             <tbody>
-                            {category.abilities.map(ability => {
+                            {category.items.map(ability => {
                                 return (<AbilityListItem key={ability.id} data={ability}/>)
                             })}
                             </tbody>
@@ -76,7 +76,7 @@ class AbilityList extends React.Component {
 
 const mapStateToProps = (state) => {
     return {
-        abilities: state.abilities
+        items: state.items
     }
 };
 

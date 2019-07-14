@@ -5,16 +5,13 @@
 
 [
 
-{ itemId: 0, className: "Experience", name: "exp", category: 1, maxStack: 2147483647, price: 0, sellPrice: 0, equipType1: "None" },
 
 // Weapons 2001-4000
 //---------------------------------------------------------------------------
-{ itemId: 2001, className: "Empty", name: "empty-weapon", category: 1,  maxStack: 1, price: 0, sellPrice: 0, equipType1: "None" },
 { itemId: 2002, className: "Dagger", name: "dagger", category: 1,  maxStack: 1, price: 12, sellPrice: 10, equipType1: "Sword", equipType2: "Sword", bonus:{atk:1}, matReq:"m:2;b:3;a:10" },
 { itemId: 2003, className: "Sling Shot", name: "slingshot", category: 1, maxStack: 1, price: 12, sellPrice: 10, equipType1: "SlingShot", bonus:{atk:1}, matReq:"m:2;b:3;a:10" },
 { itemId: 2004, className: "Stick Wand", name: "stick-wand", category: 1, maxStack: 1, price: 12, sellPrice: 10, equipType1: "Wand", equipType2: "Wand", bonus:{atk:1}, matReq:"m:2;b:3;a:10" },
 { itemId: 2005, className: "Wooden Club", name: "wooden-club", category: 1, maxStack: 1, price: 20, sellPrice: 18, equipType1: "Sword", equipType2: "Sword", req:{str:12}, bonus:{atk:3}, matReq:"w:100;a:200" },
-{ itemId: 2006, className: "Empty", name: "empty-weapon", category: 1, maxStack: 1, price: 0, sellPrice: 0, equipType1: "HandMagic"},
 { itemId: 2007, className: "Wooden Bow", name: "wooden-bow", category: 1, maxStack: 1, price: 20, sellPrice: 18, equipType1: "Bow", equipType2: "Bow", req:{dex:12}, bonus:{atk:3}, matReq:"w:100;a:200" },
 { itemId: 2008, className: "Pearl Wand", name: "pearl-wand", category: 1, maxStack: 1, price: 20, sellPrice: 18, equipType1: "Wand",equipType2: "Wand", req:{mag:15}, bonus:{atk:3}, matReq:"w:100;p:60;a:200" },
 { itemId: 2009, className: "Volt Bow", name: "volt-bow", category: 1, maxStack: 1, price: 50, sellPrice: 40, equipType1: "Bow", equipType2: "Bow", req:{dex:35}, bonus:{atk:8}, matReq:"w:200;p:200;a:1000" },
@@ -47,7 +44,6 @@
 
 // Armors 4001-6000
 //---------------------------------------------------------------------------
-{ itemId: 4001, className: "Empty", name: "empty-armor", category: 2, maxStack: 1, price: 0, sellPrice: 0, equipType1: "None", },
 { itemId: 4002, className: "Shirt", name: "shirt", category: 2, maxStack: 1, price: 12, sellPrice: 10, equipType1: "LightArmor", bonus:{armor:1}, matReq:"c:3;a:10" },
 { itemId: 4003, className: "Crustaceous Armor", name: "crustaceous-armor", category: 2, maxStack: 1, price: 20, sellPrice: 18, equipType1: "HeavyArmor", req:{def:15}, bonus:{armor:3}, matReq:"b:100;m:40;a:200" },
 { itemId: 4004, className: "Leather Fleece", name: "leather-fleece", category: 2, maxStack: 1, price: 25, sellPrice: 20, equipType1: "LightArmor", req:{hp:220}, bonus:{armor:3}, matReq:"c:200;p:200;a:1000" },
@@ -66,7 +62,6 @@
 
 // Secondary 6001-8000
 //---------------------------------------------------------------------------
-{ itemId: 6001, className: "Empty", name: "empty-shield", category: 3, maxStack: 1, price: 0, sellPrice: 0, equipType1: "None" },
 { itemId: 6002, className: "Basic Spell Book", name: "book1", category: 3, maxStack: 1, price: 12, sellPrice: 10, equipType1: "Book", bonus:{mag:1}, matReq:"b:3;a:10"  },
 { itemId: 6003, className: "Crude Buckler", name: "wooden-buckler", category: 3, maxStack: 1, price: 12, sellPrice: 10, equipType1: "Shield", bonus:{block:.03}, matReq:"w:2;m:1;a:10" },
 { itemId: 6004, className: "Sea Tome", name: "sea-tome", category: 3, maxStack: 1, price: 20, sellPrice: 18, equipType1: "Book", req:{mag:10}, bonus:{mag:2}, matReq:"p:60;c:40;w:40;a:200" },
@@ -96,7 +91,6 @@
 
 // Boots 8001-10000
 //---------------------------------------------------------------------------
-{ itemId: 8001, className: "Empty", name: "empty-boots", category: 4, maxStack: 1, price: 0, sellPrice: 0, equipType1: "None" },
 { itemId: 8002, className: "Sandals", name: "sandals", category: 4, maxStack: 1, price: 15, sellPrice: 12, equipType1: "Boots", bonus:{armor:1}, matReq:"c:2;a:10"  },
 { itemId: 8003, className: "Leather Boots", name: "leather-boots", category: 4, maxStack: 1, price: 20, sellPrice: 18, equipType1: "Boots", req:{agi:10}, bonus:{armor:2}, matReq:"b:80;a:200"},
 { itemId: 8004, className: "Bearpaw Boots", name: "bearpaw-boots", category: 4, maxStack: 1, price: 35, sellPrice: 30, equipType1: "Boots", req:{agi:36}, bonus:{armor:3}, matReq:"c:200;b:150;a:800"},
@@ -110,7 +104,6 @@
 
 // Gloves 10001-12000
 //---------------------------------------------------------------------------
-{ itemId: 10001, className: "Empty", name: "empty-gloves", category: 5, maxStack: 1, price: 0, sellPrice: 0, equipType1: "None" },
 { itemId: 10002, className: "Leather Gloves", name: "leather-gloves", category: 5, maxStack: 1, price: 12, sellPrice: 10, equipType1: "Gloves", bonus:{armor:1}, matReq:"c:2;a:10"  },
 { itemId: 10003, className: "Wolf Hide Gloves", name: "wolf-hide-gloves", category: 5, maxStack: 1, price: 20, sellPrice: 18, equipType1: "Gloves", req:{acc:10}, bonus:{armor:2}, matReq:"b:40;c:40;a:200"},
 { itemId: 10004, className: "Grizzly Paws", name: "grizzly-gloves", category: 5, maxStack: 1, price: 35, sellPrice: 30, equipType1: "Gloves", req:{acc:36}, bonus:{armor:3}, matReq:"c:200;b:150;a:800"},
@@ -124,7 +117,6 @@
 
 // Helmet 12001-14000
 //---------------------------------------------------------------------------
-{ itemId: 12001, className: "Empty", name: "empty-helmet", category: 6, maxStack: 1, price: 0, sellPrice: 0, equipType1: "None" },
 { itemId: 12002, className: "Leather Helmet", name: "leather-helmet", category: 6, maxStack: 1, price: 12, sellPrice: 10, equipType1: "Helmet", bonus:{armor:1}, matReq:"m:2;c:1;a:10"  },
 { itemId: 12003, className: "Shelmet", name: "shelmet", category: 6, maxStack: 1, price: 30, sellPrice: 25, equipType1: "Helmet",req:{hp:110}, bonus:{armor:2}, matReq:"b:100;m:80;a:200" },
 { itemId: 12004, className: "Granite Helm", name: "granite-helm", category: 6, maxStack: 1, price: 50, sellPrice: 40, equipType1: "Helmet",req:{hp:220}, bonus:{armor:3}, matReq:"m:150;b:150;a:1000" },
@@ -139,8 +131,7 @@
 
 // Rings 14001-16000
 //---------------------------------------------------------------------------
-{ itemId: 14001, className: "Empty", name: "empty-ring", category: 7, maxStack: 1, price: 0, sellPrice: 0, equipType1: "None" },
-{ itemId: 14002, className: "Silver Ring", name: "silver-ring", category: 7, maxStack: 1, price: 15, sellPrice: 12, equipType1: "Ring", bonus:{hp:5}}, 
+{ itemId: 14002, className: "Silver Ring", name: "silver-ring", category: 7, maxStack: 1, price: 15, sellPrice: 12, equipType1: "Ring", bonus:{hp:5}},
 { itemId: 14003, className: "Wolfssegen", name: "wolfssegen-ring", category: 7, maxStack: 1, price: 40, sellPrice: 25, equipType1: "Ring", req:{hp:110}, bonus:{"critX":.01}}, 
 { itemId: 14004, className: "Beta Ring", name: "beta-ring", category: 7, maxStack: 1, price: 0, sellPrice: 0, equipType1: "Ring"}, 
 { itemId: 14005, className: "Wisp Ring", name: "wisp-ring", category: 7, maxStack: 1, price: 50, sellPrice: 40, equipType1: "Ring", req:{hp:220}, bonus:{"critX":.01, hp:10}}, 
@@ -151,7 +142,6 @@
 
 // Necklaces 16001-18000
 //---------------------------------------------------------------------------
-{ itemId: 16001, className: "Empty", name: "empty-necklace", category: 8, maxStack: 1, price: 0, sellPrice: 0, equipType1: "None" },
 { itemId: 16002, className: "Sapphire Necklace", name: "necklace1", category: 8, maxStack: 1, price: 15, sellPrice: 12, equipType1: "Necklace", bonus:{mp:5} },
 { itemId: 16003, className: "Pearl Necklace", name: "pearl-necklace", category: 8, maxStack: 1, price: 30, sellPrice: 25, equipType1: "Necklace", req:{mp:60}, bonus:{"critY":.1} },
 { itemId: 16004, className: "Monile e Celeritas", name: "bellator-necklace", category: 8, maxStack: 1, price: 100, sellPrice: 100, equipType1: "Necklace", bonus:{speed:5,hp:10}},

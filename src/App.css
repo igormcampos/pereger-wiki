@@ -1,0 +1,7 @@
+.capital {
+    text-transform: capitalize;
+}
+
+.upper {
+    text-transform: uppercase;
+}

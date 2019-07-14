@@ -6,18 +6,12 @@ class QuestDetail extends React.Component {
         if (this.props.quest) {
             const {title, desc, target, amount, reward, rewardAmt} = this.props.quest;
 
-            const quest = (
+            return (
                 <div>
                     <h4>{title}</h4>
                     <p>{desc}</p>
                     <p>Requirement: {target} x {amount}</p>
                     <p>Rewards: {reward} x {rewardAmt}</p>
-                </div>
-            );
-
-            return (
-                <div>
-                    {quest}
                 </div>
             )
         }

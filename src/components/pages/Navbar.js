@@ -25,7 +25,7 @@ class Navbar extends React.Component {
     };
 
     goAbilities = () => {
-        this.props.history.push('/abilities')
+        this.props.history.push('/items')
     };
 
     goQuests = () => {
@@ -40,6 +40,10 @@ class Navbar extends React.Component {
         this.props.history.push('/items')
     };
 
+    goMonsters = () => {
+        this.props.history.push('/monsters')
+    };
+
     render() {
         return (
             <nav className="nav-extended">
@@ -48,6 +52,7 @@ class Navbar extends React.Component {
                         <li><NavLink to="/">Home</NavLink></li>
                         <li><NavLink to="/items">Items</NavLink></li>
                         <li><NavLink to="/abilities">Abilities</NavLink></li>
+                        <li><NavLink to="/monsters">Monsters</NavLink></li>
                         <li><NavLink to="/quests">Quests</NavLink></li>
                         <li><NavLink to="/about">About</NavLink></li>
                     </ul>
@@ -66,6 +71,7 @@ class Navbar extends React.Component {
                         <li className="tab" onClick={this.goHome}><a href="#">Home</a></li>
                         <li className="tab" onClick={this.goItems}><a href="#">Items</a></li>
                         <li className="tab" onClick={this.goAbilities}><a href="#">Abilities</a></li>
+                        <li className="tab" onClick={this.goMonsters}><a href="#">Monsters</a></li>
                         <li className="tab" onClick={this.goQuests}><a href="#">Quests</a></li>
                         <li className="tab" onClick={this.goAbout}><a href="#">About</a></li>
                     </ul>

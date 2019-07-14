@@ -56,14 +56,6 @@ class Home extends React.Component {
                     {/*<li className="collection-item"><NavLink to='/'>Friendly Monsters</NavLink></li>*/}
                     {/*<li className="collection-item"><NavLink to='/'>XP Table</NavLink></li>*/}
                 </ul>
-                <h5>TODO List:</h5>
-                <ul>
-                    <li>Add images to all items and monsters based on className</li>
-                    <li>Change IDs into human readable text everywhere</li>
-                    <li>Search bar fuzzy</li>
-                    <li>Update world map</li>
-                    <li>Link items to quests</li>
-                </ul>
             </div>
         )
     }

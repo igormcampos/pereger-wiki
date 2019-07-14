@@ -17,42 +17,96 @@ export const fetchItems = () => {
                 let items = JSON5.parse(text);
 
                 items = items.map(item => {
+                    item.bonus = item.bonus && Object.entries(item.bonus).map((b, index) => {
+                        if (b[0] === 'atkRate') {
+                            b[1] = b[1] + 'ms'
+                        } else if (b[0] === 'critX' || b[0] === 'critY') {
+                            if (b[0] === 'critX') {
+                                b[0] = 'Crit Chance'
+                            } else {
+                                b[0] = 'Crit Mult'
+                            }
+                            b[1] = b[1] * 100 + '%'
+                        }
+                        b[0] = b[0] + ': ';
+                        if (index !== 0) {
+                            b[0] = ', ' + b[0]
+                        }
+                        return b
+                    });
+                    item.req = item.req && Object.entries(item.req).map((r, index) => {
+                        r[0] = r[0] + ': ';
+                        if (index !== 0) {
+                            r[0] = ', ' + r[0]
+                        }
+                        return r
+                    });
+                    item.matReq = item.matReq && item.matReq.split(';').map((m, index) => {
+                        let mat = m.split(':');
+                        switch (mat[0]) {
+                            case 'w':
+                                mat[0] = 'Wood';
+                                break;
+                            case 'b':
+                                mat[0] = 'Beast';
+                                break;
+                            case 'm':
+                                mat[0] = 'Metal';
+                                break;
+                            case 'l':
+                                mat[0] = 'Legendary';
+                                break;
+                            case 'c':
+                                mat[0] = 'Cloth';
+                                break;
+                            case 'p':
+                                mat[0] = 'Powder';
+                                break;
+                            default:
+                                mat[0] = 'Aurum';
+                        }
+                        if (index !== 0) {
+                            mat[0] = ', ' + mat[0]
+                        }
+                        mat[0] = mat[0] + ': ';
+                        return mat
+                    });
                     switch (item.category) {
                         case 1:
-                            item.geralCategory = 'Weapons';
+                            item.generalCategory = 'Weapons';
                             break;
                         case 2:
-                            item.geralCategory = 'Armors';
+                            item.generalCategory = 'Armors';
                             break;
                         case 3:
-                            item.geralCategory = 'Secondary';
+                            item.generalCategory = 'Secondary';
                             break;
                         case 4:
-                            item.geralCategory = 'Boots';
+                            item.generalCategory = 'Boots';
                             break;
                         case 5:
-                            item.geralCategory = 'Gloves';
+                            item.generalCategory = 'Gloves';
                             break;
                         case 6:
-                            item.geralCategory = 'Helmet';
+                            item.generalCategory = 'Helmet';
                             break;
                         case 7:
-                            item.geralCategory = 'Rings';
+                            item.generalCategory = 'Rings';
                             break;
                         case 8:
-                            item.geralCategory = 'Necklaces';
+                            item.generalCategory = 'Necklaces';
                             break;
                         case 9:
-                            item.geralCategory = 'Consumables';
+                            item.generalCategory = 'Consumables';
                             break;
                         case 10:
-                            item.geralCategory = 'Materials';
+                            item.generalCategory = 'Materials';
                             break;
                         case 16:
-                            item.geralCategory = 'Money';
+                            item.generalCategory = 'Money';
                             break;
                         default:
-                            item.geralCategory = 'None'
+                            item.generalCategory = 'None'
                     }
                     return item
                 });
@@ -73,13 +127,13 @@ export const fetchAbilities = () => {
 
                     abilities = abilities.map(ability => {
                         if (ability.id <= 8000) {
-                            ability.geralCategory = 'Enemy Skills'
+                            ability.generalCategory = 'Enemy Skills'
                         } else if (ability.id <= 10000) {
-                            ability.geralCategory = 'Condition Skills'
+                            ability.generalCategory = 'Condition Skills'
                         } else if (ability.id <= 12000) {
-                            ability.geralCategory = 'Passive Skills'
+                            ability.generalCategory = 'Passive Skills'
                         } else {
-                            ability.geralCategory = 'Active Skills'
+                            ability.generalCategory = 'Active Skills'
                         }
                         if (ability.className === 'BetterBows') {
                             ability.value += 'ms'
@@ -136,7 +190,19 @@ export const fetchMonsters = () => {
         if (!getState().monsters) {
             fetch(monstersTXT)
                 .then((r) => r.text()).then(text => {
-                    dispatch({type: FETCH_MONSTERS, monsters: JSON5.parse(text)});
+                let monsters = JSON5.parse(text);
+                monsters = monsters.map(monster => {
+                    if (monster.id <= 2000) {
+                        monster.generalCategory = 'Normal Monsters'
+                    } else if (monster.id <= 4000) {
+                        monster.generalCategory = "Friendly NPC's"
+                    } else if (monster.id <= 6000) {
+                        monster.generalCategory = 'Bosses'
+                    }
+                    return monster
+                });
+
+                dispatch({type: FETCH_MONSTERS, monsters: monsters});
                 }
             );
         }

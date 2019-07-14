@@ -14,6 +14,8 @@ import ItemDetail from "./components/items/ItemDetail";
 import ItemList from "./components/items/ItemList";
 import {fetchAbilities, fetchConditions, fetchExpTable, fetchItems, fetchLoot, fetchMonsters, fetchQuests, fetchShops} from "./actions/rootActions";
 import {connect} from "react-redux";
+import MonsterList from "./components/monsters/MonsterList";
+import MonsterDetail from "./components/monsters/MonsterDetail";
 
 class App extends React.Component {
     componentDidMount() {
@@ -36,6 +38,8 @@ class App extends React.Component {
                         <Route exact path="/" component={Home}/>
                         <Route exact path="/abilities" component={AbilityList}/>
                         <Route path="/abilities/:ability_class" component={AbilityDetail}/>
+                        <Route exact path="/monsters" component={MonsterList}/>
+                        <Route path="/monsters/:monster_class" component={MonsterDetail}/>
                         <Route exact path="/quests" component={QuestList}/>
                         <Route path="/quests/:quest_name" component={QuestDetail}/>
                         <Route exact path="/items" component={ItemList}/>
