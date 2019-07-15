@@ -20,6 +20,12 @@ class MonsterDetail extends React.Component {
                     return <div>Loading loot...</div>
                 }
             });
+            const activeAbilities = this.props.activeSkills && this.props.activeSkills.map((act, index) => {
+                return <span key={act.id}>{index > 0 && ', '}<Link to={'/abilities/' + act.className}>{act.name}</Link>{act.level && 'LV' + act.level}</span>
+            });
+            const passiveAbilities = this.props.passiveSkills && this.props.passiveSkills.map((pass, index) => {
+                return <span key={pass.id}>{index > 0 && ', '}<Link to={'/abilities/' + pass.className}>{pass.name}</Link>{pass.level && ' LV' + pass.level}</span>
+            });
 
             return (
                 <div>
@@ -33,8 +39,8 @@ class MonsterDetail extends React.Component {
                     {isMonster && <p>Agility: {agi}</p>}
                     {isMonster && <p>Defense: {def}</p>}
                     {isMonster && <p>Speed: {spd}</p>}
-                    {isMonster && passives && <p>Passive Skills: {passives}</p>}
-                    {isMonster && actives && <p>Active Skills: {actives}</p>}
+                    {isMonster && passiveAbilities && <p>Passive Skills: {passiveAbilities}</p>}
+                    {isMonster && activeAbilities && <p>Active Skills: {activeAbilities}</p>}
                     {drops && drops.length > 0 && <p><b>Loot:</b></p>}
                     {drops}
                 </div>
@@ -51,12 +57,26 @@ class MonsterDetail extends React.Component {
 const mapStateToProps = (state, ownProps) => {
     let monsterClass = ownProps.match.params.monster_class;
     let monster = state.monsters && state.monsters.find(item => item.className === monsterClass);
-    if (monster) {
-        monster.passiveSkills = monster.passives && monster.passives.split(';').map(pass => {
-            let ability = pass.split(',').values();
-            console.log(pass)
+    let passiveSkills = monster && monster.passives && monster.passives.split(';').map(pass => {
+        let ability = pass.split(',');
+        pass = state.abilities && state.abilities.find(ab => {
+            return ab.id === parseInt(ability[0])
         });
-    }
+        if (pass.generalCategory !== 'Enemy Skills') {
+            pass.level = ability[1];
+        }
+        return pass
+    });
+    let activeSkills = monster && monster.actives && monster.actives.split(';').map(act => {
+        let ability = act.split(',');
+        act = state.abilities && state.abilities.find(ab => {
+            return ab.id === parseInt(ability[0])
+        });
+        if (act.generalCategory !== 'Enemy Skills') {
+            act.level = ability[1];
+        }
+        return act
+    });
     let loot = monster && state.loot && state.loot.filter(drop => {
         return drop.npc === monster.name.toLowerCase()
     });
@@ -68,7 +88,9 @@ const mapStateToProps = (state, ownProps) => {
     });
     return {
         monster: monster,
-        loot: loot
+        loot: loot,
+        activeSkills: activeSkills,
+        passiveSkills: passiveSkills
     }
 };
 

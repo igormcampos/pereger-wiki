@@ -8,6 +8,7 @@ import monstersTXT from "../files/monsters.txt";
 import questsTXT from "../files/quests.txt";
 import shopsTXT from "../files/shops.txt";
 import JSON5 from "json5";
+import equipTypes from "../files/equipTypes";
 
 export const fetchItems = () => {
     return (dispatch, getState) => {
@@ -135,11 +136,24 @@ export const fetchAbilities = () => {
                         } else {
                             ability.generalCategory = 'Active Skills'
                         }
+
                         if (ability.className === 'BetterBows') {
                             ability.value += 'ms'
                         } else if (ability.className !== 'Paramedic') {
                             ability.value = (ability.value * 100) + '%'
                         }
+
+                        ability.equip = ability.equip && ability.equip.map((e, index) => {
+                            let type = '';
+                            if (index > 0) {
+                                type = ', '
+                            }
+                            type += equipTypes.data.find(type => {
+                                return type.id === e
+                            }).type;
+                            return type
+                        });
+
                         return ability
                     });
                     dispatch({type: FETCH_ABILITIES, abilities: abilities});
