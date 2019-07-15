@@ -51,6 +51,12 @@ class MonsterDetail extends React.Component {
 const mapStateToProps = (state, ownProps) => {
     let monsterClass = ownProps.match.params.monster_class;
     let monster = state.monsters && state.monsters.find(item => item.className === monsterClass);
+    if (monster) {
+        monster.passiveSkills = monster.passives && monster.passives.split(';').map(pass => {
+            let ability = pass.split(',').values();
+            console.log(pass)
+        });
+    }
     let loot = monster && state.loot && state.loot.filter(drop => {
         return drop.npc === monster.name.toLowerCase()
     });
