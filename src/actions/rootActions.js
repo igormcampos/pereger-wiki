@@ -1,4 +1,4 @@
-import {FETCH_ABILITIES, FETCH_CONDITIONS, FETCH_EXP_TABLE, FETCH_ITEMS, FETCH_LOOT, FETCH_MONSTERS, FETCH_QUESTS, FETCH_SHOPS} from "./actionTypes";
+import {FETCH_ABILITIES, FETCH_CONDITIONS, FETCH_EXP_TABLE, FETCH_ITEMS, FETCH_LOOT, FETCH_MONSTERS, FETCH_QUESTS, FETCH_SHOPS, UPDATE_TABS} from "./actionTypes";
 import itemsTXT from "../files/items.txt";
 import abilitiesTXT from "../files/abilities.txt";
 import conditionsTXT from "../files/conditions.txt";
@@ -255,5 +255,12 @@ export const fetchShops = () => {
                 }
             );
         }
+    }
+};
+
+export const updateTabs = (tabs) => {
+    return {
+        type: UPDATE_TABS,
+        tabs: tabs
     }
 };

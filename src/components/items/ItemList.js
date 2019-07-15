@@ -3,8 +3,21 @@ import {connect} from 'react-redux'
 import _ from 'underscore'
 
 import ItemListItem from './ItemListItem'
+import {updateTabs} from "../../actions/rootActions";
 
 class ItemList extends React.Component {
+    state = {};
+
+    componentWillUpdate(nextProps, nextState, nextContext) {
+        if (nextProps !== this.props && nextProps.items) {
+            let items = _.groupBy(nextProps.items, "generalCategory");
+            nextProps.updateTabs(Object.keys(items));
+            this.setState({
+                allItems: items
+            });
+        }
+    }
+
     render() {
         if (this.props.items) {
             const allItems = _.groupBy(this.props.items, "generalCategory");
@@ -63,4 +76,12 @@ const mapStateToProps = (state) => {
     }
 };
 
-export default connect(mapStateToProps)(ItemList)
+const mapDispatchToProps = (dispatch) => {
+    return {
+        updateTabs: (tabs) => {
+            dispatch(updateTabs(tabs))
+        }
+    }
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(ItemList)

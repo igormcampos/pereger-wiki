@@ -1,4 +1,4 @@
-import {FETCH_ABILITIES, FETCH_CONDITIONS, FETCH_EXP_TABLE, FETCH_ITEMS, FETCH_LOOT, FETCH_MONSTERS, FETCH_QUESTS, FETCH_SHOPS} from "../actions/actionTypes";
+import {FETCH_ABILITIES, FETCH_CONDITIONS, FETCH_EXP_TABLE, FETCH_ITEMS, FETCH_LOOT, FETCH_MONSTERS, FETCH_QUESTS, FETCH_SHOPS, UPDATE_TABS} from "../actions/actionTypes";
 import equipTypes from '../files/equipTypes'
 
 const initState = {
@@ -47,6 +47,11 @@ const rootReducer = (state = initState, action = null) => {
                 return {
                     ...state,
                     shops: action.shops
+                };
+            case UPDATE_TABS:
+                return {
+                    ...state,
+                    tabs: action.tabs
                 };
             default:
                 return state;
