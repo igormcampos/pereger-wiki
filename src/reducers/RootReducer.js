@@ -1,5 +1,5 @@
 import {FETCH_ABILITIES, FETCH_CONDITIONS, FETCH_EXP_TABLE, FETCH_ITEMS, FETCH_LOOT, FETCH_MONSTERS, FETCH_QUESTS, FETCH_SHOPS} from "../actions/actionTypes";
-import equipTypes from '../json/equipTypes'
+import equipTypes from '../files/equipTypes'
 
 const initState = {
     equipTypes: equipTypes.data

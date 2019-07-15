@@ -3,11 +3,10 @@ import {connect} from 'react-redux'
 
 class ItemDetail extends React.Component {
     render() {
-        if (this.props.monster) {
-            const {desc, className, bonus, req, name, currency, sellPrice, price, tradable, matReq, points, generalCategory} = this.props.monster;
+        if (this.props.item) {
+            const {desc, className, bonus, req, name, currency, sellPrice, price, tradable, matReq, points, generalCategory} = this.props.item;
             const isEquipment = generalCategory !== 'Consumables' && generalCategory !== 'Materials' && generalCategory !== 'Money' && generalCategory !== 'None';
             const isUpgradeable = isEquipment && generalCategory !== 'Necklaces' && generalCategory !== 'Rings';
-
 
             return (
                 <div>
@@ -21,6 +20,7 @@ class ItemDetail extends React.Component {
                     {generalCategory !== 'Money' && <p><b>Sell Price:</b> {sellPrice}</p>}
                     {isUpgradeable && <p><b>Upgrade:</b> {matReq}</p>}
                     {generalCategory === 'Consumables' && <p>{tradable === false ? "This item is not tradable" : "This item is tradable"}</p>}
+                    {this.props.droppedBy && <p><b>Dropped by:</b> {this.props.droppedBy}</p>}
                 </div>
             )
         }
@@ -34,14 +34,22 @@ class ItemDetail extends React.Component {
 
 const mapStateToProps = (state, ownProps) => {
     let itemName = ownProps.match.params.item_name;
+    let item;
     if (itemName.includes(' ')) {
-        return {
-            monster: state.items && state.items.find(item => item.className === itemName)
-        }
+        item = state.items && state.items.find(item => item.className === itemName);
     } else {
-        return {
-            monster: state.items && state.items.find(item => item.name === itemName)
-        }
+        item = state.items && state.items.find(item => item.name === itemName);
+    }
+    let loot = item && state.loot && state.loot.filter(drop => drop.item === item.itemId);
+    let droppedBy = loot && state.monsters && state.monsters.filter(monster => {
+        return loot.forEach(value => {
+            return monster.name.toLowerCase() === value.npc
+        });
+    });
+    console.log(droppedBy);
+    return {
+        item: item,
+        droppedBy: droppedBy
     }
 };
 

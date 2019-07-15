@@ -27,25 +27,6 @@
 { monsterId: 21, className: "Wolf", name: "Wolf", level: 75, exp: 1200, hp: 500, sp: 0, str: 85, mag: 1, acc: 90, agi: 90, def: 85 , attack: 1, spd: .6, splat: 0, respawn: 90, passives: "8001,1", actives: "5005,10,0.15"},
 { monsterId: 22, className: "Wolf", name: "Wolf", level: 105, exp: 1750, hp: 750, sp: 0, str: 115, mag: 1, acc: 126, agi: 126, def: 115 , attack: 1, spd: .6, splat: 0, respawn: 90, passives: "8001,1", actives: "5005,10,0.15"},
 
-
-// Friendly npc's 2001 - 4000
-//---------------------------------------------------------------------------
-{ monsterId: 2001, className: "npc", name: "Roshin", level: 1, exp: 0, hp: 100, sp: 100, str: 10, mag: 10, acc: 10, agi: 10, def: 10, attack: 1, spd: 1, splat: 0, appearance: [ 0, 1, 2, 3, 8, 0, 21, 27, 2 ]  },
-{ monsterId: 2002, className: "npc", name: "Keltet", level: 1, exp: 0, hp: 100, sp: 100, str: 10, mag: 10, acc: 10, agi: 10, def: 10, attack: 1, spd: 1, splat: 0, appearance: [ 0, 1, 2, 9, 8, 0, 3, 17, 0 ]  },
-{ monsterId: 2003, className: "npc", name: "Flyn", level: 1, exp: 0, hp: 100, sp: 100, str: 10, mag: 10, acc: 10, agi: 10, def: 10, attack: 1, spd: 1, splat: 0, appearance: [ 0, 1, 2, 8, 8, 0, 5, 0, 0 ]  },
-{ monsterId: 2004, className: "npc", name: "Grego", level: 1, exp: 0, hp: 100, sp: 100, str: 10, mag: 10, acc: 10, agi: 10, def: 10, attack: 1, spd: 1, splat: 0, appearance: [ 0, 14, 2, 15, 16, 0, 2, 28, 4 ]  },
-{ monsterId: 2005, className: "npc", name: "Jacqueline", level: 1, exp: 0, hp: 100, sp: 100, str: 10, mag: 10, acc: 10, agi: 10, def: 10, attack: 1, spd: 1, splat: 0, appearance: [ 0, 1, 2, 7, 8, 0, 3, 0, 12 ]  },
-{ monsterId: 2006, className: "npc", name: "Worker 1", level: 1, exp: 0, hp: 100, sp: 100, str: 10, mag: 10, acc: 10, agi: 10, def: 10, attack: 1, spd: 1, splat: 0, appearance: [ 0, 1, 2, 8, 17, 0, 12, 0, 0 ]  },
-{ monsterId: 2007, className: "npc", name: "Worker 2", level: 1, exp: 0, hp: 100, sp: 100, str: 10, mag: 10, acc: 10, agi: 10, def: 10, attack: 1, spd: 1, splat: 0, appearance: [ 0, 1, 2, 8, 16, 0, 12, 0, 0 ]  },
-{ monsterId: 2008, className: "npc", name: "Ida", level: 1, exp: 0, hp: 100, sp: 100, str: 10, mag: 10, acc: 10, agi: 10, def: 10, attack: 1, spd: 1, splat: 0, appearance: [ 0, 21, 2, 20, 22, 0, 20, 3, 3 ]  },
-{ monsterId: 2009, className: "npc", name: "Customs", level: 1, exp: 0, hp: 100, sp: 100, str: 10, mag: 10, acc: 10, agi: 10, def: 10, attack: 1, spd: 1, splat: 0, appearance: [ 0, 1, 2, 4, 8, 0, 3, 22, 28 ]  },
-{ monsterId: 2010, className: "npc", name: "Aegon", level: 1, exp: 0, hp: 100, sp: 100, str: 10, mag: 10, acc: 10, agi: 10, def: 10, attack: 1, spd: 1, splat: 0, appearance: [ 0, 1, 2, 3, 8, 0, 21, 29, 11 ]  },
-{ monsterId: 2011, className: "npc", name: "Meera", level: 1, exp: 0, hp: 100, sp: 100, str: 10, mag: 10, acc: 10, agi: 10, def: 10, attack: 1, spd: 1, splat: 0, appearance: [ 0, 1, 2, 6, 8, 0, 0, 2, 18 ]  },
-{ monsterId: 2012, className: "npc", name: "Warden", level: 1, exp: 0, hp: 100, sp: 100, str: 10, mag: 10, acc: 10, agi: 10, def: 10, attack: 1, spd: 1, splat: 0, appearance: [ 0, 1, 2, 3, 8, 0, 21, 27, 27 ]  },
-{ monsterId: 2012, className: "npc", name: "Warden", level: 1, exp: 0, hp: 100, sp: 100, str: 10, mag: 10, acc: 10, agi: 10, def: 10, attack: 1, spd: 1, splat: 0, appearance: [ 0, 1, 2, 3, 8, 0, 21, 27, 27 ]  },
-{ monsterId: 2013, className: "npc", name: "Tammi", level: 1, exp: 0, hp: 100, sp: 100, str: 10, mag: 10, acc: 10, agi: 10, def: 10, attack: 1, spd: 1, splat: 0, appearance: [ 0, 1, 37, 6, 8, 0, 8, 15, 20 ]  },
-
-
 //Bosses 4001 - 6000
 { monsterId: 4001, className: "AlphaWolf1", name: "Alpha Wolf", level: 20, exp: 1400, hp: 3500, sp: 100, str: 25, mag: 1, acc: 30, agi: 30, def: 25, attack: 1, spd: .3, splat: 0, size: 3, passives: "8001,3;10012,11;10013,11;10014,11", actives: "5006,10,.1;5007,10,.1;5008,10,.1" },
 { monsterId: 4002, className: "AlphaWolf2", name: "Alpha Wolf", level: 50, exp: 8500, hp: 10000, sp: 100, str: 60, mag: 1, acc: 60, agi: 60, def: 60,  attack: 1, spd: .3, splat: 0, size: 3, passives: "8001,3;10012,11;10013,11;10014,11", actives: "5006,10,.1;5007,10,.1;5008,10,.1" },
@@ -68,6 +49,26 @@
 { monsterId: 4017, className: "VibroMons4", name: "Vibro Mons", level: 140, exp: 65700, hp: 36500, sp: 100, str: 1, mag: 170, acc: 168, agi: 168, def: 170, attack: 21, spd: .4, splat: 0, size: 3, passives: "10016,1;10012,11;10013,11;10014,11", actives: "5017,10,.1;5018,10,.1;5019,10,.1" },
 
 { monsterId: 4018, className: "Bellator", name: "Bellator", level: 50, exp: 10000, hp: 50000, sp: 100, str: 50, mag: 1, acc: 150, agi: 30, def: 30, attack: 1, spd: .1, splat: 0, size: 3, passives: "10012,11;10013,11;10014,11", actives: "5020,10,.1;5021,10,.1;5022,10,.1;" },
+
+
+
+// Friendly npc's 2001 - 4000
+//---------------------------------------------------------------------------
+{ monsterId: 2001, className: "npc", name: "Roshin", level: 1, exp: 0, hp: 100, sp: 100, str: 10, mag: 10, acc: 10, agi: 10, def: 10, attack: 1, spd: 1, splat: 0, appearance: [ 0, 1, 2, 3, 8, 0, 21, 27, 2 ]  },
+{ monsterId: 2002, className: "npc", name: "Keltet", level: 1, exp: 0, hp: 100, sp: 100, str: 10, mag: 10, acc: 10, agi: 10, def: 10, attack: 1, spd: 1, splat: 0, appearance: [ 0, 1, 2, 9, 8, 0, 3, 17, 0 ]  },
+{ monsterId: 2003, className: "npc", name: "Flyn", level: 1, exp: 0, hp: 100, sp: 100, str: 10, mag: 10, acc: 10, agi: 10, def: 10, attack: 1, spd: 1, splat: 0, appearance: [ 0, 1, 2, 8, 8, 0, 5, 0, 0 ]  },
+{ monsterId: 2004, className: "npc", name: "Grego", level: 1, exp: 0, hp: 100, sp: 100, str: 10, mag: 10, acc: 10, agi: 10, def: 10, attack: 1, spd: 1, splat: 0, appearance: [ 0, 14, 2, 15, 16, 0, 2, 28, 4 ]  },
+{ monsterId: 2005, className: "npc", name: "Jacqueline", level: 1, exp: 0, hp: 100, sp: 100, str: 10, mag: 10, acc: 10, agi: 10, def: 10, attack: 1, spd: 1, splat: 0, appearance: [ 0, 1, 2, 7, 8, 0, 3, 0, 12 ]  },
+{ monsterId: 2006, className: "npc", name: "Worker 1", level: 1, exp: 0, hp: 100, sp: 100, str: 10, mag: 10, acc: 10, agi: 10, def: 10, attack: 1, spd: 1, splat: 0, appearance: [ 0, 1, 2, 8, 17, 0, 12, 0, 0 ]  },
+{ monsterId: 2007, className: "npc", name: "Worker 2", level: 1, exp: 0, hp: 100, sp: 100, str: 10, mag: 10, acc: 10, agi: 10, def: 10, attack: 1, spd: 1, splat: 0, appearance: [ 0, 1, 2, 8, 16, 0, 12, 0, 0 ]  },
+{ monsterId: 2008, className: "npc", name: "Ida", level: 1, exp: 0, hp: 100, sp: 100, str: 10, mag: 10, acc: 10, agi: 10, def: 10, attack: 1, spd: 1, splat: 0, appearance: [ 0, 21, 2, 20, 22, 0, 20, 3, 3 ]  },
+{ monsterId: 2009, className: "npc", name: "Customs", level: 1, exp: 0, hp: 100, sp: 100, str: 10, mag: 10, acc: 10, agi: 10, def: 10, attack: 1, spd: 1, splat: 0, appearance: [ 0, 1, 2, 4, 8, 0, 3, 22, 28 ]  },
+{ monsterId: 2010, className: "npc", name: "Aegon", level: 1, exp: 0, hp: 100, sp: 100, str: 10, mag: 10, acc: 10, agi: 10, def: 10, attack: 1, spd: 1, splat: 0, appearance: [ 0, 1, 2, 3, 8, 0, 21, 29, 11 ]  },
+{ monsterId: 2011, className: "npc", name: "Meera", level: 1, exp: 0, hp: 100, sp: 100, str: 10, mag: 10, acc: 10, agi: 10, def: 10, attack: 1, spd: 1, splat: 0, appearance: [ 0, 1, 2, 6, 8, 0, 0, 2, 18 ]  },
+{ monsterId: 2012, className: "npc", name: "Warden", level: 1, exp: 0, hp: 100, sp: 100, str: 10, mag: 10, acc: 10, agi: 10, def: 10, attack: 1, spd: 1, splat: 0, appearance: [ 0, 1, 2, 3, 8, 0, 21, 27, 27 ]  },
+{ monsterId: 2012, className: "npc", name: "Warden", level: 1, exp: 0, hp: 100, sp: 100, str: 10, mag: 10, acc: 10, agi: 10, def: 10, attack: 1, spd: 1, splat: 0, appearance: [ 0, 1, 2, 3, 8, 0, 21, 27, 27 ]  },
+{ monsterId: 2013, className: "npc", name: "Tammi", level: 1, exp: 0, hp: 100, sp: 100, str: 10, mag: 10, acc: 10, agi: 10, def: 10, attack: 1, spd: 1, splat: 0, appearance: [ 0, 1, 37, 6, 8, 0, 8, 15, 20 ]  },
+
 
 // Friendly monsters
 //---------------------------------------------------------------------------

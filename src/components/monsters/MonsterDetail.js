@@ -4,11 +4,23 @@ import {connect} from 'react-redux'
 class MonsterDetail extends React.Component {
     render() {
         if (this.props.monster) {
-            const {name} = this.props.monster;
+            const {name, level, exp, hp, sp, atkStat, acc, agi, def, spd, generalCategory, passives, actives} = this.props.monster;
+            const isMonster = generalCategory === 'Normal Monsters' || generalCategory === 'Bosses';
 
             return (
                 <div>
                     <h4>{name}</h4>
+                    {isMonster && <p>Level: {level}</p>}
+                    {isMonster && <p>Experience: {exp}</p>}
+                    {isMonster && <p>Health Points: {hp}</p>}
+                    {isMonster && <p>Spirit Points: {sp}</p>}
+                    {isMonster && <p>Attack: {atkStat}</p>}
+                    {isMonster && <p>Accuracy: {acc}</p>}
+                    {isMonster && <p>Agility: {agi}</p>}
+                    {isMonster && <p>Defense: {def}</p>}
+                    {isMonster && <p>Speed: {spd}</p>}
+                    {isMonster && passives && <p>Passive Skills: {passives}</p>}
+                    {isMonster && actives && <p>Active Skills: {actives}</p>}
                 </div>
             )
         }

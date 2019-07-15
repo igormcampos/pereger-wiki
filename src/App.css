@@ -5,3 +5,7 @@
 .upper {
     text-transform: uppercase;
 }
+
+body {
+    margin-bottom: 24px !important;
+}

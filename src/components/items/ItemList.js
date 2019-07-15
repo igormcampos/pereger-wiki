@@ -33,7 +33,7 @@ class ItemList extends React.Component {
                             </thead>
                             <tbody>
                             {category.map(item => {
-                                return (<ItemListItem key={item.id} data={item}/>)
+                                return (<ItemListItem key={item.itemId} data={item}/>)
                             })}
                             </tbody>
                         </table>

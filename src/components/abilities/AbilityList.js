@@ -11,9 +11,9 @@ class AbilityList extends React.Component {
 
             const tables = Object.values(allAbilities).map(category => {
                 const ct = category[0].generalCategory;
-                console.log(ct);
                 const responsiveTable = ct !== 'Enemy Skills' ? 'responsive-table' : '';
                 const hideDescription = ct !== 'Enemy Skills' ? 'hide-on-med-and-down' : '';
+
                 return (
                     <div key={ct}>
                         <h5>{ct}</h5>

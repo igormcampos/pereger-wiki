@@ -11,12 +11,12 @@ class ItemListItem extends React.Component {
     };
 
     render() {
-        const {id, className, bonus, req, name, currency, sellPrice, price, tradable, matReq, points, generalCategory} = this.props.data;
+        const {itemId, className, bonus, req, name, currency, sellPrice, price, tradable, matReq, points, generalCategory} = this.props.data;
         const isEquipment = generalCategory !== 'Consumables' && generalCategory !== 'Materials' && generalCategory !== 'Money' && generalCategory !== 'None';
         const isUpgradeable = isEquipment && generalCategory !== 'Necklaces' && generalCategory !== 'Rings';
 
         return (
-            <tr key={id} onClick={this.handleDetail}>
+            <tr key={itemId} onClick={this.handleDetail}>
                 <td>{className}</td>
                 {isEquipment && <td className="upper">{bonus}</td>}
                 {isEquipment && <td className="upper">{req}</td>}

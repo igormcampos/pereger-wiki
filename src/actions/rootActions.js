@@ -1,12 +1,12 @@
 import {FETCH_ABILITIES, FETCH_CONDITIONS, FETCH_EXP_TABLE, FETCH_ITEMS, FETCH_LOOT, FETCH_MONSTERS, FETCH_QUESTS, FETCH_SHOPS} from "./actionTypes";
-import itemsTXT from "../json/items.txt";
-import abilitiesTXT from "../json/abilities.txt";
-import conditionsTXT from "../json/conditions.txt";
-import expTableTXT from "../json/exp.txt";
-import lootTXT from "../json/loot.txt";
-import monstersTXT from "../json/monsters.txt";
-import questsTXT from "../json/quests.txt";
-import shopsTXT from "../json/shops.txt";
+import itemsTXT from "../files/items.txt";
+import abilitiesTXT from "../files/abilities.txt";
+import conditionsTXT from "../files/conditions.txt";
+import expTableTXT from "../files/exp.txt";
+import lootTXT from "../files/loot.txt";
+import monstersTXT from "../files/monsters.txt";
+import questsTXT from "../files/quests.txt";
+import shopsTXT from "../files/shops.txt";
 import JSON5 from "json5";
 
 export const fetchItems = () => {
@@ -192,12 +192,23 @@ export const fetchMonsters = () => {
                 .then((r) => r.text()).then(text => {
                 let monsters = JSON5.parse(text);
                 monsters = monsters.map(monster => {
-                    if (monster.id <= 2000) {
+                    if (monster.monsterId <= 2000) {
                         monster.generalCategory = 'Normal Monsters'
-                    } else if (monster.id <= 4000) {
+                    } else if (monster.monsterId <= 4000) {
                         monster.generalCategory = "Friendly NPC's"
-                    } else if (monster.id <= 6000) {
+                    } else if (monster.monsterId <= 6000) {
                         monster.generalCategory = 'Bosses'
+                    } else {
+                        monster.generalCategory = 'Friendly Monsters'
+                    }
+                    if (monster.str > 1) {
+                        monster.atkStat = monster.str
+                    } else if (monster.mag > 1) {
+                        monster.atkStat = monster.mag
+                    } else if (monster.dex > 1) {
+                        monster.atkStat = monster.dex
+                    } else {
+                        monster.atkStat = 1
                     }
                     return monster
                 });
