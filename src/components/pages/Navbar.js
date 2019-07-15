@@ -46,37 +46,49 @@ class Navbar extends React.Component {
 
     render() {
         return (
-            <nav className="nav-extended">
-                <div className="nav-wrapper black">
-                    <ul id="nav-mobile" className="left hide-on-med-and-down">
-                        <li><NavLink to="/">Home</NavLink></li>
-                        <li><NavLink to="/items">Items</NavLink></li>
-                        <li><NavLink to="/abilities">Abilities</NavLink></li>
-                        <li><NavLink to="/monsters">Monsters</NavLink></li>
-                        <li><NavLink to="/quests">Quests</NavLink></li>
-                        <li><NavLink to="/about">About</NavLink></li>
-                    </ul>
-                    <a href="/" className="brand-logo center">Pereger Wiki</a>
-                    <ul className="right">
-                        <li><MediaLink href="https://peregeronline.com/" target="_blank">
-                            <MediaImg src={pereger} alt="Pereger"/>
-                        </MediaLink></li>
-                        <li><MediaLink href="https://discord.gg/8uF4F8X" target="_blank">
-                            <MediaImg src={discord} alt="Discord"/>
-                        </MediaLink></li>
-                    </ul>
-                </div>
-                <div className="nav-content black hide-on-large-only">
-                    <ul className="tabs tabs-transparent">
-                        <li className="tab" onClick={this.goHome}><a href="#">Home</a></li>
-                        <li className="tab" onClick={this.goItems}><a href="#">Items</a></li>
-                        <li className="tab" onClick={this.goAbilities}><a href="#">Abilities</a></li>
-                        <li className="tab" onClick={this.goMonsters}><a href="#">Monsters</a></li>
-                        <li className="tab" onClick={this.goQuests}><a href="#">Quests</a></li>
-                        <li className="tab" onClick={this.goAbout}><a href="#">About</a></li>
-                    </ul>
-                </div>
-            </nav>
+            <div>
+                <nav className="nav-extended">
+                    <div className="nav-wrapper black">
+                        <a href="/" className="brand-logo center">Pereger Wiki</a>
+                        <a href="#" data-target="mobile-demo" className="sidenav-trigger"><i className="material-icons">menu</i></a>
+                        <ul id="nav-mobile" className="hide-on-med-and-down">
+                            <li><NavLink to="/">Home</NavLink></li>
+                            <li><NavLink to="/items">Items</NavLink></li>
+                            <li><NavLink to="/abilities">Abilities</NavLink></li>
+                            <li><NavLink to="/monsters">Monsters</NavLink></li>
+                            <li><NavLink to="/quests">Quests</NavLink></li>
+                            <li><NavLink to="/about">About</NavLink></li>
+                        </ul>
+                        <ul className="right">
+                            <li><MediaLink href="https://peregeronline.com/" target="_blank">
+                                <MediaImg src={pereger} alt="Pereger"/>
+                            </MediaLink></li>
+                            <li><MediaLink href="https://discord.gg/8uF4F8X" target="_blank">
+                                <MediaImg src={discord} alt="Discord"/>
+                            </MediaLink></li>
+                        </ul>
+                    </div>
+                    <div className="nav-content black">
+                        <ul className="tabs tabs-transparent">
+                            <li className="tab" onClick={this.goHome}><a href="#">Home</a></li>
+                            <li className="tab" onClick={this.goItems}><a href="#">Items</a></li>
+                            <li className="tab" onClick={this.goAbilities}><a href="#">Abilities</a></li>
+                            <li className="tab" onClick={this.goMonsters}><a href="#">Monsters</a></li>
+                            <li className="tab" onClick={this.goQuests}><a href="#">Quests</a></li>
+                            <li className="tab" onClick={this.goAbout}><a href="#">About</a></li>
+                        </ul>
+                    </div>
+                </nav>
+
+                <ul className="sidenav" id="mobile-demo">
+                    <li><NavLink to="/">Home</NavLink></li>
+                    <li><NavLink to="/items">Items</NavLink></li>
+                    <li><NavLink to="/abilities">Abilities</NavLink></li>
+                    <li><NavLink to="/monsters">Monsters</NavLink></li>
+                    <li><NavLink to="/quests">Quests</NavLink></li>
+                    <li><NavLink to="/about">About</NavLink></li>
+                </ul>
+            </div>
         )
 
     }
