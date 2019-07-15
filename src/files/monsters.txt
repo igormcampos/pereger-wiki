@@ -23,9 +23,6 @@
 { monsterId: 17, className: "Goblin", name: "Goblin", level: 50, exp: 900, hp: 350, sp: 0, str: 60, mag: 1, acc: 60, agi: 60, def: 70 , attack: 1, spd: .6, splat: 0, respawn: 90, passives: "10006,5;10015,5"},
 { monsterId: 18, className: "Cabalus", name: "Cabalus", level: 54, exp: 1050, hp: 380, sp: 0, str: 1, mag: 65, acc: 66, agi: 66, def: 65 , attack: 3, spd: .6, splat: 0, respawn: 90, passives: "10016,5;10017,5", actives: "5003,10,0.15" },
 { monsterId: 19, className: "Gunter", name: "Gunter", level: 58, exp: 1200, hp: 420, sp: 0, str: 1, mag: 1,dex: 70, acc: 66, agi: 66, def: 60 , attack: 2, spd: .6, splat: 0, respawn: 90, passives: "10008,5"},
-{ monsterId: 20, className: "Wolf", name: "Wolf", level: 45, exp: 740, hp: 330, sp: 0, str: 55, mag: 1, acc: 54, agi: 54, def: 55 , attack: 1, spd: .6, splat: 0, respawn: 90, passives: "8001,1", actives: "5005,10,0.15"},
-{ monsterId: 21, className: "Wolf", name: "Wolf", level: 75, exp: 1200, hp: 500, sp: 0, str: 85, mag: 1, acc: 90, agi: 90, def: 85 , attack: 1, spd: .6, splat: 0, respawn: 90, passives: "8001,1", actives: "5005,10,0.15"},
-{ monsterId: 22, className: "Wolf", name: "Wolf", level: 105, exp: 1750, hp: 750, sp: 0, str: 115, mag: 1, acc: 126, agi: 126, def: 115 , attack: 1, spd: .6, splat: 0, respawn: 90, passives: "8001,1", actives: "5005,10,0.15"},
 
 //Bosses 4001 - 6000
 { monsterId: 4001, className: "AlphaWolf1", name: "Alpha Wolf", level: 20, exp: 1400, hp: 3500, sp: 100, str: 25, mag: 1, acc: 30, agi: 30, def: 25, attack: 1, spd: .3, splat: 0, size: 3, passives: "8001,3;10012,11;10013,11;10014,11", actives: "5006,10,.1;5007,10,.1;5008,10,.1" },

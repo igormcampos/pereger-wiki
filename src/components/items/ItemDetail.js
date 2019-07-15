@@ -1,5 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
+import {Link} from "react-router-dom";
 
 class ItemDetail extends React.Component {
     render() {
@@ -7,6 +8,19 @@ class ItemDetail extends React.Component {
             const {desc, className, bonus, req, name, currency, sellPrice, price, tradable, matReq, points, generalCategory} = this.props.item;
             const isEquipment = generalCategory !== 'Consumables' && generalCategory !== 'Materials' && generalCategory !== 'Money' && generalCategory !== 'None';
             const isUpgradeable = isEquipment && generalCategory !== 'Necklaces' && generalCategory !== 'Rings';
+            const drops = this.props.loot && this.props.loot.map(loot => {
+                if (loot.monster) {
+                    let amount = '';
+                    if (loot.quantity[0] === loot.quantity[1]) {
+                        amount = 'x' + loot.quantity[0]
+                    } else {
+                        amount = 'x' + loot.quantity[0] + ' ~ x' + loot.quantity[1]
+                    }
+                    return <div key={loot.monster.monsterId}><Link to={'/monsters/' + loot.monster.className}>{loot.monster.name}</Link> ({loot.probability}%) {amount}<br/></div>
+                } else {
+                    return <div>Loading loot...</div>
+                }
+            });
 
             return (
                 <div>
@@ -20,7 +34,8 @@ class ItemDetail extends React.Component {
                     {generalCategory !== 'Money' && <p><b>Sell Price:</b> {sellPrice}</p>}
                     {isUpgradeable && <p><b>Upgrade:</b> {matReq}</p>}
                     {generalCategory === 'Consumables' && <p>{tradable === false ? "This item is not tradable" : "This item is tradable"}</p>}
-                    {this.props.droppedBy && <p><b>Dropped by:</b> {this.props.droppedBy}</p>}
+                    {drops && drops.length > 0 && <p><b>Dropped by:</b></p>}
+                    {drops}
                 </div>
             )
         }
@@ -40,16 +55,18 @@ const mapStateToProps = (state, ownProps) => {
     } else {
         item = state.items && state.items.find(item => item.name === itemName);
     }
-    let loot = item && state.loot && state.loot.filter(drop => drop.item === item.itemId);
-    let droppedBy = loot && state.monsters && state.monsters.filter(monster => {
-        return loot.forEach(value => {
-            return monster.name.toLowerCase() === value.npc
-        });
+    let loot = item && state.loot && state.loot.filter(drop => {
+        return drop.item === item.itemId
     });
-    console.log(droppedBy);
+    loot = loot && loot.map(drop => {
+        drop.monster = state.monsters && state.monsters.find(monster => {
+            return monster.name.toLowerCase() === drop.npc
+        });
+        return drop
+    });
     return {
         item: item,
-        droppedBy: droppedBy
+        loot: loot
     }
 };
 

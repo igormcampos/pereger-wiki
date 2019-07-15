@@ -50,7 +50,7 @@ class Home extends React.Component {
                     {/*<li className="collection-item"><NavLink to='/'>Maps</NavLink></li>*/}
                     {/*<li className="collection-item"><NavLink to='/'>Locations</NavLink></li>*/}
                     {/*<li className="collection-item"><NavLink to='/'>World Map</NavLink></li>*/}
-                    {/*<li className="collection-item"><NavLink to='/'>Monsters</NavLink></li>*/}
+                    <li className="collection-item"><NavLink to='/monsters'>Monsters</NavLink></li>
                     {/*<li className="collection-item"><NavLink to='/'>Normal Monsters</NavLink></li>*/}
                     {/*<li className="collection-item"><NavLink to='/'>Boss Monsters</NavLink></li>*/}
                     {/*<li className="collection-item"><NavLink to='/'>Friendly Monsters</NavLink></li>*/}
