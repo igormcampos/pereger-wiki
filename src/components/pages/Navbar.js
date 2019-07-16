@@ -68,7 +68,7 @@ class Navbar extends React.Component {
                             </MediaLink></li>
                         </ul>
                     </div>
-                    <div className="nav-content black">
+                    <div className="nav-content black hide-on-large-only">
                         <ul className="tabs tabs-transparent">
                             <li className="tab" onClick={this.goHome}><a href="#">Home</a></li>
                             <li className="tab" onClick={this.goItems}><a href="#">Items</a></li>
