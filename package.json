@@ -2,6 +2,7 @@
   "name": "pereger-wiki",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://peregeronline.com/wiki/",
   "dependencies": {
     "json5": "^2.1.0",
     "materialize-css": "^1.0.0-rc.2",

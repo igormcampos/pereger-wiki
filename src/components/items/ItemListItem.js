@@ -1,5 +1,12 @@
 import React from 'react'
 import {withRouter} from "react-router-dom";
+import itemsImages from '../../files/itemsImages'
+import styled from 'styled-components'
+
+const ItemImage = styled.img({
+    width: 30,
+    height: 30
+});
 
 class ItemListItem extends React.Component {
     handleDetail = () => {
@@ -11,13 +18,18 @@ class ItemListItem extends React.Component {
     };
 
     render() {
-        const {itemId, className, bonus, req, image, name, currency, sellPrice, price, tradable, matReq, points, generalCategory} = this.props.data;
+        const {itemId, className, bonus, req, name, currency, sellPrice, price, tradable, matReq, points, generalCategory} = this.props.data;
         const isEquipment = generalCategory !== 'Consumables' && generalCategory !== 'Materials' && generalCategory !== 'Money' && generalCategory !== 'None';
         const isUpgradeable = isEquipment && generalCategory !== 'Necklaces' && generalCategory !== 'Rings';
 
+        let imageName = name.replace(/-/g, '');
+        if (imageName === 'betaring') {
+            imageName = 'silverring'
+        }
+
         return (
             <tr key={itemId} onClick={this.handleDetail}>
-                {/*<td><img src={image} /></td>*/}
+                {generalCategory !== 'Money' && <td><ItemImage src={itemsImages[imageName]} alt={className}/></td>}
                 <td>{className}</td>
                 {isEquipment && <td className="upper">{bonus}</td>}
                 {isEquipment && <td className="upper">{req}</td>}

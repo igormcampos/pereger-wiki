@@ -17,7 +17,6 @@ class About extends React.Component {
                     <li className="collection-item">Fuzzy search bar</li>
                     <li className="collection-item">Tabs to jump to categories on mobile</li>
                     <li className="collection-item">Breadcrumbs</li>
-                    <li className="collection-item">Add image to items and monsters</li>
                     <li className="collection-item">Updated world map</li>
                     <li className="collection-item">XP Table</li>
                     <li className="collection-item">Contact form for this page</li>

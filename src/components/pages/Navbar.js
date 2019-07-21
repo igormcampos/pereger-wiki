@@ -6,13 +6,13 @@ import pereger from '../../static/img/pereger.png'
 import styled from "styled-components";
 
 const MediaImg = styled.img({
-    height: '1.5em',
-    width: '1.5em'
+    height: '2em',
+    width: '2em'
 });
 
 const MediaLink = styled.a({
     padding: 0,
-    marginRight: '1em'
+    marginRight: '1.5em'
 });
 
 class Navbar extends React.Component {

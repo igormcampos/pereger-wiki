@@ -1,6 +1,23 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {Link} from "react-router-dom";
+import itemsImages from "../../files/itemsImages";
+import styled from "styled-components";
+
+const DetailContainer = styled.div({
+    display: 'grid',
+    gridTemplateColumns: '2fr 1fr'
+});
+
+const ImageContainer = styled.div({
+    alignSelf: 'center',
+    justifySelf: 'center'
+});
+
+const Image = styled.img({
+    width: 50,
+    height: 50
+});
 
 class ItemDetail extends React.Component {
     render() {
@@ -22,8 +39,14 @@ class ItemDetail extends React.Component {
                 }
             });
 
+            let imageName = name.replace(/-/g, '');
+            if (imageName === 'betaring') {
+                imageName = 'silverring'
+            }
+
             return (
-                <div>
+                <DetailContainer>
+                    <div>
                     <h4>{className}</h4>
                     <p>{desc}</p>
                     {isEquipment && bonus && <p className="upper">{bonus}</p>}
@@ -36,7 +59,11 @@ class ItemDetail extends React.Component {
                     {generalCategory === 'Consumables' && <p>{tradable === false ? "This item is not tradable" : "This item is tradable"}</p>}
                     {drops && drops.length > 0 && <p><b>Dropped by:</b></p>}
                     {drops}
-                </div>
+                    </div>
+                    <ImageContainer>
+                        {generalCategory !== 'Money' && <Image src={itemsImages[imageName]} alt={className}></Image>}
+                    </ImageContainer>
+                </DetailContainer>
             )
         }
         return (
