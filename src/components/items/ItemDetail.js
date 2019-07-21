@@ -47,21 +47,21 @@ class ItemDetail extends React.Component {
             return (
                 <DetailContainer>
                     <div>
-                    <h4>{className}</h4>
-                    <p>{desc}</p>
-                    {isEquipment && bonus && <p className="upper">{bonus}</p>}
-                    {isEquipment && req && <p className="upper"><b>Requirements:</b> {req}</p>}
-                    {generalCategory === 'Materials' && <p className="capital"><b>Category:</b> {name}</p>}
-                    {generalCategory === 'Materials' && <p><b>Minae:</b> {points}</p>}
-                    {generalCategory === 'Consumables' && <p><b>Buy Price:</b> {price} {currency === 'nummus' && currency}</p>}
-                    {generalCategory !== 'Money' && <p><b>Sell Price:</b> {sellPrice}</p>}
-                    {isUpgradeable && <p><b>Upgrade:</b> {matReq}</p>}
-                    {generalCategory === 'Consumables' && <p>{tradable === false ? "This item is not tradable" : "This item is tradable"}</p>}
-                    {drops && drops.length > 0 && <p><b>Dropped by:</b></p>}
-                    {drops}
+                        <h4>{className}</h4>
+                        <p>{desc}</p>
+                        {isEquipment && bonus && <p className="upper">{bonus}</p>}
+                        {isEquipment && req && <p className="upper"><b>Requirements:</b> {req}</p>}
+                        {generalCategory === 'Materials' && <p className="capital"><b>Category:</b> {name}</p>}
+                        {generalCategory === 'Materials' && <p><b>Minae:</b> {points}</p>}
+                        {generalCategory === 'Consumables' && <p><b>Buy Price:</b> {price} {currency === 'nummus' && currency}</p>}
+                        {generalCategory !== 'Money' && <p><b>Sell Price:</b> {sellPrice}</p>}
+                        {isUpgradeable && <p><b>Upgrade:</b> {matReq}</p>}
+                        {generalCategory === 'Consumables' && <p>{tradable === false ? "This item is not tradable" : "This item is tradable"}</p>}
+                        {drops && drops.length > 0 && <p><b>Dropped by:</b></p>}
+                        {drops}
                     </div>
                     <ImageContainer>
-                        {generalCategory !== 'Money' && <Image src={itemsImages[imageName]} alt={className}></Image>}
+                        {generalCategory !== 'Money' && <Image src={itemsImages[imageName]} alt={className}/>}
                     </ImageContainer>
                 </DetailContainer>
             )

@@ -1,5 +1,12 @@
 import React from 'react'
 import {withRouter} from "react-router-dom";
+import monstersImages from './../../files/monstersImages'
+import styled from "styled-components";
+
+const MonsterImage = styled.img({
+    width: 40,
+    height: 40
+});
 
 class MonsterListItem extends React.Component {
     handleDetail = () => {
@@ -7,11 +14,12 @@ class MonsterListItem extends React.Component {
     };
 
     render() {
-        const {id, name, level, exp, hp, sp, atkStat, acc, agi, def, spd, generalCategory} = this.props.data;
+        const {monsterId, name, level, exp, hp, sp, atkStat, acc, agi, def, spd, generalCategory} = this.props.data;
         const isMonster = generalCategory === 'Normal Monsters' || generalCategory === 'Bosses';
 
         return (
-            <tr key={id} onClick={this.handleDetail}>
+            <tr key={monsterId} onClick={this.handleDetail}>
+                {generalCategory !== "Friendly NPC's" && <td><MonsterImage src={monstersImages[monsterId]} alt={name}/></td>}
                 <td>{name}</td>
                 {isMonster && <td>{level}</td>}
                 {isMonster && <td>{exp}</td>}

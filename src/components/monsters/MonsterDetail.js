@@ -1,11 +1,28 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {Link} from "react-router-dom";
+import styled from "styled-components";
+import monstersImages from "../../files/monstersImages";
+
+const DetailContainer = styled.div({
+    display: 'grid',
+    gridTemplateColumns: '2fr 1fr'
+});
+
+const ImageContainer = styled.div({
+    justifySelf: 'center',
+    marginTop: 100
+});
+
+const Image = styled.img({
+    width: 70,
+    height: 70
+});
 
 class MonsterDetail extends React.Component {
     render() {
         if (this.props.monster) {
-            const {name, level, exp, hp, sp, atkStat, acc, agi, def, spd, generalCategory, passives, actives} = this.props.monster;
+            const {monsterId, name, level, exp, hp, sp, atkStat, acc, agi, def, spd, generalCategory} = this.props.monster;
             const isMonster = generalCategory === 'Normal Monsters' || generalCategory === 'Bosses';
             const drops = this.props.loot && this.props.loot.map(loot => {
                 if (loot.ref) {
@@ -21,29 +38,40 @@ class MonsterDetail extends React.Component {
                 }
             });
             const activeAbilities = this.props.activeSkills && this.props.activeSkills.map((act, index) => {
-                return <span key={act.id}>{index > 0 && ', '}<Link to={'/abilities/' + act.className}>{act.name}</Link>{act.level && 'LV' + act.level}</span>
+                if (act) {
+                    return <span key={act.id}>{index > 0 && ', '}<Link to={'/abilities/' + act.className}>{act.name}</Link>{act.level && 'LV' + act.level}</span>
+                }
+                return ''
             });
             const passiveAbilities = this.props.passiveSkills && this.props.passiveSkills.map((pass, index) => {
-                return <span key={pass.id}>{index > 0 && ', '}<Link to={'/abilities/' + pass.className}>{pass.name}</Link>{pass.level && ' LV' + pass.level}</span>
+                if (pass) {
+                    return <span key={pass.id}>{index > 0 && ', '}<Link to={'/abilities/' + pass.className}>{pass.name}</Link>{pass.level && ' LV' + pass.level}</span>
+                }
+                return ''
             });
 
             return (
-                <div>
-                    <h4>{name}</h4>
-                    {isMonster && <p>Level: {level}</p>}
-                    {isMonster && <p>Experience: {exp}</p>}
-                    {isMonster && <p>Health Points: {hp}</p>}
-                    {isMonster && <p>Spirit Points: {sp}</p>}
-                    {isMonster && <p>Attack: {atkStat}</p>}
-                    {isMonster && <p>Accuracy: {acc}</p>}
-                    {isMonster && <p>Agility: {agi}</p>}
-                    {isMonster && <p>Defense: {def}</p>}
-                    {isMonster && <p>Speed: {spd}</p>}
-                    {isMonster && passiveAbilities && <p>Passive Skills: {passiveAbilities}</p>}
-                    {isMonster && activeAbilities && <p>Active Skills: {activeAbilities}</p>}
-                    {drops && drops.length > 0 && <p><b>Loot:</b></p>}
-                    {drops}
-                </div>
+                <DetailContainer>
+                    <div>
+                        <h4>{name}</h4>
+                        {isMonster && <p>Level: {level}</p>}
+                        {isMonster && <p>Experience: {exp}</p>}
+                        {isMonster && <p>Health Points: {hp}</p>}
+                        {isMonster && <p>Spirit Points: {sp}</p>}
+                        {isMonster && <p>Attack: {atkStat}</p>}
+                        {isMonster && <p>Accuracy: {acc}</p>}
+                        {isMonster && <p>Agility: {agi}</p>}
+                        {isMonster && <p>Defense: {def}</p>}
+                        {isMonster && <p>Speed: {spd}</p>}
+                        {isMonster && passiveAbilities && <p>Passive Skills: {passiveAbilities}</p>}
+                        {isMonster && activeAbilities && <p>Active Skills: {activeAbilities}</p>}
+                        {drops && drops.length > 0 && <p><b>Loot:</b></p>}
+                        {drops}
+                    </div>
+                    <ImageContainer>
+                        {generalCategory !== "Friendly NPC's" && <Image src={monstersImages[monsterId]} alt={name}/>}
+                    </ImageContainer>
+                </DetailContainer>
             )
         }
         return (
@@ -62,7 +90,7 @@ const mapStateToProps = (state, ownProps) => {
         pass = state.abilities && state.abilities.find(ab => {
             return ab.id === parseInt(ability[0])
         });
-        if (pass.generalCategory !== 'Enemy Skills') {
+        if (pass && pass.generalCategory !== 'Enemy Skills') {
             pass.level = ability[1];
         }
         return pass
@@ -72,7 +100,7 @@ const mapStateToProps = (state, ownProps) => {
         act = state.abilities && state.abilities.find(ab => {
             return ab.id === parseInt(ability[0])
         });
-        if (act.generalCategory !== 'Enemy Skills') {
+        if (act && act.generalCategory !== 'Enemy Skills') {
             act.level = ability[1];
         }
         return act

@@ -4,6 +4,11 @@ import _ from 'underscore'
 
 import ItemListItem from './ItemListItem'
 import {updateTabs} from "../../actions/rootActions";
+import styled from "styled-components";
+
+const ImageHeader = styled.th({
+    height: 66
+});
 
 class ItemList extends React.Component {
     state = {};
@@ -33,7 +38,7 @@ class ItemList extends React.Component {
                         <table className='highlight responsive-table'>
                             <thead>
                             <tr>
-                                {ct !== 'Money' && <th>Image</th>}
+                                {ct !== 'Money' && <ImageHeader>Image</ImageHeader>}
                                 <th>Name</th>
                                 {isEquipment && <th>Bonus</th>}
                                 {isEquipment && <th>Requirements</th>}

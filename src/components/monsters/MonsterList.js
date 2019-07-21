@@ -1,9 +1,14 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import _ from 'underscore'
+import styled from 'styled-components'
 
 import MonsterListItem from './MonsterListItem'
 import {Link} from "react-router-dom";
+
+const ImageHeader = styled.th({
+    height: 76
+});
 
 class MonsterList extends React.Component {
     render() {
@@ -21,6 +26,7 @@ class MonsterList extends React.Component {
                         <table className={'highlight ' + responsiveTable}>
                             <thead>
                             <tr>
+                                {ct !== "Friendly NPC's" && <ImageHeader>Image</ImageHeader>}
                                 <th>Name</th>
                                 {isMonster && <th>Level</th>}
                                 {isMonster && <th>EXP</th>}

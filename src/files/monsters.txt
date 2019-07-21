@@ -63,7 +63,6 @@
 { monsterId: 2010, className: "npc", name: "Aegon", level: 1, exp: 0, hp: 100, sp: 100, str: 10, mag: 10, acc: 10, agi: 10, def: 10, attack: 1, spd: 1, splat: 0, appearance: [ 0, 1, 2, 3, 8, 0, 21, 29, 11 ]  },
 { monsterId: 2011, className: "npc", name: "Meera", level: 1, exp: 0, hp: 100, sp: 100, str: 10, mag: 10, acc: 10, agi: 10, def: 10, attack: 1, spd: 1, splat: 0, appearance: [ 0, 1, 2, 6, 8, 0, 0, 2, 18 ]  },
 { monsterId: 2012, className: "npc", name: "Warden", level: 1, exp: 0, hp: 100, sp: 100, str: 10, mag: 10, acc: 10, agi: 10, def: 10, attack: 1, spd: 1, splat: 0, appearance: [ 0, 1, 2, 3, 8, 0, 21, 27, 27 ]  },
-{ monsterId: 2012, className: "npc", name: "Warden", level: 1, exp: 0, hp: 100, sp: 100, str: 10, mag: 10, acc: 10, agi: 10, def: 10, attack: 1, spd: 1, splat: 0, appearance: [ 0, 1, 2, 3, 8, 0, 21, 27, 27 ]  },
 { monsterId: 2013, className: "npc", name: "Tammi", level: 1, exp: 0, hp: 100, sp: 100, str: 10, mag: 10, acc: 10, agi: 10, def: 10, attack: 1, spd: 1, splat: 0, appearance: [ 0, 1, 37, 6, 8, 0, 8, 15, 20 ]  },
 
 
