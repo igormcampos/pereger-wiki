@@ -1,4 +1,4 @@
-import {FETCH_ABILITIES, FETCH_CONDITIONS, FETCH_EXP_TABLE, FETCH_ITEMS, FETCH_LOOT, FETCH_MONSTERS, FETCH_QUESTS, FETCH_SHOPS, UPDATE_TABS} from "./actionTypes";
+import {FETCH_ABILITIES, FETCH_CONDITIONS, FETCH_EXP_TABLE, FETCH_ITEMS, FETCH_LOOT, FETCH_MONSTERS, FETCH_QUESTS, FETCH_SHOPS, TYPE_ON_SEARCH, UPDATE_TABS} from "./actionTypes";
 import itemsTXT from "../files/items.txt";
 import abilitiesTXT from "../files/abilities.txt";
 import conditionsTXT from "../files/conditions.txt";
@@ -10,9 +10,16 @@ import shopsTXT from "../files/shops.txt";
 import JSON5 from "json5";
 import equipTypes from "../files/equipTypes";
 
+export const typeOnSearch = (text) => {
+    return {
+        type: TYPE_ON_SEARCH,
+        text: text
+    }
+};
+
 export const fetchItems = () => {
     return (dispatch, getState) => {
-        if (!getState().items) {
+        if (getState().items.length === 0) {
             fetch(itemsTXT)
                 .then((r) => r.text()).then(text => {
                 let items = JSON5.parse(text);
@@ -121,7 +128,7 @@ export const fetchItems = () => {
 
 export const fetchAbilities = () => {
     return (dispatch, getState) => {
-        if (!getState().abilities) {
+        if (getState().abilities.length === 0) {
             fetch(abilitiesTXT)
                 .then((r) => r.text()).then(text => {
                     let abilities = JSON5.parse(text);
@@ -165,7 +172,7 @@ export const fetchAbilities = () => {
 
 export const fetchConditions = () => {
     return (dispatch, getState) => {
-        if (!getState().conditions) {
+        if (getState().conditions.length === 0) {
             fetch(conditionsTXT)
                 .then((r) => r.text()).then(text => {
                     dispatch({type: FETCH_CONDITIONS, conditions: JSON5.parse(text)});
@@ -177,7 +184,7 @@ export const fetchConditions = () => {
 
 export const fetchExpTable = () => {
     return (dispatch, getState) => {
-        if (!getState().expTable) {
+        if (getState().expTable.length === 0) {
             fetch(expTableTXT)
                 .then((r) => r.text()).then(text => {
                     dispatch({type: FETCH_EXP_TABLE, expTable: JSON5.parse(text)});
@@ -189,7 +196,7 @@ export const fetchExpTable = () => {
 
 export const fetchLoot = () => {
     return (dispatch, getState) => {
-        if (!getState().loot) {
+        if (getState().loot.length === 0) {
             fetch(lootTXT)
                 .then((r) => r.text()).then(text => {
                     dispatch({type: FETCH_LOOT, loot: JSON5.parse(text)});
@@ -201,7 +208,7 @@ export const fetchLoot = () => {
 
 export const fetchMonsters = () => {
     return (dispatch, getState) => {
-        if (!getState().monsters) {
+        if (getState().monsters.length === 0) {
             fetch(monstersTXT)
                 .then((r) => r.text()).then(text => {
                 let monsters = JSON5.parse(text);
@@ -236,7 +243,7 @@ export const fetchMonsters = () => {
 
 export const fetchQuests = () => {
     return (dispatch, getState) => {
-        if (!getState().quests) {
+        if (getState().quests.length === 0) {
             fetch(questsTXT)
                 .then((r) => r.text()).then(text => {
                     dispatch({type: FETCH_QUESTS, quests: JSON5.parse(text)});
@@ -248,7 +255,7 @@ export const fetchQuests = () => {
 
 export const fetchShops = () => {
     return (dispatch, getState) => {
-        if (!getState().shops) {
+        if (getState().shops.length === 0) {
             fetch(shopsTXT)
                 .then((r) => r.text()).then(text => {
                     dispatch({type: FETCH_SHOPS, shops: JSON5.parse(text)});

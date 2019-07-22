@@ -2,7 +2,16 @@ import {FETCH_ABILITIES, FETCH_CONDITIONS, FETCH_EXP_TABLE, FETCH_ITEMS, FETCH_L
 import equipTypes from '../files/equipTypes'
 
 const initState = {
-    equipTypes: equipTypes.data
+    items: [],
+    abilities: [],
+    conditions: [],
+    expTable: [],
+    loot: [],
+    monsters: [],
+    quests: [],
+    shops: [],
+    equipTypes: equipTypes.data,
+    searchResultList: []
 };
 
 const rootReducer = (state = initState, action = null) => {
