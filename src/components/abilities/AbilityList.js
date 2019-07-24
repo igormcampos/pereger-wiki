@@ -42,6 +42,7 @@ class AbilityList extends React.Component {
             return (
                 <div>
                     <h4 className="center">Abilities</h4>
+                    <p>Every passive skill value increases your <b>current</b> stat of that skill by a percentage, it <b>doesn't</b> add it to your current stats.</p>
                     {tables}
                 </div>
             )

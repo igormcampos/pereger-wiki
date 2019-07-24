@@ -155,7 +155,7 @@ export const fetchAbilities = () => {
                         if (ability.className === 'BetterBows') {
                             ability.value += 'ms'
                         } else if (ability.className !== 'Paramedic') {
-                            ability.value = (ability.value * 100) + '%'
+                            ability.value = 'Current x ' + (ability.value * 100) + '%'
                         }
 
                         ability.equip = ability.equip && ability.equip.map((e, index) => {
