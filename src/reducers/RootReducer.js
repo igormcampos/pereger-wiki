@@ -57,42 +57,44 @@ const rootReducer = (state = initState, action = null) => {
                 };
             case DO_SEARCH:
                 const searchKeys = Object.keys(state.searchResultList);
-                const searchedKey = searchKeys[0];
-                let type = 'item';
+                if (searchKeys.length > 1) {
+                    const searchedKey = searchKeys[0];
+                    let type = 'item';
 
-                let searchedThing = state.items.find(item => {
-                    return item.className.toLowerCase().includes(searchedKey.toLowerCase())
-                });
-                if (searchedThing === undefined) {
-                    type = 'ability';
-                    searchedThing = state.abilities.find(ability => {
-                        return ability.name.toLowerCase().includes(searchedKey.toLowerCase())
+                    let searchedThing = state.items.find(item => {
+                        return item.className.toLowerCase().includes(searchedKey.toLowerCase())
                     });
                     if (searchedThing === undefined) {
-                        type = 'monster';
-                        searchedThing = state.monsters.find(monster => {
-                            return monster.name.toLowerCase().includes(searchedKey.toLowerCase())
+                        type = 'ability';
+                        searchedThing = state.abilities.find(ability => {
+                            return ability.name.toLowerCase().includes(searchedKey.toLowerCase())
                         });
                         if (searchedThing === undefined) {
-                            type = 'quest';
-                            searchedThing = state.quests.find(quest => {
-                                return quest.title.toLowerCase().includes(searchedKey.toLowerCase())
+                            type = 'monster';
+                            searchedThing = state.monsters.find(monster => {
+                                return monster.name.toLowerCase().includes(searchedKey.toLowerCase())
                             });
+                            if (searchedThing === undefined) {
+                                type = 'quest';
+                                searchedThing = state.quests.find(quest => {
+                                    return quest.title.toLowerCase().includes(searchedKey.toLowerCase())
+                                });
+                            }
                         }
                     }
-                }
-                if (type === 'item') {
-                    if (searchedThing.generalCategory === 'Materials') {
-                        action.history('/items/' + searchedThing.className)
-                    } else {
-                        action.history('/items/' + searchedThing.name)
+                    if (type === 'item') {
+                        if (searchedThing.generalCategory === 'Materials') {
+                            action.history('/items/' + searchedThing.className)
+                        } else {
+                            action.history('/items/' + searchedThing.name)
+                        }
+                    } else if (type === 'ability') {
+                        action.history('/abilities/' + searchedThing.className)
+                    } else if (type === 'monster') {
+                        action.history('/monsters/' + searchedThing.className)
+                    } else if (type === 'quest') {
+                        action.history('/quests/' + searchedThing.name)
                     }
-                } else if (type === 'ability') {
-                    action.history('/abilities/' + searchedThing.className)
-                } else if (type === 'monster') {
-                    action.history('/monsters/' + searchedThing.className)
-                } else if (type === 'quest') {
-                    action.history('/quests/' + searchedThing.name)
                 }
                 return {
                     ...state,
