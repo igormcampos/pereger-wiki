@@ -76,11 +76,9 @@ class ItemDetail extends React.Component {
 
 const mapStateToProps = (state, ownProps) => {
     let itemName = ownProps.match.params.item_name;
-    let item;
-    if (itemName.includes(' ')) {
+    let item = state.items && state.items.find(item => item.name === itemName);
+    if (item === undefined) {
         item = state.items && state.items.find(item => item.className === itemName);
-    } else {
-        item = state.items && state.items.find(item => item.name === itemName);
     }
     let loot = item && state.loot && state.loot.filter(drop => {
         return drop.item === item.itemId
