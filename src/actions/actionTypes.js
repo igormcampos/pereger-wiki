@@ -8,4 +8,5 @@ export const FETCH_QUESTS = "FETCH_QUESTS";
 export const FETCH_SHOPS = "FETCH_SHOPS";
 
 export const TYPE_ON_SEARCH = "TYPE_ON_SEARCH";
+export const DO_SEARCH = "DO_SEARCH";
 export const UPDATE_TABS = "UPDATE_TABS";

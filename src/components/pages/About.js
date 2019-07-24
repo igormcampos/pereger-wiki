@@ -10,10 +10,13 @@ class About extends React.Component {
                 <p><b>Discord: </b> Yun#2052</p>
                 <ul className="collection">
                     <li className="collection-header"><b>TODO List:</b></li>
-                    <li className="collection-item">Fuzzy search bar</li>
+                    <li className="collection-item">Finish search bar</li>
+                    <li className="collection-item">Search bar result list</li>
+                    <li className="collection-item">Search bar click on the results will search it</li>
+                    <li className="collection-item">Search bar show if result is an item/quest/ability etc</li>
                     <li className="collection-item">I'm aware of the Bellator loot table by level, it will be fixed later</li>
                     <li className="collection-item">Conditions list / detail</li>
-                    <li className="collection-item">Achieviments list / detail</li>
+                    <li className="collection-item">Achievements list / detail</li>
                     <li className="collection-item">Tabs to jump to categories on mobile</li>
                     <li className="collection-item">Breadcrumbs</li>
                     <li className="collection-item">Updated world map</li>

@@ -1,9 +1,9 @@
 import React from 'react'
 import {NavLink, withRouter} from 'react-router-dom'
 import M from 'materialize-css'
-import discord from '../../static/img/discord.png'
-import pereger from '../../static/img/pereger.png'
 import styled from "styled-components";
+import {connect} from "react-redux";
+import {doSearch, typeOnSearch} from "../../actions/rootActions";
 
 const MediaImg = styled.img({
     height: '2em',
@@ -15,9 +15,21 @@ const MediaLink = styled.a({
     marginRight: '1.5em'
 });
 
+const SearchContainer = styled.div({
+    backgroundColor: 'rgba(255, 255, 255, 0.2)',
+    borderRadius: '10px 0 0 10px',
+    paddingLeft: 16,
+    width: '25%'
+});
+
 class Navbar extends React.Component {
+    state = {
+        searchText: ''
+    };
+
     componentDidMount() {
         M.AutoInit();
+        M.Autocomplete.init(document.getElementById('omni-search'))
     }
 
     goHome = () => {
@@ -44,6 +56,23 @@ class Navbar extends React.Component {
         this.props.history.push('/monsters')
     };
 
+    omniSearch = (e) => {
+        const text = e.target.value;
+        this.setState({
+            searchText: text
+        });
+        this.props.typeOnSearch(text);
+        M.Autocomplete.getInstance(e.target).updateData(this.props.searchResultList)
+    };
+
+    doSearch = (e) => {
+        e.preventDefault();
+        this.setState({
+            searchText: ''
+        });
+        this.props.doSearch(this.props.history.push)
+    };
+
     render() {
         return (
             <div>
@@ -59,14 +88,19 @@ class Navbar extends React.Component {
                             <li><NavLink to="/quests">Quests</NavLink></li>
                             <li><NavLink to="/about">About</NavLink></li>
                         </ul>
-                        <ul className="right">
+                        <SearchContainer className="input-field right">
+                            <form onSubmit={this.doSearch}>
+                                <input type="text" placeholder="(WIP) Search Bar" autocomplete="off" onChange={this.omniSearch} value={this.state.searchText} id="omni-search" className="autocomplete white-text"/>
+                            </form>
+                        </SearchContainer>
+                        {/* <ul className="right">
                             <li><MediaLink href="https://peregeronline.com/" target="_blank">
                                 <MediaImg src={pereger} alt="Pereger"/>
                             </MediaLink></li>
                             <li><MediaLink href="https://discord.gg/8uF4F8X" target="_blank">
                                 <MediaImg src={discord} alt="Discord"/>
                             </MediaLink></li>
-                        </ul>
+                        </ul> */}
                     </div>
                     <div className="nav-content black hide-on-large-only">
                         <ul className="tabs tabs-transparent">
@@ -94,4 +128,23 @@ class Navbar extends React.Component {
     }
 }
 
-export default withRouter(Navbar)
+const mapStateToProps = (state) => {
+    return {
+        searchBarText: state.searchBarText,
+        searchResultList: state.searchResultList
+    }
+};
+
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        typeOnSearch: (text) => {
+            dispatch(typeOnSearch(text))
+        },
+        doSearch: (history) => {
+            dispatch(doSearch(history))
+        }
+    }
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(Navbar))

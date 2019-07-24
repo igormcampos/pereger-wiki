@@ -1,4 +1,4 @@
-import {FETCH_ABILITIES, FETCH_CONDITIONS, FETCH_EXP_TABLE, FETCH_ITEMS, FETCH_LOOT, FETCH_MONSTERS, FETCH_QUESTS, FETCH_SHOPS, TYPE_ON_SEARCH, UPDATE_TABS} from "./actionTypes";
+import {DO_SEARCH, FETCH_ABILITIES, FETCH_CONDITIONS, FETCH_EXP_TABLE, FETCH_ITEMS, FETCH_LOOT, FETCH_MONSTERS, FETCH_QUESTS, FETCH_SHOPS, TYPE_ON_SEARCH, UPDATE_TABS} from "./actionTypes";
 import itemsTXT from "../files/items.txt";
 import abilitiesTXT from "../files/abilities.txt";
 import conditionsTXT from "../files/conditions.txt";
@@ -14,6 +14,14 @@ export const typeOnSearch = (text) => {
     return {
         type: TYPE_ON_SEARCH,
         text: text
+    }
+};
+
+
+export const doSearch = (history) => {
+    return {
+        type: DO_SEARCH,
+        history: history
     }
 };
 
