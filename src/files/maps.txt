@@ -37,6 +37,16 @@
 { mapId: 32, className: "meeraShop", engName: "Meera's Shop" },
 { mapId: 33, className: "forestboss", engName: "Forest Boss" },
 { mapId: 34, className: "mountainboss", engName: "Mountain Boss" },
+{ mapId: 35, className: "karabranthBank", engName: "Karabranth Bank" },
+{ mapId: 36, className: "lizards1", engName: "Lizards1" },
+{ mapId: 37, className: "lizards2", engName: "Lizards2" },
+{ mapId: 38, className: "lizards3", engName: "Lizards3" },
+{ mapId: 39, className: "inferno1", engName: "Inferno1" },
+{ mapId: 40, className: "inferno2", engName: "Inferno2" },
+{ mapId: 41, className: "infernoBoss", engName: "Inferno Boss" },
+{ mapId: 42, className: "taraginBank", engName: "Taragin Bank" },
+
+
 
 
 { mapId: 1001, className: "AlphaBoss", engName: "Alpha Boss" },

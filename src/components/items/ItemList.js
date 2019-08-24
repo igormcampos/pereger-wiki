@@ -46,7 +46,7 @@ class ItemList extends React.Component {
                                 {ct === 'Materials' && <th>Minae</th>}
                                 {ct === 'Consumables' && <th>Buy</th>}
                                 {ct !== 'Money' && <th>Sell</th>}
-                                {isUpgradeable && <th>Upgrade</th>}
+                                {/*{isUpgradeable && <th>Upgrade</th>}*/}
                                 {ct === 'Consumables' && <th>Tradable</th>}
                             </tr>
                             </thead>

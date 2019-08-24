@@ -39,8 +39,8 @@
 { shopOwner: "Meera", name: "Taragin Potion Shop", productId: 202, itemId: 18003, priceMultiplier: 1 },
 { shopOwner: "Meera", name: "Taragin Potion Shop", productId: 203, itemId: 18004, priceMultiplier: 1 },
 { shopOwner: "Meera", name: "Taragin Potion Shop", productId: 204, itemId: 18008, priceMultiplier: 1 },
-{ shopOwner: "Meera", name: "Taragin Potion Shop", productId: 205, itemId: 18005, priceMultiplier: 1 },
-{ shopOwner: "Meera", name: "Taragin Potion Shop", productId: 206, itemId: 18006, priceMultiplier: 1 },
+//{ shopOwner: "Meera", name: "Taragin Potion Shop", productId: 205, itemId: 18005, priceMultiplier: 1 },
+//{ shopOwner: "Meera", name: "Taragin Potion Shop", productId: 206, itemId: 18006, priceMultiplier: 1 },
 { shopOwner: "Meera", name: "Taragin Potion Shop", productId: 207, itemId: 18015, priceMultiplier: 1 },
 { shopOwner: "Meera", name: "Taragin Potion Shop", productId: 208, itemId: 18016, priceMultiplier: 1 },
 { shopOwner: "Meera", name: "Taragin Potion Shop", productId: 209, itemId: 18017, priceMultiplier: 1 },
@@ -52,6 +52,18 @@
 { shopOwner: "Jacqueline", name: "Jacqueline Premium Shop", productId: 223, itemId: 18020, priceMultiplier: 1 },
 { shopOwner: "Jacqueline", name: "Jacqueline Premium Shop", productId: 224, itemId: 18021, priceMultiplier: 1 },
 { shopOwner: "Jacqueline", name: "Jacqueline Premium Shop", productId: 225, itemId: 18022, priceMultiplier: 1 },
+{ shopOwner: "Jacqueline", name: "Jacqueline Premium Shop", productId: 226, itemId: 18023, priceMultiplier: 1 },
+{ shopOwner: "Jacqueline", name: "Jacqueline Premium Shop", productId: 227, itemId: 18024, priceMultiplier: 1 },
+
+{ shopOwner: "Jackson", name: "Jackson Premium Shop", productId: 230, itemId: 18005, priceMultiplier: 1 },
+{ shopOwner: "Jackson", name: "Jackson Premium Shop", productId: 231, itemId: 18006, priceMultiplier: 1 },
+{ shopOwner: "Jackson", name: "Jackson Premium Shop", productId: 232, itemId: 18019, priceMultiplier: 1 },
+{ shopOwner: "Jackson", name: "Jackson Premium Shop", productId: 233, itemId: 18020, priceMultiplier: 1 },
+{ shopOwner: "Jackson", name: "Jackson Premium Shop", productId: 234, itemId: 18021, priceMultiplier: 1 },
+{ shopOwner: "Jackson", name: "Jackson Premium Shop", productId: 235, itemId: 18022, priceMultiplier: 1 },
+{ shopOwner: "Jackson", name: "Jackson Premium Shop", productId: 236, itemId: 18023, priceMultiplier: 1 },
+{ shopOwner: "Jackson", name: "Jackson Premium Shop", productId: 237, itemId: 18024, priceMultiplier: 1 },
+
 
 
 ]

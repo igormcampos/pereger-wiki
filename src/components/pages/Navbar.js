@@ -90,7 +90,7 @@ class Navbar extends React.Component {
                         </ul>
                         <SearchContainer className="input-field right">
                             <form onSubmit={this.doSearch}>
-                                <input type="text" placeholder="(WIP) Search Bar" autocomplete="off" onChange={this.omniSearch} value={this.state.searchText} id="omni-search" className="autocomplete white-text"/>
+                                <input type="text" placeholder="(WIP) Search Bar" autoComplete="off" onChange={this.omniSearch} value={this.state.searchText} id="omni-search" className="autocomplete white-text"/>
                             </form>
                         </SearchContainer>
                         {/* <ul className="right">

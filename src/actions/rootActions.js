@@ -42,7 +42,7 @@ export const fetchItems = () => {
                             } else {
                                 b[0] = 'Crit Mult'
                             }
-                            b[1] = b[1] * 100 + '%'
+                            b[1] = Math.floor(b[1] * 100) + '%'
                         }
                         b[0] = b[0] + ': ';
                         if (index !== 0) {
@@ -154,8 +154,10 @@ export const fetchAbilities = () => {
 
                         if (ability.className === 'BetterBows') {
                             ability.value += 'ms'
+                        } else if (ability.className === 'KeenEye') {
+                            ability.value = ''
                         } else if (ability.className !== 'Paramedic') {
-                            ability.value = 'Current x ' + (ability.value * 100) + '%'
+                            ability.value = 'Current x ' + (Math.floor(ability.value * 10000) / 100) + '%'
                         }
 
                         ability.equip = ability.equip && ability.equip.map((e, index) => {

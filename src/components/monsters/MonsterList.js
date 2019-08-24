@@ -53,7 +53,7 @@ class MonsterList extends React.Component {
                 <div>
                     <h4 className="center">Monsters</h4>
                     <p>Notice that the XP shown is a relative to the level difference between the enemy and the player. The XP will also be greater in parties or if a <Link to="/items/ticket-red">Realm XP Event</Link> is active.</p>
-                    <p>Every enemy takes 90 seconds to respawn.</p>
+                    <p>Every enemy takes 90 seconds to respawn. If there are a lot of players on the same map, the respawn can go down until 30s per monster.</p>
                     {tables}
                 </div>
             )

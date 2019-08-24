@@ -27,9 +27,6 @@ const rootReducer = (state = initState, action = null) => {
                 });
                 for (let i = 0; i < items.length; i++) {
                     let imageName = items[i].name.replace(/-/g, '');
-                    if (imageName === 'betaring') {
-                        imageName = 'silverring'
-                    }
                     result[items[i].className] = itemsImages[imageName]
                 }
                 let abilities = state.abilities.filter(ability => {

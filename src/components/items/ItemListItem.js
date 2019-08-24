@@ -23,9 +23,6 @@ class ItemListItem extends React.Component {
         const isUpgradeable = isEquipment && generalCategory !== 'Necklaces' && generalCategory !== 'Rings';
 
         let imageName = name.replace(/-/g, '');
-        if (imageName === 'betaring') {
-            imageName = 'silverring'
-        }
 
         return (
             <tr key={itemId} onClick={this.handleDetail}>
@@ -37,7 +34,7 @@ class ItemListItem extends React.Component {
                 {generalCategory === 'Materials' && <td>{points}</td>}
                 {generalCategory === 'Consumables' && <td>{price} {currency === 'nummus' && currency}</td>}
                 {generalCategory !== 'Money' && <td>{sellPrice}</td>}
-                {isUpgradeable && <td>{matReq}</td>}
+                {/*{isUpgradeable && <td>{matReq}</td>}*/}
                 {generalCategory === 'Consumables' && <td>{tradable === false ? "No" : "Yes"}</td>}
             </tr>
         )

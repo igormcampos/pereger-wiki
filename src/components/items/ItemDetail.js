@@ -40,9 +40,6 @@ class ItemDetail extends React.Component {
             });
 
             let imageName = name.replace(/-/g, '');
-            if (imageName === 'betaring') {
-                imageName = 'silverring'
-            }
 
             return (
                 <DetailContainer>

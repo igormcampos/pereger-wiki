@@ -5,46 +5,51 @@
 
 [
 
-
 // Weapons 2001-4000
 //---------------------------------------------------------------------------
-{ itemId: 2002, className: "Dagger", name: "dagger", category: 1,  maxStack: 1, price: 12, sellPrice: 10, equipType1: "Sword", equipType2: "Sword", bonus:{atk:1}, matReq:"m:2;b:3;a:10" },
+{ itemId: 2002, className: "Short Sword", name: "short-sword", category: 1,  maxStack: 1, price: 12, sellPrice: 10, equipType1: "Sword", equipType2: "Sword", bonus:{atk:1}, matReq:"m:2;b:3;a:10" },
 { itemId: 2003, className: "Sling Shot", name: "slingshot", category: 1, maxStack: 1, price: 12, sellPrice: 10, equipType1: "SlingShot", bonus:{atk:1}, matReq:"m:2;b:3;a:10" },
 { itemId: 2004, className: "Stick Wand", name: "stick-wand", category: 1, maxStack: 1, price: 12, sellPrice: 10, equipType1: "Wand", equipType2: "Wand", bonus:{atk:1}, matReq:"m:2;b:3;a:10" },
-{ itemId: 2005, className: "Wooden Club", name: "wooden-club", category: 1, maxStack: 1, price: 20, sellPrice: 18, equipType1: "Sword", equipType2: "Sword", req:{str:12}, bonus:{atk:3}, matReq:"w:100;a:200" },
-{ itemId: 2007, className: "Wooden Bow", name: "wooden-bow", category: 1, maxStack: 1, price: 20, sellPrice: 18, equipType1: "Bow", equipType2: "Bow", req:{dex:12}, bonus:{atk:3}, matReq:"w:100;a:200" },
-{ itemId: 2008, className: "Pearl Wand", name: "pearl-wand", category: 1, maxStack: 1, price: 20, sellPrice: 18, equipType1: "Wand",equipType2: "Wand", req:{mag:15}, bonus:{atk:3}, matReq:"w:100;p:60;a:200" },
-{ itemId: 2009, className: "Volt Bow", name: "volt-bow", category: 1, maxStack: 1, price: 50, sellPrice: 40, equipType1: "Bow", equipType2: "Bow", req:{dex:35}, bonus:{atk:8}, matReq:"w:200;p:200;a:1000" },
-{ itemId: 2010, className: "Volt Sword", name: "volt-sword", category: 1, maxStack: 1, price: 50, sellPrice: 40, equipType1: "Sword", equipType2: "Sword", req:{str:35}, bonus:{atk:8}, matReq:"w:200;p:200;a:1000" },
-{ itemId: 2011, className: "Volt Wand", name: "volt-wand", category: 1, maxStack: 1, price: 50, sellPrice: 40, equipType1: "Wand", equipType2: "Wand", req:{mag:35}, bonus:{atk:8}, matReq:"w:200;p:200;a:1000" },
-{ itemId: 2012, className: "Goblin Knife", name: "goblin-knife", category: 1, maxStack: 1, price: 70, sellPrice: 60, equipType1: "Sword", equipType2: "Sword", req:{str:45}, bonus:{atk:12}, matReq:"w:300;m:300;a:1600" },
-{ itemId: 2013, className: "Goblin Bow", name: "goblin-bow", category: 1, maxStack: 1, price: 70, sellPrice: 60, equipType1: "Bow", equipType2: "Bow", req:{dex:45}, bonus:{atk:12}, matReq:"w:200;c:200;p:100;a:1600" },
-{ itemId: 2014, className: "Lupus Wand", name: "alpha-wand", category: 1, maxStack: 1, price: 0, sellPrice: 120, equipType1: "Wand", equipType2: "Wand", req:{mag:20}, bonus:{atk:9}, matReq:"w:60;p:60;m:30;l:4;a:300" },
-{ itemId: 2015, className: "Hunter's Bow", name: "alpha-bow", category: 1, maxStack: 1, price: 0, sellPrice: 480, equipType1: "Bow", equipType2: "Bow", req:{dex:80}, bonus:{atk:20, hp:20}, matReq:"w:400;m:400;c:150;l:16;a:4200" },
-{ itemId: 2016, className: "Ballesta Crossbow", name: "alpha-crossbow", category: 1, maxStack: 1, price: 0, sellPrice: 660, equipType1: "Crossbow", equipType2: "Crossbow", req:{dex:110}, bonus:{atk:30, "critY":.3, atkRate:-150}, matReq:"m:500;w:500;p:325;l:22;a:7850" },
-{ itemId: 2017, className: "Crimson Sword", name: "bellator-sword", category: 1, maxStack: 1, price: 0, sellPrice: 180, equipType1: "Sword", equipType2: "Sword", req:{str:30}, bonus:{atk:11, "critY":.15}, matReq:"m:125;w:100;b:50;l:6;a:650" },
-{ itemId: 2018, className: "Gladiator Axe", name: "bellator-axe", category: 1, maxStack: 1, price: 0, sellPrice: 600, equipType1: "Axe", equipType2: "Axe", req:{str:100}, bonus:{atk:28, hp:40}, matReq:"m:600;w:500;b:100;l:20;a:6500" },
-{ itemId: 2019, className: "Gae Bolg", name: "bellator-spear", category: 1, maxStack: 1, price: 0, sellPrice: 420, equipType1: "Spear", equipType2: "Spear", req:{str:70}, bonus:{atk:19, hp:20}, matReq:"w:400;m:300;c:100;l:14;a:3250"  },
-{ itemId: 2020, className: "Diplo Toxo Crossbow", name: "bellator-crossbow", category: 1, maxStack: 1, price: 0, sellPrice: 240, equipType1: "Crossbow", equipType2: "Crossbow", req:{dex:40}, bonus:{atk:16, "critX":.025}, matReq:"w:150;m:150;b:100;l:8;a:1100" },
-{ itemId: 2021, className: "Yumi Bow", name: "bellator-bow", category: 1, maxStack: 1, price: 0, sellPrice: 540, equipType1: "Bow", equipType2: "Bow", req:{dex:90}, bonus:{atk:22, atkRate:75}, matReq:"w:500;m:300;c:250;l:18;a:5300" },
-{ itemId: 2022, className: "Hakaihou Wand", name: "bellator-wand", category: 1, maxStack: 1, price: 0, sellPrice: 540, equipType1: "Wand", equipType2: "Wand", req:{mag:90}, bonus:{atk:23, mp:50}, matReq:"w:400;m:400;p:250;l:18;a:5300" },
-{ itemId: 2023, className: "Tonitrum Crossbow", name: "vibro-crossbow", category: 1, maxStack: 1, price: 0, sellPrice: 300, equipType1: "Crossbow", equipType2: "Crossbow", req:{dex:50}, bonus:{atk:17, mp:15, atkRate:-25}, matReq:"m:200;w:200;b:150;l:10;a:1700" },
-{ itemId: 2024, className: "Corundum Axe", name: "vibro-axe", category: 1, maxStack: 1, price: 0, sellPrice: 360, equipType1: "Axe", equipType2: "Axe", req:{str:60}, bonus:{atk:17, hp:20, atkRate:-25}, matReq:"m:300;w:200;p:50;l:10;a:1700" },
-{ itemId: 2025, className: "Plasma Wand", name: "vibro-wand", category: 1, maxStack: 1, price: 0, sellPrice: 480, equipType1: "Wand", equipType2: "Wand", req:{mag:80}, bonus:{atk:21, mp:30}, matReq:"p:350;m:300;w:300;l:16;a:4200" },
-{ itemId: 2026, className: "Tree Splitter Sword", name: "ent-sword", category: 1, maxStack: 1, price: 0, sellPrice: 240, equipType1: "Sword", equipType2: "Sword", req:{str:40}, bonus:{atk:13}, matReq:"w:150;m:150;b:100;l:8;a:1100"  },
-{ itemId: 2027, className: "Treewalker Axe", name: "ent-axe", category: 1, maxStack: 1, price: 0, sellPrice: 420, equipType1: "Axe", equipType2: "Axe", req:{str:70}, bonus:{atk:22, atkRate:-75}, matReq:"m:400;w:300;b:100;l:14;a:3250" },
-{ itemId: 2028, className: "Sprit Crossbow", name: "ent-crossbow", category: 1, maxStack: 1, price: 0, sellPrice: 420, equipType1: "Crossbow", equipType2: "Crossbow", req:{dex:70}, bonus:{atk:22, mp:15, atkRate:-75},  matReq:"w:400;m:200;b:200;l:14;a:3250" },
-//{ itemId: 2029, className: "Apollo's Bow", name: "ent-bow", category: 1, maxStack: 1, price: 0, sellPrice: 540, equipType1: "Bow", equipType2: "Bow", req:{dex:90}, bonus:{atk:28, atkRate:25} },
-{ itemId: 2030, className: "Tentacle Bow", name: "octo-bow", category: 1, maxStack: 1, price: 0, sellPrice: 180, equipType1: "Bow", equipType2: "Bow", req:{dex:30}, bonus:{atk:11, atkRate:25}, matReq:"w:100;b:100;c:75;l:6;a:650" },
-{ itemId: 2031, className: "Sea King Sword", name: "octo-sword", category: 1, maxStack: 1, price: 0, sellPrice: 360, equipType1: "Sword", equipType2: "Sword", req:{str:60}, bonus:{atk:17, critY:.25}, matReq:"m:250;w:225;p:200;l:12;a:2400"  },
-{ itemId: 2032, className: "Leviathan Axe", name: "octo-axe", category: 1, maxStack: 1, price: 0, sellPrice: 720, equipType1: "Axe", equipType2: "Axe", req:{str:120}, bonus:{atk:32, hp:50, atkRate:-100}, matReq:"w:600;m:500;b:350;l:24;a:9300" },
+{ itemId: 2005, className: "Steel Rapier", name: "steel-rapier", category: 1, maxStack: 1, price: 20, sellPrice: 18, equipType1: "Sword", equipType2: "Sword", req:{str:12}, bonus:{atk:3}, matReq:"w:100;a:200" },
+{ itemId: 2007, className: "Wooden Bow", name: "wooden-bow", category: 1, maxStack: 1, price: 20, sellPrice: 18, equipType1: "Bow", equipType2: "Bow", req:{dex:12}, bonus:{atk:3, atkRate:100}, matReq:"w:100;a:200" },
+{ itemId: 2008, className: "Pearl Wand", name: "pearl-wand", category: 1, maxStack: 1, price: 20, sellPrice: 18, equipType1: "Wand",equipType2: "Wand", req:{mag:15}, bonus:{atk:4}, matReq:"w:100;p:60;a:200" },
+{ itemId: 2009, className: "Volt Bow", name: "volt-bow", category: 1, maxStack: 1, price: 50, sellPrice: 40, equipType1: "Bow", equipType2: "Bow", req:{dex:40}, bonus:{atk:9, atkRate:150}, matReq:"w:200;p:200;a:1000" },
+{ itemId: 2010, className: "Volt Sword", name: "volt-sword", category: 1, maxStack: 1, price: 50, sellPrice: 40, equipType1: "Sword", equipType2: "Sword", req:{str:35}, bonus:{atk:9}, matReq:"w:200;p:200;a:1000" },
+{ itemId: 2011, className: "Volt Wand", name: "volt-wand", category: 1, maxStack: 1, price: 50, sellPrice: 40, equipType1: "Wand", equipType2: "Wand", req:{mag:40}, bonus:{atk:9}, matReq:"w:200;p:200;a:1000" },
+{ itemId: 2012, className: "Goblin Knife", name: "goblin-knife", category: 1, maxStack: 1, price: 70, sellPrice: 60, equipType1: "Sword", equipType2: "Sword", req:{str:45}, bonus:{atk:11}, matReq:"w:300;m:300;a:1600" },
+{ itemId: 2013, className: "Goblin Bow", name: "goblin-bow", category: 1, maxStack: 1, price: 70, sellPrice: 60, equipType1: "Bow", equipType2: "Bow", req:{dex:50}, bonus:{atk:10, atkRate:175}, matReq:"w:200;c:200;p:100;a:1600" },
+{ itemId: 2014, className: "Lupus Wand", name: "alpha-wand", category: 1, maxStack: 1, price: 0, sellPrice: 120, equipType1: "Wand", equipType2: "Wand", req:{mag:20}, bonus:{atk:11}, matReq:"w:60;p:60;m:30;l:4;a:300" },
+{ itemId: 2015, className: "Hunter's Bow", name: "alpha-bow", category: 1, maxStack: 1, price: 0, sellPrice: 480, equipType1: "Bow", equipType2: "Bow", req:{dex:80}, bonus:{atk:23, hp:20, atkRate:250}, matReq:"w:400;m:400;c:150;l:16;a:4200" },
+{ itemId: 2016, className: "Ballesta Crossbow", name: "alpha-crossbow", category: 1, maxStack: 1, price: 0, sellPrice: 660, equipType1: "Crossbow", equipType2: "Crossbow", req:{dex:110}, bonus:{atk:30, "critY":.3, atkRate:-325}, matReq:"m:500;w:500;p:325;l:22;a:7850" },
+{ itemId: 2017, className: "Crimson Sword", name: "bellator-sword", category: 1, maxStack: 1, price: 0, sellPrice: 180, equipType1: "Sword", equipType2: "Sword", req:{str:30}, bonus:{atk:13, "critY":.15}, matReq:"m:125;w:100;b:50;l:6;a:650" },
+{ itemId: 2018, className: "Gladiator Axe", name: "bellator-axe", category: 1, maxStack: 1, price: 0, sellPrice: 600, equipType1: "Axe", equipType2: "Axe", req:{str:100}, bonus:{atk:28, hp:40, atkRate:-325}, matReq:"m:600;w:500;b:100;l:20;a:6500" },
+//{ itemId: 2019, className: "Gae Bolg", name: "bellator-spear", category: 1, maxStack: 1, price: //0, sellPrice: 420, equipType1: "Spear", equipType2: "Spear", req:{str:70}, bonus:{atk:19, //hp:20}, matReq:"w:400;m:300;c:100;l:14;a:3250"  },
+{ itemId: 2020, className: "Diplo Toxo Crossbow", name: "bellator-crossbow", category: 1, maxStack: 1, price: 0, sellPrice: 240, equipType1: "Crossbow", equipType2: "Crossbow", req:{dex:40}, bonus:{atk:16, "critX":.025,atkRate:-250}, matReq:"w:150;m:150;b:100;l:8;a:1100" },
+{ itemId: 2021, className: "Yumi Bow", name: "bellator-bow", category: 1, maxStack: 1, price: 0, sellPrice: 540, equipType1: "Bow", equipType2: "Bow", req:{dex:90}, bonus:{atk:24, atkRate:200}, matReq:"w:500;m:300;c:250;l:18;a:5300" },
+{ itemId: 2022, className: "Hakaihou Wand", name: "bellator-wand", category: 1, maxStack: 1, price: 0, sellPrice: 540, equipType1: "Wand", equipType2: "Wand", req:{mag:90}, bonus:{atk:25, mp:50}, matReq:"w:400;m:400;p:250;l:18;a:5300" },
+{ itemId: 2023, className: "Tonitrum Crossbow", name: "vibro-crossbow", category: 1, maxStack: 1, price: 0, sellPrice: 300, equipType1: "Crossbow", equipType2: "Crossbow", req:{dex:50}, bonus:{atk:18, mp:15, atkRate:-225}, matReq:"m:200;w:200;b:150;l:10;a:1700" },
+{ itemId: 2024, className: "Corundum Axe", name: "vibro-axe", category: 1, maxStack: 1, price: 0, sellPrice: 360, equipType1: "Axe", equipType2: "Axe", req:{str:60}, bonus:{atk:20, hp:20, atkRate:-225}, matReq:"m:300;w:200;p:50;l:10;a:1700" },
+{ itemId: 2025, className: "Plasma Wand", name: "vibro-wand", category: 1, maxStack: 1, price: 0, sellPrice: 480, equipType1: "Wand", equipType2: "Wand", req:{mag:80}, bonus:{atk:23, mp:30}, matReq:"p:350;m:300;w:300;l:16;a:4200" },
+{ itemId: 2026, className: "Tree Splitter Sword", name: "ent-sword", category: 1, maxStack: 1, price: 0, sellPrice: 240, equipType1: "Sword", equipType2: "Sword", req:{str:40}, bonus:{atk:15}, matReq:"w:150;m:150;b:100;l:8;a:1100"  },
+{ itemId: 2027, className: "Treewalker Axe", name: "ent-axe", category: 1, maxStack: 1, price: 0, sellPrice: 420, equipType1: "Axe", equipType2: "Axe", req:{str:70}, bonus:{atk:22, atkRate:-300}, matReq:"m:400;w:300;b:100;l:14;a:3250" },
+{ itemId: 2028, className: "Sprit Crossbow", name: "ent-crossbow", category: 1, maxStack: 1, price: 0, sellPrice: 420, equipType1: "Crossbow", equipType2: "Crossbow", req:{dex:70}, bonus:{atk:22, mp:15, atkRate:-300},  matReq:"w:400;m:200;b:200;l:14;a:3250" },
+//{ itemId: 2029, className: "Apollo's Bow", name: "ent-bow", category: 1, maxStack: 1, price: 0, sellPrice: 540, equipType1: "Bow", equipType2: "Bow", req:{dex:90}, bonus:{atk:25, atkRate:175} },
+{ itemId: 2030, className: "Tentacle Bow", name: "octo-bow", category: 1, maxStack: 1, price: 0, sellPrice: 180, equipType1: "Bow", equipType2: "Bow", req:{dex:30}, bonus:{atk:12, atkRate:200}, matReq:"w:100;b:100;c:75;l:6;a:650" },
+{ itemId: 2031, className: "Sea King Sword", name: "octo-sword", category: 1, maxStack: 1, price: 0, sellPrice: 360, equipType1: "Sword", equipType2: "Sword", req:{str:60}, bonus:{atk:19, critY:.25}, matReq:"m:250;w:225;p:200;l:12;a:2400"  },
+{ itemId: 2032, className: "Leviathan Axe", name: "octo-axe", category: 1, maxStack: 1, price: 0, sellPrice: 720, equipType1: "Axe", equipType2: "Axe", req:{str:120}, bonus:{atk:32, hp:50, atkRate:-325}, matReq:"w:600;m:500;b:350;l:24;a:9300" },
+{ itemId: 2033, className: "Lacerta Sting", name: "lizard-crossbow", category: 1, maxStack: 1, price: 110, sellPrice: 720, equipType1: "Crossbow", req:{dex:65}, bonus:{atk:15, atkRate:-225}, matReq:"w:600;m:500;b:350;a:2400" },
+{ itemId: 2034, className: "Acrodont Blade", name: "lizard-sword", category: 1, maxStack: 1, price: 110, sellPrice: 720, equipType1: "Sword", equipType2: "Sword", req:{str:60}, bonus:{atk:13}, matReq:"w:300;m:300;p:150;a:2400" },
+{ itemId: 2035, className: "Lash of Tongues", name: "lizard-wand", category: 1, maxStack: 1, price: 110, sellPrice: 720, equipType1: "Wand", equipType2: "Wand", req:{mag:65}, bonus:{atk:13}, matReq:"w:300;m:300;9:150;a:2400" },
 
+{ itemId: 2036, className: "Hades Cleaver", name: "lava-axe", category: 1, maxStack: 1, price: 130, sellPrice: 900, equipType1: "Axe", equipType2: "Axe", req:{str:70}, bonus:{atk:17, atkRate:-225}, matReq:"m:450;w:400;b:150;a:3250" },
+{ itemId: 2037, className: "Wand of the Abyss", name: "lava-wand", category: 1, maxStack: 1, price: 130, sellPrice: 900, equipType1: "Wand", equipType2: "Wand", req:{mag:75}, bonus:{atk:15}, matReq:"w:400;b:400;m:200;a:3250" },
+{ itemId: 2038, className: "Pandemonium Bow", name: "lava-bow", category: 1, maxStack: 1, price: 130, sellPrice: 900, equipType1: "Bow", equipType2: "Bow", req:{dex:75}, bonus:{atk:13,atkRate: 200}, matReq:"w:400;b:400;p:200;a:3250" },
 
 
 
 // Armors 4001-6000
 //---------------------------------------------------------------------------
-{ itemId: 4002, className: "Shirt", name: "shirt", category: 2, maxStack: 1, price: 12, sellPrice: 10, equipType1: "LightArmor", bonus:{armor:1}, matReq:"c:3;a:10" },
+{ itemId: 4002, className: "Leather Armor", name: "leather-armor", category: 2, maxStack: 1, price: 12, sellPrice: 10, equipType1: "LightArmor", bonus:{armor:1}, matReq:"c:3;a:10" },
 { itemId: 4003, className: "Crustaceous Armor", name: "crustaceous-armor", category: 2, maxStack: 1, price: 20, sellPrice: 18, equipType1: "HeavyArmor", req:{def:15}, bonus:{armor:3}, matReq:"b:100;m:40;a:200" },
 { itemId: 4004, className: "Leather Fleece", name: "leather-fleece", category: 2, maxStack: 1, price: 25, sellPrice: 20, equipType1: "LightArmor", req:{hp:220}, bonus:{armor:3}, matReq:"c:200;p:200;a:1000" },
 { itemId: 4005, className: "Stone Skin", name: "stone-skin-chest", category: 2, maxStack: 1, price: 50, sellPrice: 40, equipType1: "HeavyArmor", req:{def:40}, bonus:{armor:6}, matReq:"b:200;m:150;a:1000" },
@@ -55,9 +60,13 @@
 { itemId: 4010, className: "Nensho Robe", name: "bellator-mageArmor", category: 2, maxStack: 1, price: 0, sellPrice: 240, equipType1: "LightArmor", req:{hp:250}, bonus:{armor:6, "critY":.2}, matReq:"c:150;m:150;p:100;l:8;a:1100" },
 { itemId: 4011, className: "Fulgum Armor", name: "vibro-heavyArmor", category: 2, maxStack: 1, price: 0, sellPrice: 480, equipType1: "HeavyArmor", req:{def:80}, bonus:{armor:11, hp:30}, matReq:"m:500;b:350;p:100;l:16;a:4200" },
 { itemId: 4012, className: "Hard Bark Armor", name: "ent-heavyArmor", category: 2, maxStack: 1, price: 0, sellPrice: 600, equipType1: "HeavyArmor", req:{def:100}, bonus:{armor:14, hp:50}, matReq:"w:500;m:400;b:300;l:20;a:6500" },
-{ itemId: 4013, className: "Coat of Bark", name: "ent-lightArmor", category: 2, maxStack: 1, price: 0, sellPrice: 780, equipType1: "HeavyArmor", req:{hp:700}, bonus:{armor:13, speed:2}, matReq:"w:700;b:600;m:300;l:26;a:10900" },
-{ itemId: 4014, className: "Octo Light Armor", name: "octo-lightArmor", category: 2, maxStack: 1, price: 0, sellPrice: 180, equipType1: "HeavyArmor", req:{hp:200}, bonus:{armor:4, mp:15}, matReq:"b:125;c:100;p:50;l:6;a:650" },
+{ itemId: 4013, className: "Coat of Bark", name: "ent-lightArmor", category: 2, maxStack: 1, price: 0, sellPrice: 780, equipType1: "LightArmor", req:{hp:700}, bonus:{armor:13, speed:2}, matReq:"w:700;b:600;m:300;l:26;a:10900" },
+{ itemId: 4014, className: "Octo Light Armor", name: "octo-lightArmor", category: 2, maxStack: 1, price: 0, sellPrice: 180, equipType1: "LightArmor", req:{hp:200}, bonus:{armor:4, mp:15}, matReq:"b:125;c:100;p:50;l:6;a:650" },
+{ itemId: 4015, className: "Hardened Scale Armor", name: "lizard-heavyarmor", category: 2, maxStack: 1, price: 100, sellPrice: 780, equipType1: "HeavyArmor", req:{def:60}, bonus:{armor:8, def:5}, matReq:"w:350;m:350;a:2400" },
+{ itemId: 4016, className: "Scale Skin Armor", name: "lizard-magearmor", category: 2, maxStack: 1, price: 100, sellPrice: 180, equipType1: "LightArmor", req:{hp:350}, bonus:{armor:6, mp:15}, matReq:"c:300;b:200;p:200;a:2400" },
+{ itemId: 4017, className: "Light Scale Armor", name: "lizard-lightarmor", category: 2, maxStack: 1, price: 100, sellPrice: 180, equipType1: "LightArmor", req:{hp:350}, bonus:{armor:6, hp:15}, matReq:"c:350;p:200;b:150;a:2400" },
 
+{ itemId: 4018, className: "Volcanic Armour", name: "lava-lightarmor", category: 2, maxStack: 1, price: 130, sellPrice: 360, equipType1: "LightArmor", req:{hp:450}, bonus:{armor:7, mp:25}, matReq:"b:350;c:250;p:50;a:3250" },
 
 
 // Secondary 6001-8000
@@ -85,6 +94,9 @@
 { itemId: 6022, className: "Kraken Tome", name: "octo-book", category: 3, maxStack: 1, price: 0, sellPrice: 540, equipType1: "Book", req:{mag:90}, bonus:{mag:30, mp:40, hp:30}, matReq:"p:400;c:400;b:250;l:18;a:5300" },
 { itemId: 6023, className: "Atlantis Shield", name: "octo-shield", category: 3,  maxStack: 1, price: 0, sellPrice: 540, equipType1: "Shield", req:{def:90}, bonus:{block:.10, def:20}, matReq:"m:350;b:350;p:350;l:18;a:5300" },
 { itemId: 6024, className: "Harpoon Quiver", name: "octo-quiver", category: 3, maxStack: 1, price: 0, sellPrice: 720, equipType1: "Quiver", req:{dex:120}, bonus:{atkRate:100, mp:25}, matReq:"b:550;w:450;c:450;l:24;a:9300" },
+{ itemId: 6025, className: "Lizard's Pouch", name: "lizard-quiver", category: 3, maxStack: 1, price: 100, sellPrice: 540, equipType1: "Quiver", req:{dex:60}, bonus:{dex:11, atkRate:50}, matReq:"w:350;c:250;m:150;a:2400" },
+{ itemId: 6026, className: "Scute Shield", name: "lizard-shield", category: 3,  maxStack: 1, price: 100, sellPrice: 540, equipType1: "Shield", req:{def:60}, bonus:{block:.09, def:5}, matReq:"m:300;b:300;c:150;a:2400" },
+{ itemId: 6027, className: "Tome of Old Tongue", name: "lizard-book", category: 3, maxStack: 1, price: 100, sellPrice: 720, equipType1: "Book", req:{mag:60}, bonus:{mag:11, critY:.14}, matReq:"w:300;c:300;b:150;a:2400" },
 
 
 
@@ -99,6 +111,10 @@
 { itemId: 8007, className: "Furea Boots", name: "bellator-boots", category: 4, maxStack: 1, price: 0, sellPrice: 300, equipType1: "Boots", req:{agi:120}, bonus:{armor:10, speed:2.5}, matReq:"b:450;c:400;m:350;l:20;a:6500" },
 { itemId: 8008, className: "Crystal Boots", name: "vibro-boots", category: 4, maxStack: 1, price: 0, sellPrice: 330, equipType1: "Boots", req:{agi:132}, bonus:{armor:13, hp:30}, matReq:"c:600;b:500;p:225;l:22;a:7850" },
 { itemId: 8009, className: "Fisherman Boots", name: "octo-boots", category: 4, maxStack: 1, price: 0, sellPrice: 180, equipType1: "Boots", req:{agi:36}, bonus:{armor:3, speed:1}, matReq:"c:150;b:75;p:50;l:6;a:650"},
+{ itemId: 8010, className: "Diactyl Boots", name: "lizard-boots", category: 4, maxStack: 1, price: 80, sellPrice: 180, equipType1: "Boots", req:{agi:72}, bonus:{armor:5}, matReq:"c:350;b:200;w:100;a:2400"},
+
+{ itemId: 8011, className: "Magma Boots", name: "lava-boots", category: 4, maxStack: 1, price: 110, sellPrice: 240, equipType1: "Boots", req:{agi:90}, bonus:{armor:6, atk:5}, matReq:"b:350;c:350;p:300;a:3250"},
+
 
 
 
@@ -112,6 +128,7 @@
 { itemId: 10007, className: "Adamant Gloves", name: "vibro-gloves", category: 5, maxStack: 1, price: 0, sellPrice: 840, equipType1: "Gloves", req:{acc:168}, bonus:{armor:16,atkRate:50}, matReq:"c:600;b:600;p:525;l:28;a:12600" },
 { itemId: 10008, className: "Demeter's Gloves", name: "ent-gloves", category: 5, maxStack: 1, price: 0, sellPrice: 240, equipType1: "Gloves", req:{acc:48}, bonus:{armor:5,hp:5}, matReq:"b:200;c:150;w:50;l:8;a:1100"},
 { itemId: 10009, className: "Marine Gloves", name: "octo-gloves", category: 5, maxStack: 1, price: 0, sellPrice: 360, equipType1: "Gloves", req:{acc:72}, bonus:{armor:7,hp:10}, matReq:"b:300;c:300;p:75;l:12;a:2400"},
+{ itemId: 10010, className: "Komodo Claws", name: "lizard-gloves", category: 5, maxStack: 1, price: 80, sellPrice: 360, equipType1: "Gloves", req:{acc:72}, bonus:{armor:5}, matReq:"b:350;p:300;a:2400"},
 
 
 
@@ -127,6 +144,10 @@
 { itemId: 12009, className: "Raito Helmet", name: "vibro-helmet", category: 6, maxStack: 1, price: 0, sellPrice: 840, equipType1: "Helmet",req:{hp:700}, bonus:{armor:12, hp:50}, matReq:"m:700;w:600;p:425;l:28;a:12600" },
 { itemId: 12010, className: "Fern Helmet", name: "ent-helmet", category: 6, maxStack: 1, price: 0, sellPrice: 240, equipType1: "Helmet",req:{hp:250}, bonus:{armor:5, critX:.01}, matReq:"m:150;b:150;w:100;l:8;a:1100" },
 { itemId: 12011, className: "Poseidon's Crown", name: "octo-helmet", category: 6, maxStack: 1, price: 0, sellPrice: 360, equipType1: "Helmet",req:{hp:350}, bonus:{armor:6, critX:.02}, matReq:"m:225;p:225;b:225;l:12;a:2400" },
+{ itemId: 12012, className: "Frilled Helm", name: "lizard-helmet", category: 6, maxStack: 1, price: 100, sellPrice: 360, equipType1: "Helmet", req:{hp:350}, bonus:{armor:5, def:5}, matReq:"c:300;p:200;b:200;a:2400" },
+
+{ itemId: 12014, className: "Inferno Hat", name: "lava-magehat", category: 6, maxStack: 1, price: 120, sellPrice: 80, equipType1:"Helmet",req:{mp:80}, bonus:{armor:5, atk:3, mp:10}, matReq:"c:400;b:350;p:200;a:3250" },
+
 
 
 // Rings 14001-16000
@@ -138,6 +159,8 @@
 { itemId: 14006, className: "Speed Ring", name: "speed-ring", category: 7, maxStack: 1, price: 50, sellPrice: 40, equipType1: "Ring", bonus:{speed:150}}, 
 { itemId: 14007, className: "Kami Ring", name: "bellator-ring", category: 7, maxStack: 1, price: 50, sellPrice: 40, equipType1: "Ring", bonus:{hp:50, mp:50, atk:5}}, 
 
+{ itemId: 14008, className: "Fiery Ring", name: "lava-ring", category: 7, maxStack: 1, price: 0, sellPrice: 80, equipType1: "Ring", req:{mp:150}, bonus:{"mp":15, atk:5} },
+
 
 
 // Necklaces 16001-18000
@@ -148,6 +171,10 @@
 { itemId: 16005, className: "Forest Necklace", name: "wisp-necklace", category: 8, maxStack: 1, price: 50, sellPrice: 40, equipType1: "Necklace", req:{mp:80}, bonus:{"critY":.1, mp:10} },
 { itemId: 16006, className: "Goblin Necklace", name: "goblin-necklace", category: 8, maxStack: 1, price: 50, sellPrice: 40, equipType1: "Necklace", req:{mp:100}, bonus:{"critX":.01, mp:20} },
 
+{ itemId: 16007, className: "Life Stone Necklace", name: "lava-necklace", category: 8, maxStack: 1, price: 50, sellPrice: 80, equipType1: "Necklace", req:{mp:150}, bonus:{"hp":30, armor:2} },
+{ itemId: 16008, className: "Basalt Necklace", name: "lava-necklace2", category: 8, maxStack: 1, price: 50, sellPrice: 80, equipType1: "Necklace", req:{mp:150}, bonus:{"block":.02, def:5} },
+
+
 
 // Consumables 18001-20000
 //---------------------------------------------------------------------------
@@ -155,8 +182,8 @@
 { itemId: 18002, className: "Medium HP Potion", desc: "Restores 100 HP", name: "medium-hp-potion", category: 9, maxStack: 32767, price: 100, sellPrice: 25, time: 5 },
 { itemId: 18003, className: "Large HP Potion", desc: "Restores 200 HP", name: "large-hp-potion", category: 9, maxStack: 32767, price: 500, sellPrice: 200, time: 5 },
 { itemId: 18004, className: "Revive Potion", desc: "Revives upon death", name: "revive-potion", category: 9, maxStack: 32767, price: 500, sellPrice: 100 },
-{ itemId: 18005, className: "Reset Stats", desc: "Clears hero's stats and returns the points", name: "scroll-stat-reset", category: 9, maxStack: 32767, price: 25, sellPrice: 0,currency: "nummus", tradable: false },
-{ itemId: 18006, className: "Reset Abilities", desc: "Clears hero's abilities and returns the points", name: "scroll-ability-reset", category: 9, maxStack: 32767, price: 25, sellPrice: 0, currency: "nummus", tradable: false},
+{ itemId: 18005, className: "Reset Stats Scroll", desc: "Clears hero's stats and returns the points", name: "scroll-stat-reset", category: 9, maxStack: 32767, price: 25, sellPrice: 0,currency: "nummus", tradable: false },
+{ itemId: 18006, className: "Reset Abilities Scroll", desc: "Clears hero's abilities and returns the points", name: "scroll-ability-reset", category: 9, maxStack: 32767, price: 25, sellPrice: 0, currency: "nummus", tradable: false},
 { itemId: 18007, className: "Armageddon Scroll", desc: "Insta-death to everyone on the map except the beholder of this scroll", name: "scroll-red", category: 9, maxStack: 32767, price: 0, sellPrice: 0 },
 { itemId: 18008, className: "Apple", desc: "An apple a day keeps the doctor away", name: "apple", category: 9, maxStack: 32767, price: 5, sellPrice: 2 },
 { itemId: 18009, className: "God Mode Scroll", desc: "Increases health to an unhealthy level for a duration", name: "scroll-blue", category: 9, maxStack: 32767, price: 0, sellPrice: 0 },
@@ -170,9 +197,12 @@
 { itemId: 18017, className: "Large MP Potion", desc: "Restores 200 MP", name: "large-mp-potion", category: 9, maxStack: 32767, price: 500, sellPrice: 200, time: 5 },
 { itemId: 18018, className: "Save Point Scroll", desc: "Warps your hero back to the last save point", name: "scroll-brown", category: 9, maxStack: 32767, price: 100, sellPrice: 50 },
 { itemId: 18019, className: "Name Change Scroll", desc: "Change your hero's name", name: "scroll-purple", category: 9, maxStack: 32767, price: 50, sellPrice: 0, currency: "nummus", tradable:false },
-{ itemId: 18020, className: "Realm XP Event", desc: "Boosts experience in the realm by 150% for [x] hour/s.", name: "ticket-red", category: 9, maxStack: 24, price: 25, sellPrice: 0, currency: "nummus", tradable:false },
-{ itemId: 18021, className: "Realm Legendary Drop Event", desc: "Boosts legendary drop rates in the realm by 200% for [x] hour/s.", name: "ticket-purple", category: 9, maxStack: 24, price: 25, sellPrice: 0, currency: "nummus", tradable:false },
-{ itemId: 18022, className: "Realm Normal Drop Event", desc: "Boosts drops by normal mobs in the realm by 200% for [x] hour/s.", name: "ticket-blue", category: 9, maxStack: 24, price: 25, sellPrice: 0, currency: "nummus", tradable:false },
+{ itemId: 18020, className: "Realm XP Event", desc: "Boosts experience in the realm by 150% for [x] hour/s.", name: "ticket-red", category: 9, maxStack: 24, price: 25, sellPrice: 0, currency: "nummus"},
+{ itemId: 18021, className: "Realm Legendary Drop Event", desc: "Boosts legendary drop rates in the realm by 200% for [x] hour/s.", name: "ticket-purple", category: 9, maxStack: 24, price: 25, sellPrice: 0, currency: "nummus" },
+{ itemId: 18022, className: "Realm Normal Drop Event", desc: "Boosts drops by normal mobs in the realm by 200% for [x] hour/s.", name: "ticket-blue", category: 9, maxStack: 24, price: 25, sellPrice: 0, currency: "nummus"},
+{ itemId: 18023, className: "Reset Stat Parchment", desc: "Clears a single stat and returns the points", name: "parchment-stat-reset", category: 9, maxStack: 32767, price: 10, sellPrice: 0,currency: "nummus", tradable: false },
+{ itemId: 18024, className: "Reset Ability Parchment", desc: "Clears a single ability and returns the points", name: "parchment-ability-reset", category: 9, maxStack: 32767, price: 7, sellPrice: 0, currency: "nummus", tradable: false},
+
 //tickets -18023 - 18025
 
 // Materials 20001-22000
@@ -224,6 +254,23 @@
 { itemId: 20045, className: "Crystal Grains", desc: "Crafting Item", name: "powder", category: 10, maxStack: 32767, price: 0, sellPrice: 42, points: 12, mat:"p" },
 { itemId: 20046, className: "Obsidian Arrowhead", desc: "Crafting Item", name: "metal", category: 10, maxStack: 32767, price: 0, sellPrice: 47, points: 13, mat:"m" },
 { itemId: 20047, className: "Petrified Wood", desc: "Crafting Item", name: "wood", category: 10, maxStack: 32767, price: 0, sellPrice: 33, points: 8, mat:"w" },
+
+{ itemId: 20048, className: "Ancient Juniper", desc: "Crafting Item", name: "wood", category: 10, maxStack: 32767, price: 0, sellPrice: 48, points: 13, mat:"w" },
+{ itemId: 20049, className: "Spandrel Powder", desc: "Crafting Item", name: "powder", category: 10, maxStack: 32767, price: 0, sellPrice: 50, points: 14, mat:"p" },
+{ itemId: 20050, className: "Lacerta Belt", desc: "Crafting Item", name: "cloth", category: 10, maxStack: 32767, price: 0, sellPrice: 49, points: 14, mat:"c" },
+{ itemId: 20051, className: "Taragin Steel", desc: "Crafting Item", name: "metal", category: 10, maxStack: 32767, price: 0, sellPrice: 51, points: 15, mat:"m" },
+{ itemId: 20052, className: "Cedar Post", desc: "Crafting Item", name: "wood", category: 10, maxStack: 32767, price: 0, sellPrice: 52, points: 15, mat:"w" },
+{ itemId: 20053, className: "Lizard Tail", desc: "Crafting Item", name: "beast", category: 10, maxStack: 32767, price: 0, sellPrice: 52, points: 16, mat:"b" },
+{ itemId: 20054, className: "Uric Acid", desc: "Crafting Item", name: "powder", category: 10, maxStack: 32767, price: 0, sellPrice: 53, points: 16, mat:"p" },
+{ itemId: 20055, className: "Lizard Scales", desc: "Crafting Item", name: "cloth", category: 10, maxStack: 32767, price: 0, sellPrice: 54, points: 16, mat:"c" },
+
+{ itemId: 20056, className: "Molive Steel", desc: "Crafting Item", name: "metal", category: 10, maxStack: 32767, price: 0, sellPrice: 55, points: 17, mat:"m" },
+{ itemId: 20057, className: "Magma Cruor", desc: "Crafting Item", name: "beast", category: 10, maxStack: 32767, price: 0, sellPrice: 57, points: 17, mat:"b" },
+{ itemId: 20058, className: "Polyester", desc: "Crafting Item", name: "cloth", category: 10, maxStack: 32767, price: 0, sellPrice: 59, points: 17, mat:"c" },
+{ itemId: 20059, className: "Cobalt Powder", desc: "Crafting Item", name: "powder", category: 10, maxStack: 32767, price: 0, sellPrice: 59, points: 18, mat:"p" },
+{ itemId: 20060, className: "Hellfire Steel", desc: "Crafting Item", name: "metal", category: 10, maxStack: 32767, price: 0, sellPrice: 62, points: 18, mat:"m" },
+{ itemId: 20061, className: "Crarred Wood", desc: "Crafting Item", name: "wood", category: 10, maxStack: 32767, price: 0, sellPrice: 64, points: 19, mat:"w" },
+
 
 
 

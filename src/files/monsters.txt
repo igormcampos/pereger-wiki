@@ -1,51 +1,41 @@
-// Values: monsterId, className, name, level, exp, hp, sp, str, mag, acc, agi, def, dex attack, speed, splat, respawn, size, abilities,  
+// Values: monsterId, className, name, level, exp, hp, sp, str, mag, acc, agi, def, dex, attack, speed, splat, respawn, size, abilities,  
 // appearance[body, shirt, pants, hair, accessory, body color, shirt color, pants color, hair color]
 //---------------------------------------------------------------------------
 
 [
 // Monsters 1 - 2000
 //---------------------------------------------------------------------------
-{ monsterId: 1, className: "Crow", name: "Crow", level: 1, exp: 7, hp: 8, sp: 0, str: 1, mag: 1, acc: 1, agi: 1, def: 1, attack: 1, spd: .8, splat: 0, respawn: 90 },
-{ monsterId: 2, className: "Badger", name: "Badger", level: 3, exp: 20, hp: 25, sp: 0, str: 4, mag: 1, acc: 3, agi: 2, def: 3, attack: 1, spd: .8, splat: 0, respawn: 90 },
-{ monsterId: 3, className: "Manihot", name: "Manihot", level: 5, exp: 35, hp: 40, sp: 100, str: 1, mag: 7, acc: 5, agi: 5,  def: 5, attack: 3, spd: 0.75, splat: 2, respawn: 90, passives: "10010,2", actives: "5003,10,0.15" },
+{ monsterId: 1, className: "Crow", name: "Crow", level: 1, exp: 7, hp: 8, sp: 0, str: 3, mag: 1, acc: 1, agi: 1, def: 1, attack: 1, spd: .8, splat: 0, respawn: 90 },
+{ monsterId: 2, className: "Badger", name: "Badger", level: 3, exp: 20, hp: 17, sp: 0, str: 5, mag: 1, acc: 3, agi: 2, def: 3, attack: 1, spd: .8, splat: 0, respawn: 90 },
+{ monsterId: 3, className: "Manihot", name: "Manihot", level: 5, exp: 35, hp: 30, sp: 100, str: 1, mag: 7, acc: 5, agi: 5,  def: 5, attack: 3, spd: 0.75, splat: 2, respawn: 90, passives: "10010,2", actives: "5003,10,0.15" },
 { monsterId: 4, className: "Nepetha", name: "Nepetha", level: 7, exp: 50, hp: 50, sp: 0, str: 10, mag: 1, acc: 7, agi: 7, def: 7 , attack: 1, spd: .9, splat: 2, respawn: 90, passives: "10016,2"},
-{ monsterId: 5, className: "WolfPup", name: "Wolf Pup", level: 10, exp: 80, hp: 60, sp: 0, str: 12, mag: 1, acc: 10, agi: 10, def: 10 , attack: 1, spd: 0.6, splat: 0, respawn: 90, passives: "8001,1"},
-{ monsterId: 6, className: "Wolf", name: "Wolf", level: 15, exp: 110, hp: 90, sp: 100, str: 15, mag: 1, acc: 15, agi: 15, def: 15 , attack: 1, spd: 0.5, splat: 0, respawn: 90, passives: "8001,1", actives: "5005,10,0.15"},
-{ monsterId: 7, className: "GiantCrab", name: "Giant Crab", level: 20, exp: 175, hp: 120, sp: 0, str: 25, mag: 1, acc: 25, agi: 25, def: 20 , attack: 1, spd: 0.75, splat: 0, respawn: 90, passives: "10015,3"},
-{ monsterId: 9, className: "Scarecrow", name: "Scarecrow", level: 7, exp: 65, hp: 50, sp: 0, str: 10, mag: 1, acc: 8, agi: 8, def: 7 , attack: 1, spd: .9, splat: 3, respawn: 90, passives: "10016,2"},
+{ monsterId: 5, className: "WolfPup", name: "Wolf Pup", level: 10, exp: 80, hp: 50, sp: 0, str: 12, mag: 1, acc: 10, agi: 10, def: 10 , attack: 1, spd: 0.6, splat: 0, respawn: 90, passives: "8001,1"},
+{ monsterId: 6, className: "Wolf", name: "Wolf", level: 15, exp: 110, hp: 80, sp: 100, str: 15, mag: 1, acc: 15, agi: 15, def: 15 , attack: 1, spd: 0.5, splat: 0, respawn: 90, passives: "8001,4", actives: "5005,10,0.15"},
+{ monsterId: 7, className: "GiantCrab", name: "Giant Crab", level: 20, exp: 175, hp: 140, sp: 0, str: 25, mag: 1, acc: 25, agi: 25, def: 20 , attack: 1, spd: 0.75, splat: 0, respawn: 90, passives: "10015,3"},
+{ monsterId: 9, className: "Scarecrow", name: "Scarecrow", level: 7, exp: 65, hp: 40, sp: 0, str: 10, mag: 1, acc: 8, agi: 8, def: 7 , attack: 1, spd: .9, splat: 3, respawn: 90, passives: "10016,2"},
 //10
 //11
-{ monsterId: 12, className: "SilvaWisp", name: "Silva Wisp", level: 35, exp: 420, hp: 220, sp: 0, str: 1, mag: 40, acc: 40, agi: 30, def: 40 , attack: 3, spd: 1, splat: 1, respawn: 90, passives: "5012,1;10008,8;10011,5", actives: "5013,1,0.15" },
-{ monsterId: 13, className: "PearlClam", name: "Pearl Clam", level: 25, exp: 225, hp: 140, sp: 100, str: 1, mag: 1, acc: 28, agi: 25, def: 28, dex: 30, attack: 7, spd: 0.75, splat: 2, respawn: 90, passives: "10016,3", actives: "5004,10,0.15"},
-{ monsterId: 14, className: "GrizzlyBear", name: "Grizzly Bear", level: 30, exp: 300, hp: 180, sp: 0, str: 35, mag: 1, acc: 32, agi: 32, def: 35 , attack: 1, spd: 0.6, splat: 0, respawn: 90, passives: "8001,3;8002,3;"},
-{ monsterId: 15, className: "RockGolem", name: "Rock Golem", level: 40, exp: 545, hp: 250, sp: 0, str: 48, mag: 1, acc: 48, agi: 48, def: 46 , attack: 1, spd: 1, splat: 4, respawn: 90, passives: "5001,1;10012,8;10015,5"},
-{ monsterId: 16, className: "Volta", name: "Volta", level: 45, exp: 740, hp: 330, sp: 300, str: 1, mag: 54, acc: 54, agi: 54, def: 45 , attack: 10, spd: .6, splat: 4, respawn: 90, passives: "10009,5;10016,5;", actives: "5002,10,0.15" },
-{ monsterId: 17, className: "Goblin", name: "Goblin", level: 50, exp: 900, hp: 350, sp: 0, str: 60, mag: 1, acc: 60, agi: 60, def: 70 , attack: 1, spd: .6, splat: 0, respawn: 90, passives: "10006,5;10015,5"},
-{ monsterId: 18, className: "Cabalus", name: "Cabalus", level: 54, exp: 1050, hp: 380, sp: 0, str: 1, mag: 65, acc: 66, agi: 66, def: 65 , attack: 3, spd: .6, splat: 0, respawn: 90, passives: "10016,5;10017,5", actives: "5003,10,0.15" },
-{ monsterId: 19, className: "Gunter", name: "Gunter", level: 58, exp: 1200, hp: 420, sp: 0, str: 1, mag: 1,dex: 70, acc: 66, agi: 66, def: 60 , attack: 2, spd: .6, splat: 0, respawn: 90, passives: "10008,5"},
+{ monsterId: 12, className: "SilvaWisp", name: "Silva Wisp", level: 35, exp: 420, hp: 315, sp: 0, str: 1, mag: 40, acc: 40, agi: 30, def: 40 , attack: 3, spd: 1, splat: 1, respawn: 90, passives: "5012,1;10008,8", actives: "5013,1,0.15" },
+{ monsterId: 13, className: "PearlClam", name: "Pearl Clam", level: 25, exp: 225, hp: 205, sp: 100, str: 1, mag: 1, acc: 28, agi: 25, def: 28, dex: 30, attack: 7, spd: 0.75, splat: 2, respawn: 90, passives: "10016,3", actives: "5004,10,0.15"},
+{ monsterId: 14, className: "GrizzlyBear", name: "Grizzly Bear", level: 30, exp: 300, hp: 240, sp: 0, str: 35, mag: 1, acc: 32, agi: 32, def: 35 , attack: 1, spd: 0.6, splat: 0, respawn: 90, passives: "8001,3;8002,3;"},
+{ monsterId: 15, className: "RockGolem", name: "Rock Golem", level: 40, exp: 545, hp: 360, sp: 0, str: 48, mag: 1, acc: 48, agi: 48, def: 46 , attack: 1, spd: 1, splat: 4, respawn: 90, passives: "5001,1;10012,8;10015,5"},
+{ monsterId: 16, className: "Volta", name: "Volta", level: 45, exp: 740, hp: 440, sp: 300, str: 1, mag: 54, acc: 54, agi: 54, def: 45 , attack: 10, spd: .6, splat: 4, respawn: 90, passives: "10009,5;10016,5;", actives: "5002,10,0.15" },
+{ monsterId: 17, className: "Goblin", name: "Goblin", level: 50, exp: 900, hp: 500, sp: 0, str: 60, mag: 1, acc: 60, agi: 60, def: 70 , attack: 1, spd: .6, splat: 0, respawn: 90, passives: "10006,5;10015,5"},
+{ monsterId: 18, className: "Cabalus", name: "Cabalus", level: 54, exp: 1050, hp: 575, sp: 0, str: 1, mag: 65, acc: 66, agi: 66, def: 65 , attack: 3, spd: .6, splat: 0, respawn: 90, passives: "10016,5;10017,5", actives: "5003,10,0.15" },
+{ monsterId: 19, className: "Gunter", name: "Gunter", level: 58, exp: 1200, hp: 625, sp: 0, str: 1, mag: 1,dex: 70, acc: 66, agi: 66, def: 60 , attack: 2, spd: .6, splat: 0, respawn: 90, passives: "10008,5"},
+//{ monsterId: 20, className: "Wolf", name: "Wolf", level: 45, exp: 740, hp: 440, sp: 0, str: 55, mag: 1, acc: 54, agi: 54, def: 55 , attack: 1, spd: .6, splat: 0, respawn: 90, passives: "8001,1", actives: "5005,10,0.15"},
+//{ monsterId: 21, className: "Wolf", name: "Wolf", level: 75, exp: 1200, hp: 920, sp: 0, str: 85, mag: 1, acc: 90, agi: 90, def: 85 , attack: 1, spd: .6, splat: 0, respawn: 90, passives: "8001,1", actives: "5005,10,0.15"},
+//{ monsterId: 22, className: "Wolf", name: "Wolf", level: 105, exp: 1750, hp: 1290, sp: 0, str: 115, mag: 1, acc: 126, agi: 126, def: 115 , attack: 1, spd: .6, splat: 0, respawn: 90, passives: "8001,1", actives: "5005,10,0.15"},
 
-//Bosses 4001 - 6000
-{ monsterId: 4001, className: "AlphaWolf1", name: "Alpha Wolf Normal", level: 20, exp: 1400, hp: 3500, sp: 100, str: 25, mag: 1, acc: 30, agi: 30, def: 25, attack: 1, spd: .3, splat: 0, size: 3, passives: "8001,3;10012,11;10013,11;10014,11", actives: "5006,10,.1;5007,10,.1;5008,10,.1" },
-{ monsterId: 4002, className: "AlphaWolf2", name: "Alpha Wolf Hard", level: 50, exp: 8500, hp: 10000, sp: 100, str: 60, mag: 1, acc: 60, agi: 60, def: 60,  attack: 1, spd: .3, splat: 0, size: 3, passives: "8001,3;10012,11;10013,11;10014,11", actives: "5006,10,.1;5007,10,.1;5008,10,.1" },
-{ monsterId: 4003, className: "AlphaWolf3", name: "Alpha Wolf Extreme", level: 80, exp: 22000, hp: 17500, sp: 100, str: 95, mag: 1, acc: 96, agi: 96, def: 95, attack: 1, spd: .3, splat: 0, size: 3, passives: "8001,3;10012,11;10013,11;10014,11", actives: "5006,10,.1;5007,10,.1;5008,10,.1" },
-{ monsterId: 4004, className: "AlphaWolf4", name: "Alpha Wolf Ultimate", level: 110, exp: 40640, hp: 26500, sp: 100, str: 130, mag: 1, acc: 132, agi: 132, def: 130, attack: 1, spd: .3, splat: 0, size: 3, passives: "8001,3;10012,11;10013,11;10014,11", actives: "5006,10,.1;5007,10,.1;5008,10,.1" },
+{ monsterId: 23, className: "Lacerta", name: "Lacerta", level: 61, exp: 1320, hp: 650, sp: 300, str: 70, mag: 1, acc: 70, agi: 72, def: 78, attack: 1, spd: .4, splat: 0, respawn: 90, passives: "8003,1;5023,10", actives: ""},
+{ monsterId: 24, className: "EquesLizard", name: "Eques Lizard", level: 66, exp: 1580, hp: 750, sp:300, str: 73, mag: 1, acc: 76, agi: 76, def: 79, attack: 1, spd: .4, splat: 0, respawn: 90, passives: "8001,5", actives: "12008,10,.15"},
+{ monsterId: 25, className: "MagumLizard", name: "Magum Lizard", level: 69, exp: 1720, hp: 800, sp: 300, str: 1, mag: 82, acc: 80, agi: 80, def: 80, attack: 24, spd: .4, splat: 0, respawn: 90, passives: "10024,10", actives: "5026,10,.15"},
+{ monsterId: 26, className: "ArcumLizard", name: "Arcum Lizard", level: 63, exp: 1440, hp: 700, sp: 300, str: 1, mag: 1, acc: 75, agi: 75, def: 70, dex: 83, attack: 2, spd: .4, splat: 0, respawn: 90, passives: "12009,5", actives: "12007,3,.2"},
+{ monsterId: 27, className: "MagmaKnight", name: "Magma Knight", level: 71, exp: 1820, hp: 850, sp: 300, str: 82, mag: 1, acc: 85, agi: 85, def: 88, attack: 1, spd: .3, splat: 0, respawn: 90, passives: "9025,5;8003,5", actives: "12011,5,.2"},
+{ monsterId: 28, className: "ScoriaBrute", name: "Scoria Brute", level: 75, exp: 2030, hp: 920, sp: 300, str: 1, mag: 93, dex: 1, acc: 90, agi: 90, def: 87, attack: 23, spd: .3, splat: 0, respawn: 90, passives: "9025,7", actives: "5024,10,.2"},
+{ monsterId: 29, className: "MoltenSlime", name: "Molten Slime", level: 79, exp: 2250, hp: 950, sp: 300, str: 1, mag: 98, acc: 95, agi: 95, def: 92, attack: 1, spd: .5, splat: 0, respawn: 90, passives: "9025,3", actives: "5025,10,.3" },
+{ monsterId: 30, className: "MiniSlime", name: "Mini Slime", level: 78, exp: 500, hp: 250, sp: 300, str: 1, mag: 98, acc: 95, agi: 95, def: 92, attack: 1, spd: .5, splat: 0, respawn: 90, passives: "9025,3", actives: ""},
 
-{ monsterId: 4006, className: "KingPolypus1", name: "King Polypus Normal", level: 30, exp: 3000, hp: 5500, sp: 100, str: 40, mag: 1, acc: 36, agi: 36, def: 40, attack: 1, spd: .4, splat: 0, size: 3, passives: "10016,1;10012,11;10013,11;10014,11", actives: "5009,10,.1;5010,10,.1;5011,10,.1" },
-{ monsterId: 4007, className: "KingPolypus2", name: "King Polypus Hard", level: 60, exp: 12200, hp: 12500, sp: 100, str: 75, mag: 1, acc: 72, agi: 72, def: 75, attack: 1, spd: .4, splat: 0, size: 3, passives: "10016,1;10012,11;10013,11;10014,11", actives: "5009,10,.1;5010,10,.1;5011,10,.1" },
-{ monsterId: 4008, className: "KingPolypus3", name: "King Polypus Extreme", level: 90, exp: 27200, hp: 20500, sp: 100, str: 110, mag: 1, acc: 108, agi: 108, def: 110, attack: 1, spd: .4, splat: 0, size: 3, passives: "10016,1;10012,11;10013,11;10014,11", actives: "5009,10,.1;5010,10,.1;5011,10,.1" },
-{ monsterId: 4009, className: "KingPolypus4", name: "King Polypus Ultimate", level: 120, exp: 48300, hp: 30000, sp: 100, str: 150, mag: 1, acc: 144, agi: 144, def: 150, attack: 1, spd: .4, splat: 0, size: 3, passives: "10016,1;10012,11;10013,11;10014,11", actives: "5009,10,.1;5010,10,.1;5011,10,.1" },
-
-{ monsterId: 4010, className: "VisiusEnt1", name: "Visius Ent Normal", level: 40, exp: 5500, hp: 7500, sp: 100, str: 50, mag: 1, acc: 48, agi: 48, def: 50, attack: 1, spd: .4, splat: 0, size: 3, passives: "10016,1;10012,11;10013,11;10014,11", actives: "5014,10,.1;5015,10,.1;5016,10,.1" },
-{ monsterId: 4011, className: "VisiusEnt2", name: "Visius Ent Hard", level: 70, exp: 16500, hp: 15000, sp: 100, str: 85, mag: 1, acc: 84, agi: 84, def: 85, attack: 1, spd: .4, splat: 0, size: 3, passives: "10016,1;10012,11;10013,11;10014,11", actives: "5014,10,.1;5015,10,.1;5016,10,.1" },
-{ monsterId: 4012, className: "VisiusEnt3", name: "Visius Ent Extreme", level: 100, exp: 33600, hp: 23500, sp: 100, str: 120, mag: 1, acc: 120, agi: 120, def: 120, attack: 1, spd: .4, splat: 0, size: 3, passives: "10016,1;10012,11;10013,11;10014,11", actives: "5014,10,.1;5015,10,.1;5016,10,.1" },
-{ monsterId: 4013, className: "VisiusEnt4", name: "Visius Ent Ultimate", level: 130, exp: 57000, hp: 33000, sp: 100, str: 160, mag: 1, acc: 156, agi: 156, def: 160, attack: 1, spd: .4, splat: 0, size: 3, passives: "10016,1;10012,11;10013,11;10014,11", actives: "5014,10,.1;5015,10,.1;5016,10,.1" },
-
-{ monsterId: 4014, className: "VibroMons1", name: "Vibro Mons Normal", level: 50, exp: 8500, hp: 10000, sp: 100, str: 1, mag: 60, acc: 60, agi: 60, def: 60, attack: 21, spd: .4, splat: 0, size: 3, passives: "10016,1;10012,11;10013,11;10014,11", actives: "5017,10,.1;5018,10,.1;5019,10,.1" },
-{ monsterId: 4015, className: "VibroMons2", name: "Vibro Mons Hard", level: 80, exp: 22000, hp: 17600, sp: 100, str: 1, mag: 100, acc: 96, agi: 96, def: 100, attack: 21, spd: .4, splat: 0, size: 3, passives: "10016,1;10012,11;10013,11;10014,11", actives: "5017,10,.1;5018,10,.1;5019,10,.1" },
-{ monsterId: 4016, className: "VibroMons3", name: "Vibro Mons Extreme", level: 110, exp: 40640, hp: 26500, sp: 100, str: 1, mag: 135, acc: 132, agi: 132, def: 135, attack: 21, spd: .4, splat: 0, size: 3, passives: "10016,1;10012,11;10013,11;10014,11", actives: "5017,10,.1;5018,10,.1;5019,10,.1" },
-{ monsterId: 4017, className: "VibroMons4", name: "Vibro Mons Ultimate", level: 140, exp: 65700, hp: 36500, sp: 100, str: 1, mag: 170, acc: 168, agi: 168, def: 170, attack: 21, spd: .4, splat: 0, size: 3, passives: "10016,1;10012,11;10013,11;10014,11", actives: "5017,10,.1;5018,10,.1;5019,10,.1" },
-
-{ monsterId: 4018, className: "Bellator", name: "Bellator", level: 50, exp: 10000, hp: 50000, sp: 100, str: 50, mag: 1, acc: 150, agi: 30, def: 30, attack: 1, spd: .1, splat: 0, size: 3, passives: "10012,11;10013,11;10014,11", actives: "5020,10,.1;5021,10,.1;5022,10,.1;" },
 
 
 
@@ -64,7 +54,34 @@
 { monsterId: 2011, className: "npc", name: "Meera", level: 1, exp: 0, hp: 100, sp: 100, str: 10, mag: 10, acc: 10, agi: 10, def: 10, attack: 1, spd: 1, splat: 0, appearance: [ 0, 1, 2, 6, 8, 0, 0, 2, 18 ]  },
 { monsterId: 2012, className: "npc", name: "Warden", level: 1, exp: 0, hp: 100, sp: 100, str: 10, mag: 10, acc: 10, agi: 10, def: 10, attack: 1, spd: 1, splat: 0, appearance: [ 0, 1, 2, 3, 8, 0, 21, 27, 27 ]  },
 { monsterId: 2013, className: "npc", name: "Tammi", level: 1, exp: 0, hp: 100, sp: 100, str: 10, mag: 10, acc: 10, agi: 10, def: 10, attack: 1, spd: 1, splat: 0, appearance: [ 0, 1, 37, 6, 8, 0, 8, 15, 20 ]  },
+{ monsterId: 2014, className: "npc", name: "Prescott", level: 1, exp: 0, hp: 100, sp: 100, str: 10, mag: 10, acc: 10, agi: 10, def: 10, attack: 1, spd: 1, splat: 0, appearance: [ 0, 42, 43, 103, 8, 0, 1, 0, 0 ]  },
+{ monsterId: 2015, className: "npc", name: "Jackson", level: 1, exp: 0, hp: 100, sp: 100, str: 10, mag: 10, acc: 10, agi: 10, def: 10, attack: 1, spd: 1, splat: 0, appearance: [ 0, 1, 2, 5, 8, 0, 1, 17, 4 ]  },
+{ monsterId: 2016, className: "npc", name: "Hemsworth", level: 1, exp: 0, hp: 100, sp: 100, str: 10, mag: 10, acc: 10, agi: 10, def: 10, attack: 1, spd: 1, splat: 0, appearance: [ 0, 42, 43, 103, 8, 0, 1, 0, 0 ]  },
 
+
+
+//Bosses 4001 - 6000
+{ monsterId: 4001, className: "AlphaWolf1", name: "Alpha Wolf", level: 20, exp: 1400, hp: 3500, sp: 100, str: 25, mag: 1, acc: 30, agi: 30, def: 25, attack: 1, spd: .3, splat: 0, size: 3, passives: "8001,3;10012,11;10013,11;10014,11", actives: "5006,10,.1;5007,10,.1;5008,10,.1" },
+{ monsterId: 4002, className: "AlphaWolf2", name: "Alpha Wolf", level: 50, exp: 8500, hp: 10000, sp: 100, str: 60, mag: 1, acc: 60, agi: 60, def: 60,  attack: 1, spd: .3, splat: 0, size: 3, passives: "8001,3;10012,11;10013,11;10014,11", actives: "5006,10,.1;5007,10,.1;5008,10,.1" },
+{ monsterId: 4003, className: "AlphaWolf3", name: "Alpha Wolf", level: 80, exp: 22000, hp: 17500, sp: 100, str: 95, mag: 1, acc: 96, agi: 96, def: 95, attack: 1, spd: .3, splat: 0, size: 3, passives: "8001,3;10012,11;10013,11;10014,11", actives: "5006,10,.1;5007,10,.1;5008,10,.1" },
+{ monsterId: 4004, className: "AlphaWolf4", name: "Alpha Wolf", level: 110, exp: 40640, hp: 26500, sp: 100, str: 130, mag: 1, acc: 132, agi: 132, def: 130, attack: 1, spd: .3, splat: 0, size: 3, passives: "8001,3;10012,11;10013,11;10014,11", actives: "5006,10,.1;5007,10,.1;5008,10,.1" },
+
+{ monsterId: 4006, className: "KingPolypus1", name: "King Polypus", level: 30, exp: 3000, hp: 5500, sp: 100, str: 40, mag: 1, acc: 36, agi: 36, def: 40, attack: 1, spd: .4, splat: 0, size: 3, passives: "10016,1;10012,11;10013,11;10014,11", actives: "5009,10,.1;5010,10,.1;5011,10,.1" },
+{ monsterId: 4007, className: "KingPolypus2", name: "King Polypus", level: 60, exp: 12200, hp: 12500, sp: 100, str: 75, mag: 1, acc: 72, agi: 72, def: 75, attack: 1, spd: .4, splat: 0, size: 3, passives: "10016,1;10012,11;10013,11;10014,11", actives: "5009,10,.1;5010,10,.1;5011,10,.1" },
+{ monsterId: 4008, className: "KingPolypus3", name: "King Polypus", level: 90, exp: 27200, hp: 20500, sp: 100, str: 110, mag: 1, acc: 108, agi: 108, def: 110, attack: 1, spd: .4, splat: 0, size: 3, passives: "10016,1;10012,11;10013,11;10014,11", actives: "5009,10,.1;5010,10,.1;5011,10,.1" },
+{ monsterId: 4009, className: "KingPolypus4", name: "King Polypus", level: 120, exp: 48300, hp: 30000, sp: 100, str: 150, mag: 1, acc: 144, agi: 144, def: 150, attack: 1, spd: .4, splat: 0, size: 3, passives: "10016,1;10012,11;10013,11;10014,11", actives: "5009,10,.1;5010,10,.1;5011,10,.1" },
+
+{ monsterId: 4010, className: "VisiusEnt1", name: "Visius Ent", level: 40, exp: 5500, hp: 7500, sp: 100, str: 50, mag: 1, acc: 48, agi: 48, def: 50, attack: 1, spd: .4, splat: 0, size: 3, passives: "10016,1;10012,11;10013,11;10014,11", actives: "5014,10,.1;5015,10,.1;5016,10,.1" },
+{ monsterId: 4011, className: "VisiusEnt2", name: "Visius Ent", level: 70, exp: 16500, hp: 15000, sp: 100, str: 85, mag: 1, acc: 84, agi: 84, def: 85, attack: 1, spd: .4, splat: 0, size: 3, passives: "10016,1;10012,11;10013,11;10014,11", actives: "5014,10,.1;5015,10,.1;5016,10,.1" },
+{ monsterId: 4012, className: "VisiusEnt3", name: "Visius Ent", level: 100, exp: 33600, hp: 23500, sp: 100, str: 120, mag: 1, acc: 120, agi: 120, def: 120, attack: 1, spd: .4, splat: 0, size: 3, passives: "10016,1;10012,11;10013,11;10014,11", actives: "5014,10,.1;5015,10,.1;5016,10,.1" },
+{ monsterId: 4013, className: "VisiusEnt4", name: "Visius Ent", level: 130, exp: 57000, hp: 33000, sp: 100, str: 160, mag: 1, acc: 156, agi: 156, def: 160, attack: 1, spd: .4, splat: 0, size: 3, passives: "10016,1;10012,11;10013,11;10014,11", actives: "5014,10,.1;5015,10,.1;5016,10,.1" },
+
+{ monsterId: 4014, className: "VibroMons1", name: "Vibro Mons", level: 50, exp: 8500, hp: 10000, sp: 100, str: 1, mag: 60, acc: 60, agi: 60, def: 60, attack: 21, spd: .4, splat: 0, size: 3, passives: "10016,1;10012,11;10013,11;10014,11", actives: "5017,10,.1;5018,10,.1;5019,10,.1" },
+{ monsterId: 4015, className: "VibroMons2", name: "Vibro Mons", level: 80, exp: 22000, hp: 17600, sp: 100, str: 1, mag: 100, acc: 96, agi: 96, def: 100, attack: 21, spd: .4, splat: 0, size: 3, passives: "10016,1;10012,11;10013,11;10014,11", actives: "5017,10,.1;5018,10,.1;5019,10,.1" },
+{ monsterId: 4016, className: "VibroMons3", name: "Vibro Mons", level: 110, exp: 40640, hp: 26500, sp: 100, str: 1, mag: 135, acc: 132, agi: 132, def: 135, attack: 21, spd: .4, splat: 0, size: 3, passives: "10016,1;10012,11;10013,11;10014,11", actives: "5017,10,.1;5018,10,.1;5019,10,.1" },
+{ monsterId: 4017, className: "VibroMons4", name: "Vibro Mons", level: 140, exp: 65700, hp: 36500, sp: 100, str: 1, mag: 170, acc: 168, agi: 168, def: 170, attack: 21, spd: .4, splat: 0, size: 3, passives: "10016,1;10012,11;10013,11;10014,11", actives: "5017,10,.1;5018,10,.1;5019,10,.1" },
+
+{ monsterId: 4018, className: "Bellator", name: "Bellator", level: 50, exp: 10000, hp: 50000, sp: 100, str: 50, mag: 1, acc: 150, agi: 30, def: 30, attack: 1, spd: .1, splat: 0, size: 3, passives: "10012,11;10013,11;10014,11", actives: "5020,10,.1;5021,10,.1;5022,10,.1;" },
 
 // Friendly monsters
 //---------------------------------------------------------------------------
