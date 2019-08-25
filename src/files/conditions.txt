@@ -22,7 +22,7 @@
 { id: 8013, className: "Fatigue", name: "Fatigue", desc: "Causes loss of accuracy, loss of attack rate, and slowness.", category: "None", value: 1, maxValue: 50,duration:60,  stackable: true},
 { id: 8014, className: "Safe", name: "Safe", desc: "Area where you cannot be attacked.", category: "None", value: 1, maxValue: 1,duration:0,  stackable: false},
 { id: 8015, className: "DizzinessCondition", name: "Dizziness", desc: "Causes random movement and loss of accuracy and agility", category: "Mental", value: 1, maxValue: 10,duration:30,  stackable: true},
-{ id: 8016, className: "BurnCondition", name: "Burn", desc: "Causes loss of HP each round.", category: "Elemental", value: .01, maxValue: .1, duration:30, stackable: true},
+{ id: 8016, className: "BurnCondition", name: "Burn", desc: "Causes loss of HP each round.", category: "Elemental", value: .01, maxValue: .1, duration:30, stackable: false},
 { id: 8017, className: "FreezeCondition", name: "Freeze", desc: "Causes walking and attacking slowness.", category: "Elemental", value: 1, maxValue: 10,duration:.5,  stackable: true},
 { id: 8018, className: "WeaknessCondition", name: "Weakness", desc: "Causes loss of defense and armor", category: "Physical", value: 1, maxValue: 10,duration:15,  stackable: false},
 { id: 8019, className: "ImmobilizeCondition", name: "Immobilize", desc: "Innability to move or attack due to constriction from roots.", category: "Physical", value: 1, maxValue: 10,duration:6,  stackable: false},
@@ -31,7 +31,7 @@
 { id: 8022, className: "HpAutoRegen", name: "Hp Auto Regen", desc: "Regenerates 5% of health while out of combat every 10 seconds.", category: "Physical", value: .005,duration:60, maxValue: 1,  stackable: false},
 { id: 8023, className: "MpAutoRegen", name: "Mp Auto Regen", desc: "Regenerates 5% of mana while out of combat every 10 seconds.", category: "Physical", value: .005,duration:60, maxValue: 1,  stackable: false},
 { id: 8024, className: "SecondLife", name: "Second Life", desc: "Regenerates half of the enemy's life if their life is less than 20%", category: "Physical", value: .02, duration:60, maxValue: 1,  stackable: false},
-{ id: 8025, className: "Berserk", name: "Berserk", desc: "Increased crit rate, crit multiplier, and movement for 10 seconds. Lowers defense.", category: "Mental", value: .025, maxValue: 10, duration:10, stackable: false},
+{ id: 8025, className: "Berserk", name: "Berserk", desc: "Increased crit rate, crit multiplier, and movement for 10 seconds. Lowers defense.", category: "Mental", value: .05, maxValue: 10, duration:10, stackable: false},
 
 
 ]

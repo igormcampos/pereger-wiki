@@ -1,0 +1,13 @@
+// Melia
+// Database file
+//---------------------------------------------------------------------------
+[
+{ type: "Login", id: 1, ip: "192.168.0.105", port: 1337},
+{ type: "Channel", id: 1, ip: "192.168.0.105", port: 1338, maps: "all" },
+{ type: "Chat", id: 1, ip: "192.168.0.105", port: 1339, maps: "all" },
+]
+//[
+//{ type: "Login", id: 1, ip: "127.0.0.1", port: 2100 },
+//{ type: "Channel", id: 1, ip: "127.0.0.1", port: 2101, maps: "all" },
+//{ type: "Chat", id: 1, ip: "127.0.0.1", port: 2102, maps: "all" },
+//]
