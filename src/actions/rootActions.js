@@ -1,5 +1,4 @@
 import {DO_SEARCH, FETCH_ABILITIES, FETCH_CONDITIONS, FETCH_EXP_TABLE, FETCH_ITEMS, FETCH_LOOT, FETCH_MONSTERS, FETCH_QUESTS, FETCH_SHOPS, TYPE_ON_SEARCH, UPDATE_TABS} from "./actionTypes";
-import itemsTXT from "../files/items.txt";
 import abilitiesTXT from "../files/abilities.txt";
 import conditionsTXT from "../files/conditions.txt";
 import expTableTXT from "../files/exp.txt";
@@ -28,65 +27,81 @@ export const doSearch = (history) => {
 export const fetchItems = () => {
     return (dispatch, getState) => {
         if (getState().items.length === 0) {
-            fetch(itemsTXT)
-                .then((r) => r.text()).then(text => {
+            fetch('https://gist.githubusercontent.com/igormcampos/2e6a454d4e3f5cb95e60c7b0015acc6a/raw/c74c72e70dead23536ebf9c1b092a41245330546/items.txt')
+                .then((response) => response.text()).then(text => {
                 let items = JSON5.parse(text);
 
-                items = items.map(item => {
+                items = items.filter(item => {
+                    // Not empty equips / miscellaneous things like xp and patron / not runes
+                    return item.className !== 'Empty' && item.itemId > 2000 && item.category !== 11
+                }).map(item => {
+                    // Format the equips attributes
                     item.bonus = item.bonus && Object.entries(item.bonus).map((b, index) => {
-                        if (b[0] === 'atkRate') {
-                            b[1] = b[1] + 'ms'
-                        } else if (b[0] === 'critX' || b[0] === 'critY') {
-                            if (b[0] === 'critX') {
-                                b[0] = 'Crit Chance'
+                        let itemBonusType = b[0];
+                        let itemBonusValue = b[1];
+                        if (itemBonusType === 'atkRate') {
+                            itemBonusValue = itemBonusValue + 'ms'
+                        } else if (itemBonusType === 'critX' || itemBonusType === 'critY' || itemBonusType === 'block') {
+                            if (itemBonusType === 'critX') {
+                                itemBonusType = 'Crit Chance'
+                            } else if ('block') {
+                                itemBonusType = 'Block'
                             } else {
-                                b[0] = 'Crit Mult'
+                                itemBonusType = 'Crit Mult'
                             }
-                            b[1] = Math.floor(b[1] * 100) + '%'
+                            itemBonusValue = Math.floor(itemBonusValue * 100) + '%'
                         }
-                        b[0] = b[0] + ': ';
+                        itemBonusType = itemBonusType + ': ';
                         if (index !== 0) {
-                            b[0] = ', ' + b[0]
+                            itemBonusType = ', ' + itemBonusType
                         }
-                        return b
+                        return [itemBonusType, itemBonusValue]
                     });
-                    item.req = item.req && Object.entries(item.req).map((r, index) => {
-                        r[0] = r[0] + ': ';
+
+                    // Format the equips requirements
+                    item.req = item.req && Object.entries(item.req).map((requirement, index) => {
+                        let requirementType = requirement[0] + ': ';
+                        let requirementValue = requirement[1];
                         if (index !== 0) {
-                            r[0] = ', ' + r[0]
+                            requirementType = ', ' + requirementType
                         }
-                        return r
+                        return [requirementType, requirementValue]
                     });
-                    item.matReq = item.matReq && item.matReq.split(';').map((m, index) => {
-                        let mat = m.split(':');
-                        switch (mat[0]) {
+
+                    // Translate the materials letter into readable content
+                    item.matReq = item.matReq && item.matReq.split(';').map((material, index) => {
+                        let materialType = material[0].split(':');
+                        let materialValue = material[1].split(':');
+                        switch (materialType) {
                             case 'w':
-                                mat[0] = 'Wood';
+                                materialType = 'Wood';
                                 break;
                             case 'b':
-                                mat[0] = 'Beast';
+                                materialType = 'Beast';
                                 break;
                             case 'm':
-                                mat[0] = 'Metal';
+                                materialType = 'Metal';
                                 break;
                             case 'l':
-                                mat[0] = 'Legendary';
+                                materialType = 'Legendary';
                                 break;
                             case 'c':
-                                mat[0] = 'Cloth';
+                                materialType = 'Cloth';
                                 break;
                             case 'p':
-                                mat[0] = 'Powder';
+                                materialType = 'Powder';
                                 break;
                             default:
-                                mat[0] = 'Aurum';
+                                materialType = 'Aurum';
                         }
                         if (index !== 0) {
-                            mat[0] = ', ' + mat[0]
+                            materialType = ', ' + materialType
                         }
-                        mat[0] = mat[0] + ': ';
-                        return mat
+                        materialType = materialType + ': ';
+                        return [materialType, materialValue]
                     });
+
+                    // Split items into categories, that will show in different sections on the page
                     switch (item.category) {
                         case 1:
                             item.generalCategory = 'Weapons';
@@ -118,11 +133,20 @@ export const fetchItems = () => {
                         case 10:
                             item.generalCategory = 'Materials';
                             break;
+                        case 11:
+                            item.generalCategory = 'Runes';
+                            break;
+                        case 12:
+                            item.generalCategory = 'Quest';
+                            break;
+                        case 13:
+                            item.generalCategory = 'Collection';
+                            break;
                         case 16:
                             item.generalCategory = 'Money';
                             break;
                         default:
-                            item.generalCategory = 'None'
+                            item.generalCategory = 'Other'
                     }
                     return item
                 });
