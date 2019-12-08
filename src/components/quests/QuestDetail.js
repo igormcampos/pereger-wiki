@@ -10,8 +10,8 @@ class QuestDetail extends React.Component {
                 <div>
                     <h4>{title}</h4>
                     <p>{desc}</p>
-                    <p>Requirement: {target} x {amount}</p>
-                    <p>Rewards: {reward} x {rewardAmt}</p>
+                    <p>{target && amount && 'Requirement: ' + target + ' x ' + amount}</p>
+                    <p>{reward && rewardAmt && 'Rewards: ' + reward + ' x ' + rewardAmt}</p>
                 </div>
             )
         }

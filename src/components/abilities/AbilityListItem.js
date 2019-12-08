@@ -13,12 +13,12 @@ class AbilityListItem extends React.Component {
         return (
             <tr key={id} onClick={this.handleDetail}>
                 <td>{name}</td>
-                { ! ['Enemy Skills', 'Enemy Condition Skills'].includes(generalCategory) && <td>{category}</td>}
+                {!['Enemy Skills', 'Enemy Condition Skills'].includes(generalCategory) && <td>{category}</td>}
                 {generalCategory !== 'Enemy Skills' && generalCategory !== "Active Skills" && <td>{value}</td>}
                 {!passive && generalCategory !== 'Enemy Skills' && <td>{mana}</td>}
                 {generalCategory !== "Active Skills" && generalCategory !== "Enemy Skills" && <td>{passive ? "Yes" : "No"}</td>}
                 <td className={hideDescription}>{desc}</td>
-                { ! ['Enemy Skills', 'Enemy Condition Skills'].includes(generalCategory) && <td>{equip}</td>}
+                {!['Enemy Skills', 'Enemy Condition Skills'].includes(generalCategory) && <td>{equip}</td>}
                 {generalCategory === 'Enemy Skills' && <td>{passive ? 'Yes' : 'No'}</td>}
                 {generalCategory === 'Enemy Skills' && <td>{cool ? cool + 's' : undefined}</td>}
             </tr>

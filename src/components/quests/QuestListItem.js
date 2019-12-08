@@ -13,8 +13,8 @@ class QuestListItem extends React.Component {
             <tr key={id} onClick={this.handleDetail}>
                 <td>{title}</td>
                 <td>{desc}</td>
-                <td>{target} x {amount}</td>
-                <td>{reward} x {rewardAmt}</td>
+                <td>{target && amount && target + ' x ' + amount}</td>
+                <td>{reward && rewardAmt && reward + ' x ' + rewardAmt}</td>
             </tr>
         )
     }

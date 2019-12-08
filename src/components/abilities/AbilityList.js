@@ -21,12 +21,12 @@ class AbilityList extends React.Component {
                             <thead>
                             <tr>
                                 <th>Name</th>
-                                { ! ['Enemy Skills', 'Enemy Condition Skills'].includes(generalCategory) && <th>Category</th>}
+                                {!['Enemy Skills', 'Enemy Condition Skills'].includes(generalCategory) && <th>Category</th>}
                                 {generalCategory !== 'Enemy Skills' && generalCategory !== 'Active Skills' && <th>Per Level</th>}
                                 {generalCategory === 'Active Skills' && <th>Mana</th>}
                                 {generalCategory !== 'Active Skills' && generalCategory !== 'Enemy Skills' && <th>Passive?</th>}
                                 <th className={hideDescription}>Description</th>
-                                { ! ['Enemy Skills', 'Enemy Condition Skills'].includes(generalCategory) && <th>Equipment</th>}
+                                {!['Enemy Skills', 'Enemy Condition Skills'].includes(generalCategory) && <th>Equipment</th>}
                                 {generalCategory === 'Enemy Skills' && <th>Passive</th>}
                                 {generalCategory === 'Enemy Skills' && <th>Cooldown</th>}
                             </tr>

@@ -13,7 +13,7 @@ class AbilityDetail extends React.Component {
                     <p>{passive ? "Is a passive skill." : "Is an active skill."}</p>
                     <p>{generalCategory === 'Enemy Skills' && cool && `Has a cooldown of ${cool} seconds.`}</p>
                     {category !== 'Enemy' && <p>Category: {category}</p>}
-                    {! ['Enemy Skills', 'Active Skills'].includes(generalCategory) && value && <p>Per Level: {value}</p>}
+                    {!['Enemy Skills', 'Active Skills'].includes(generalCategory) && value && <p>Per Level: {value}</p>}
                     {!passive && category !== 'Enemy' && <p>Mana: {mana}</p>}
                     {category !== 'Enemy' && equip && <p>Equipment: {equip}</p>}
                 </div>
