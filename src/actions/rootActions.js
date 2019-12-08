@@ -1,5 +1,5 @@
 import {DO_SEARCH, FETCH_ABILITIES, FETCH_CONDITIONS, FETCH_EXP_TABLE, FETCH_ITEMS, FETCH_LOOT, FETCH_MONSTERS, FETCH_QUESTS, FETCH_SHOPS, TYPE_ON_SEARCH, UPDATE_TABS} from "./actionTypes";
-import abilitiesTXT from "../files/abilities.txt";
+
 import conditionsTXT from "../files/conditions.txt";
 import expTableTXT from "../files/exp.txt";
 import lootTXT from "../files/loot.txt";
@@ -9,13 +9,15 @@ import shopsTXT from "../files/shops.txt";
 import JSON5 from "json5";
 import equipTypes from "../files/equipTypes";
 
+const itemsURL = 'https://gist.githubusercontent.com/igormcampos/2e6a454d4e3f5cb95e60c7b0015acc6a/raw/c74c72e70dead23536ebf9c1b092a41245330546/items.txt';
+const abilitiesURL = 'https://gist.githubusercontent.com/igormcampos/2e6a454d4e3f5cb95e60c7b0015acc6a/raw/c74c72e70dead23536ebf9c1b092a41245330546/abilities.txt';
+
 export const typeOnSearch = (text) => {
     return {
         type: TYPE_ON_SEARCH,
         text: text
     }
 };
-
 
 export const doSearch = (history) => {
     return {
@@ -27,12 +29,12 @@ export const doSearch = (history) => {
 export const fetchItems = () => {
     return (dispatch, getState) => {
         if (getState().items.length === 0) {
-            fetch('https://gist.githubusercontent.com/igormcampos/2e6a454d4e3f5cb95e60c7b0015acc6a/raw/c74c72e70dead23536ebf9c1b092a41245330546/items.txt')
+            fetch(itemsURL)
                 .then((response) => response.text()).then(text => {
                 let items = JSON5.parse(text);
 
                 items = items.filter(item => {
-                    // Not empty equips / miscellaneous things like xp and patron / not runes
+                    // Not empty equips / miscellaneous things like xp and patron / runes
                     return item.className !== 'Empty' && item.itemId > 2000 && item.category !== 11
                 }).map(item => {
                     // Format the equips attributes
@@ -41,13 +43,13 @@ export const fetchItems = () => {
                         let itemBonusValue = b[1];
                         if (itemBonusType === 'atkRate') {
                             itemBonusValue = itemBonusValue + 'ms'
-                        } else if (itemBonusType === 'critX' || itemBonusType === 'critY' || itemBonusType === 'block') {
+                        } else if (['critX', 'critY', 'block'].includes(itemBonusType)) {
                             if (itemBonusType === 'critX') {
                                 itemBonusType = 'Crit Chance'
-                            } else if ('block') {
-                                itemBonusType = 'Block'
-                            } else {
+                            } else if (itemBonusType === 'critY') {
                                 itemBonusType = 'Crit Mult'
+                            } else {
+                                itemBonusType = 'Block'
                             }
                             itemBonusValue = Math.floor(itemBonusValue * 100) + '%'
                         }
@@ -161,36 +163,45 @@ export const fetchItems = () => {
 export const fetchAbilities = () => {
     return (dispatch, getState) => {
         if (getState().abilities.length === 0) {
-            fetch(abilitiesTXT)
-                .then((r) => r.text()).then(text => {
+            fetch(abilitiesURL)
+                .then((response) => response.text()).then(text => {
                     let abilities = JSON5.parse(text);
 
                     abilities = abilities.map(ability => {
+                        // Split abilities into categories, that will show in different sections on the page
                         if (ability.id <= 8000) {
                             ability.generalCategory = 'Enemy Skills'
-                        } else if (ability.id <= 10000) {
+                        } else if (ability.id <= 9000) {
                             ability.generalCategory = 'Condition Skills'
+                        } else if (ability.id <= 10000) {
+                            ability.generalCategory = 'Enemy Condition Skills'
                         } else if (ability.id <= 12000) {
                             ability.generalCategory = 'Passive Skills'
                         } else {
                             ability.generalCategory = 'Active Skills'
                         }
 
+                        // Format abilities values
                         if (ability.className === 'BetterBows') {
                             ability.value += 'ms'
                         } else if (ability.className === 'KeenEye') {
                             ability.value = ''
                         } else if (ability.className !== 'Paramedic') {
-                            ability.value = 'Current x ' + (Math.floor(ability.value * 10000) / 100) + '%'
+                            if (ability.category === 'Enemy') {
+                                ability.value = (Math.floor(ability.value * 10000) / 100) + '%'
+                            } else {
+                                ability.value = 'Current x ' + (Math.floor(ability.value * 10000) / 100) + '%'
+                            }
                         }
 
-                        ability.equip = ability.equip && ability.equip.map((e, index) => {
+                        // Format the equips required to use the ability
+                        ability.equip = ability.equip && ability.equip.map((equip, index) => {
                             let type = '';
                             if (index > 0) {
                                 type = ', '
                             }
-                            type += equipTypes.data.find(type => {
-                                return type.id === e
+                            type += equipTypes.data.find(equipType => {
+                                return equipType.id === equip
                             }).type;
                             return type
                         });

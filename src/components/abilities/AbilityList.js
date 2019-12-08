@@ -10,23 +10,25 @@ class AbilityList extends React.Component {
             const allAbilities = _.groupBy(this.props.abilities, "generalCategory");
 
             const tables = Object.values(allAbilities).map(category => {
-                const ct = category[0].generalCategory;
-                const responsiveTable = ct !== 'Enemy Skills' ? 'responsive-table' : '';
-                const hideDescription = ct !== 'Enemy Skills' ? 'hide-on-med-and-down' : '';
+                const generalCategory = category[0].generalCategory;
+                const responsiveTable = generalCategory !== 'Enemy Skills' ? 'responsive-table' : '';
+                const hideDescription = generalCategory !== 'Enemy Skills' ? 'hide-on-med-and-down' : '';
 
                 return (
-                    <div key={ct}>
-                        <h5>{ct}</h5>
+                    <div key={generalCategory}>
+                        <h5>{generalCategory}</h5>
                         <table className={'highlight ' + responsiveTable}>
                             <thead>
                             <tr>
                                 <th>Name</th>
-                                {ct !== 'Enemy Skills' && <th>Category</th>}
-                                {ct !== 'Enemy Skills' && ct !== 'Active Skills' && <th>Per Level</th>}
-                                {ct === 'Active Skills' && category !== 'Enemy Skills' && <th>Mana</th>}
-                                {ct !== 'Active Skills' && ct !== 'Enemy Skills' && <th>Passive?</th>}
+                                { ! ['Enemy Skills', 'Enemy Condition Skills'].includes(generalCategory) && <th>Category</th>}
+                                {generalCategory !== 'Enemy Skills' && generalCategory !== 'Active Skills' && <th>Per Level</th>}
+                                {generalCategory === 'Active Skills' && <th>Mana</th>}
+                                {generalCategory !== 'Active Skills' && generalCategory !== 'Enemy Skills' && <th>Passive?</th>}
                                 <th className={hideDescription}>Description</th>
-                                {ct !== 'Enemy Skills' && <th>Equipment</th>}
+                                { ! ['Enemy Skills', 'Enemy Condition Skills'].includes(generalCategory) && <th>Equipment</th>}
+                                {generalCategory === 'Enemy Skills' && <th>Passive</th>}
+                                {generalCategory === 'Enemy Skills' && <th>Cooldown</th>}
                             </tr>
                             </thead>
                             <tbody>

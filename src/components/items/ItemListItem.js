@@ -18,9 +18,8 @@ class ItemListItem extends React.Component {
     };
 
     render() {
-        const {itemId, className, bonus, req, name, currency, sellPrice, price, tradable, matReq, points, generalCategory} = this.props.data;
+        const {itemId, className, bonus, req, name, currency, sellPrice, price, tradable, points, generalCategory} = this.props.data;
         const isEquipment = generalCategory !== 'Consumables' && generalCategory !== 'Materials' && generalCategory !== 'Money' && generalCategory !== 'None';
-        const isUpgradeable = isEquipment && generalCategory !== 'Necklaces' && generalCategory !== 'Rings';
 
         let imageName = name.replace(/-/g, '');
 
@@ -34,7 +33,6 @@ class ItemListItem extends React.Component {
                 {generalCategory === 'Materials' && <td>{points}</td>}
                 {generalCategory === 'Consumables' && <td>{price} {currency === 'nummus' && currency}</td>}
                 {generalCategory !== 'Money' && <td>{sellPrice}</td>}
-                {/*{isUpgradeable && <td>{matReq}</td>}*/}
                 {generalCategory === 'Consumables' && <td>{tradable === false ? "No" : "Yes"}</td>}
             </tr>
         )

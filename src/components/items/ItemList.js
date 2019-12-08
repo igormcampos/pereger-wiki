@@ -30,7 +30,6 @@ class ItemList extends React.Component {
             const tables = Object.values(allItems).map(category => {
                 const ct = category[0].generalCategory;
                 const isEquipment = ct !== 'Consumables' && ct !== 'Materials' && ct !== 'Money' && ct !== 'None';
-                const isUpgradeable = isEquipment && ct !== 'Necklaces' && ct !== 'Rings';
 
                 return (
                     <div key={ct}>
@@ -46,7 +45,6 @@ class ItemList extends React.Component {
                                 {ct === 'Materials' && <th>Minae</th>}
                                 {ct === 'Consumables' && <th>Buy</th>}
                                 {ct !== 'Money' && <th>Sell</th>}
-                                {/*{isUpgradeable && <th>Upgrade</th>}*/}
                                 {ct === 'Consumables' && <th>Tradable</th>}
                             </tr>
                             </thead>
