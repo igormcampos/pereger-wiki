@@ -1,16 +1,16 @@
 import {DO_SEARCH, FETCH_ABILITIES, FETCH_CONDITIONS, FETCH_EXP_TABLE, FETCH_ITEMS, FETCH_LOOT, FETCH_MONSTERS, FETCH_QUESTS, FETCH_SHOPS, TYPE_ON_SEARCH, UPDATE_TABS} from "./actionTypes";
-
-import conditionsTXT from "../files/conditions.txt";
-import expTableTXT from "../files/exp.txt";
 import lootTXT from "../files/loot.txt";
-import questsTXT from "../files/quests.txt";
-import shopsTXT from "../files/shops.txt";
 import JSON5 from "json5";
 import equipTypes from "../files/equipTypes";
+
 
 const itemsURL = 'https://gist.githubusercontent.com/igormcampos/2e6a454d4e3f5cb95e60c7b0015acc6a/raw/c74c72e70dead23536ebf9c1b092a41245330546/items.txt';
 const abilitiesURL = 'https://gist.githubusercontent.com/igormcampos/2e6a454d4e3f5cb95e60c7b0015acc6a/raw/c74c72e70dead23536ebf9c1b092a41245330546/abilities.txt';
 const monstersURL = 'https://gist.githubusercontent.com/igormcampos/2e6a454d4e3f5cb95e60c7b0015acc6a/raw/c74c72e70dead23536ebf9c1b092a41245330546/monsters.txt';
+const questsURL = 'https://gist.githubusercontent.com/igormcampos/2e6a454d4e3f5cb95e60c7b0015acc6a/raw/c74c72e70dead23536ebf9c1b092a41245330546/quests.txt';
+const conditionsURL = 'https://gist.githubusercontent.com/igormcampos/2e6a454d4e3f5cb95e60c7b0015acc6a/raw/c74c72e70dead23536ebf9c1b092a41245330546/conditions.txt';
+const expTableURL = 'https://gist.githubusercontent.com/igormcampos/2e6a454d4e3f5cb95e60c7b0015acc6a/raw/c74c72e70dead23536ebf9c1b092a41245330546/exp.txt';
+const shopsURL = 'https://gist.githubusercontent.com/igormcampos/2e6a454d4e3f5cb95e60c7b0015acc6a/raw/c74c72e70dead23536ebf9c1b092a41245330546/shops.txt';
 
 export const typeOnSearch = (text) => {
     return {
@@ -218,7 +218,7 @@ export const fetchAbilities = () => {
 export const fetchConditions = () => {
     return (dispatch, getState) => {
         if (getState().conditions.length === 0) {
-            fetch(conditionsTXT)
+            fetch(conditionsURL)
                 .then((r) => r.text()).then(text => {
                     dispatch({type: FETCH_CONDITIONS, conditions: JSON5.parse(text)});
                 }
@@ -230,7 +230,7 @@ export const fetchConditions = () => {
 export const fetchExpTable = () => {
     return (dispatch, getState) => {
         if (getState().expTable.length === 0) {
-            fetch(expTableTXT)
+            fetch(expTableURL)
                 .then((r) => r.text()).then(text => {
                     dispatch({type: FETCH_EXP_TABLE, expTable: JSON5.parse(text)});
                 }
@@ -292,7 +292,7 @@ export const fetchMonsters = () => {
 export const fetchQuests = () => {
     return (dispatch, getState) => {
         if (getState().quests.length === 0) {
-            fetch(questsTXT)
+            fetch(questsURL)
                 .then((r) => r.text()).then(text => {
                     dispatch({type: FETCH_QUESTS, quests: JSON5.parse(text)});
                 }
@@ -304,7 +304,7 @@ export const fetchQuests = () => {
 export const fetchShops = () => {
     return (dispatch, getState) => {
         if (getState().shops.length === 0) {
-            fetch(shopsTXT)
+            fetch(shopsURL)
                 .then((r) => r.text()).then(text => {
                     dispatch({type: FETCH_SHOPS, shops: JSON5.parse(text)});
                 }
