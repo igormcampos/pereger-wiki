@@ -88,11 +88,11 @@ class Navbar extends React.Component {
                             <li><NavLink to="/quests">Quests</NavLink></li>
                             <li><NavLink to="/about">About</NavLink></li>
                         </ul>
-                        <SearchContainer className="input-field right">
-                            <form onSubmit={this.doSearch}>
-                                <input type="text" placeholder="(WIP) Search Bar" autoComplete="off" onChange={this.omniSearch} value={this.state.searchText} id="omni-search" className="autocomplete white-text"/>
-                            </form>
-                        </SearchContainer>
+                        {/*<SearchContainer className="input-field right">*/}
+                        {/*    <form onSubmit={this.doSearch}>*/}
+                        {/*        <input type="text" placeholder="(WIP) Search Bar" autoComplete="off" onChange={this.omniSearch} value={this.state.searchText} id="omni-search" className="autocomplete white-text"/>*/}
+                        {/*    </form>*/}
+                        {/*</SearchContainer>*/}
                         {/* <ul className="right">
                             <li><MediaLink href="https://peregeronline.com/" target="_blank">
                                 <MediaImg src={pereger} alt="Pereger"/>
@@ -100,6 +100,7 @@ class Navbar extends React.Component {
                             <li><MediaLink href="https://discord.gg/8uF4F8X" target="_blank">
                                 <MediaImg src={discord} alt="Discord"/>
                             </MediaLink></li>
+                            TODO add playstore link
                         </ul> */}
                     </div>
                     <div className="nav-content black hide-on-large-only">
