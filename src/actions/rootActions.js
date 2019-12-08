@@ -3,7 +3,6 @@ import {DO_SEARCH, FETCH_ABILITIES, FETCH_CONDITIONS, FETCH_EXP_TABLE, FETCH_ITE
 import conditionsTXT from "../files/conditions.txt";
 import expTableTXT from "../files/exp.txt";
 import lootTXT from "../files/loot.txt";
-import monstersTXT from "../files/monsters.txt";
 import questsTXT from "../files/quests.txt";
 import shopsTXT from "../files/shops.txt";
 import JSON5 from "json5";
@@ -11,6 +10,7 @@ import equipTypes from "../files/equipTypes";
 
 const itemsURL = 'https://gist.githubusercontent.com/igormcampos/2e6a454d4e3f5cb95e60c7b0015acc6a/raw/c74c72e70dead23536ebf9c1b092a41245330546/items.txt';
 const abilitiesURL = 'https://gist.githubusercontent.com/igormcampos/2e6a454d4e3f5cb95e60c7b0015acc6a/raw/c74c72e70dead23536ebf9c1b092a41245330546/abilities.txt';
+const monstersURL = 'https://gist.githubusercontent.com/igormcampos/2e6a454d4e3f5cb95e60c7b0015acc6a/raw/c74c72e70dead23536ebf9c1b092a41245330546/monsters.txt';
 
 export const typeOnSearch = (text) => {
     return {
@@ -254,10 +254,13 @@ export const fetchLoot = () => {
 export const fetchMonsters = () => {
     return (dispatch, getState) => {
         if (getState().monsters.length === 0) {
-            fetch(monstersTXT)
+            fetch(monstersURL)
                 .then((r) => r.text()).then(text => {
                 let monsters = JSON5.parse(text);
-                monsters = monsters.map(monster => {
+                monsters = monsters.filter(monster => {
+                    // Remove the 3 wolves that Alpha Wolf summons from the list
+                    return ! [20, 21, 22].includes(monster.monsterId)
+                }).map(monster => {
                     if (monster.monsterId <= 2000) {
                         monster.generalCategory = 'Normal Monsters'
                     } else if (monster.monsterId <= 4000) {
