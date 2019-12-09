@@ -1,17 +1,26 @@
 import React from 'react'
 import {connect} from 'react-redux'
+import {Link} from "react-router-dom";
 
 class QuestDetail extends React.Component {
     render() {
         if (this.props.quest) {
-            const {title, desc, target, amount, reward, rewardAmt} = this.props.quest;
+            const {title, desc, target, amount, reward, rewardAmt, objective} = this.props.quest;
 
             return (
                 <div>
                     <h4>{title}</h4>
                     <p>{desc}</p>
-                    <p>{target && amount && 'Requirement: ' + target + ' x ' + amount}</p>
-                    <p>{reward && rewardAmt && 'Rewards: ' + reward + ' x ' + rewardAmt}</p>
+                    <p>Requirements: {target && amount ?
+                        // objective 0; quest = 1; talk = 2; kill = 3; action = 4
+                        objective === 2 ?
+                            <Link to={'/monsters/' + target.name}>{'Talk to ' + target.name}</Link>
+                        : objective === 3 ?
+                            <Link to={'/monsters/' + target.className}>{'Kill ' + amount + ' ' + target.name}</Link>
+                        : <Link to={target.category === 10 ? '/items/' + target.className : '/items/' + target.name}>{target.className + ' x ' + amount}</Link>
+                        : ''}
+                    </p>
+                    <p>Rewards: {reward && rewardAmt && <Link to={target.category === 10 ? '/items/' + target.className : '/items/' + target.name}>reward.className</Link> + ' x ' + rewardAmt}</p>
                 </div>
             )
         }
