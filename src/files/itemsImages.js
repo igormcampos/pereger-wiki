@@ -27,6 +27,13 @@ const itemsImages = {
     parchmentabilityreset: require('./../static/img/consumables/parchment-ability-reset.png'),
     parchmentstatreset: require('./../static/img/consumables/parchment-stat-reset.png'),
 
+    letter: require('./../static/img/consumables/letter.png'),
+    egg: require('./../static/img/consumables/egg.png'),
+    amberegg: require('./../static/img/consumables/amber-egg.png'),
+    iceegg: require('./../static/img/consumables/ice-egg.png'),
+    rubyegg: require('./../static/img/consumables/ruby-egg.png'),
+    sapphireegg: require('./../static/img/consumables/sapphire-egg.png'),
+
     voltessence: require('./../static/img/materials/volt-essence.png'),
     goggles: require('./../static/img/materials/goggles.png'),
     golemheart: require('./../static/img/materials/golem-heart.png'),
@@ -187,6 +194,7 @@ const itemsImages = {
     bellatorcrossbow: require('./../static/img/weapons_armor/bellator-crossbow.png'),
     goblinmagehat: require('./../static/img/weapons_armor/goblin-mage-hat.png'),
     wispring: require('./../static/img/weapons_armor/wisp-ring.png'),
+    reinforcedleatherboots: require('./../static/img/weapons_armor/reinforced-leather-boots.png'),
 };
 
 export default itemsImages;
