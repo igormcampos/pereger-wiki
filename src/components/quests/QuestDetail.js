@@ -18,9 +18,9 @@ class QuestDetail extends React.Component {
                         : objective === 3 ?
                             <Link to={'/monsters/' + target.className}>{'Kill ' + amount + ' ' + target.name}</Link>
                         : <Link to={target.category === 10 ? '/items/' + target.className : '/items/' + target.name}>{target.className + ' x ' + amount}</Link>
-                        : ''}
+                    : ''}
                     </p>
-                    <p>Rewards: {reward && rewardAmt && <Link to={target.category === 10 ? '/items/' + target.className : '/items/' + target.name}>reward.className</Link> + ' x ' + rewardAmt}</p>
+                    <p>Rewards: {reward && rewardAmt && <Link to={reward.category === 10 ? '/items/' + reward.className : '/items/' + reward.name}>{reward.className}</Link> + ' x ' + rewardAmt}</p>
                 </div>
             )
         }
