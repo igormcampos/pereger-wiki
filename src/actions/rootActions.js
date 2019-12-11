@@ -4,15 +4,13 @@ import JSON5 from "json5";
 import equipTypes from "../files/equipTypes";
 
 
-const itemsURL = 'https://gist.githubusercontent.com/igormcampos/2e6a454d4e3f5cb95e60c7b0015acc6a/raw/c74c72e70dead23536ebf9c1b092a41245330546/items.txt';
-const abilitiesURL = 'https://gist.githubusercontent.com/igormcampos/2e6a454d4e3f5cb95e60c7b0015acc6a/raw/c74c72e70dead23536ebf9c1b092a41245330546/abilities.txt';
-const monstersURL = 'https://gist.githubusercontent.com/igormcampos/2e6a454d4e3f5cb95e60c7b0015acc6a/raw/c74c72e70dead23536ebf9c1b092a41245330546/monsters.txt';
-const questsURL = 'https://gist.githubusercontent.com/igormcampos/2e6a454d4e3f5cb95e60c7b0015acc6a/raw/45a91f6225296462305c5ca0f8a93150249646cc/quests.txt';
-const conditionsURL = 'https://gist.githubusercontent.com/igormcampos/2e6a454d4e3f5cb95e60c7b0015acc6a/raw/c74c72e70dead23536ebf9c1b092a41245330546/conditions.txt';
-const expTableURL = 'https://gist.githubusercontent.com/igormcampos/2e6a454d4e3f5cb95e60c7b0015acc6a/raw/c74c72e70dead23536ebf9c1b092a41245330546/exp.txt';
-const shopsURL = 'https://gist.githubusercontent.com/igormcampos/2e6a454d4e3f5cb95e60c7b0015acc6a/raw/c74c72e70dead23536ebf9c1b092a41245330546/shops.txt';
-
-// const expTableURL = 'https://t258gmfz65.execute-api.us-east-2.amazonaws.com/prod/expTable';
+const itemsURL = 'https://peregeronline.com/game-files/items.txt';
+const abilitiesURL = 'https://peregeronline.com/game-files/abilities.txt';
+const monstersURL = 'https://peregeronline.com/game-files/monsters.txt';
+const questsURL = 'https://peregeronline.com/game-files/quests.txt';
+const conditionsURL = 'https://peregeronline.com/game-files/conditions.txt';
+const expURL = 'https://peregeronline.com/game-files/exp.txt';
+const shopsURL = 'https://peregeronline.com/game-files/shops.txt';
 
 export const typeOnSearch = (text) => {
     return {
@@ -226,7 +224,7 @@ export const fetchConditions = () => {
 export const fetchExpTable = () => {
     return (dispatch, getState) => {
         if (getState().expTable.length === 0) {
-            fetch(expTableURL).then((response) => response.text()).then(text => {
+            fetch(expURL).then((response) => response.text()).then(text => {
                 dispatch({type: FETCH_EXP_TABLE, expTable: JSON5.parse(text)});
             });
         }
