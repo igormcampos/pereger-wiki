@@ -21,24 +21,8 @@ const Image = styled.img({
 
 class RuneDetail extends React.Component {
     render() {
-        if (this.props.item) {
-            const {desc, className, bonus, req, name, currency, sellPrice, price, tradable, matReq, points, generalCategory} = this.props.item;
-            const isEquipment = generalCategory !== 'Consumables' && generalCategory !== 'Materials' && generalCategory !== 'Money' && generalCategory !== 'None';
-            const isUpgradeable = isEquipment && generalCategory !== 'Necklaces' && generalCategory !== 'Rings';
-            const drops = this.props.loot && this.props.loot.map(loot => {
-                if (loot.monster) {
-                    let amount = '';
-                    if (loot.quantity[0] === loot.quantity[1]) {
-                        amount = 'x' + loot.quantity[0]
-                    } else {
-                        amount = 'x' + loot.quantity[0] + ' ~ x' + loot.quantity[1]
-                    }
-                    return <div key={loot.monster.monsterId}><Link to={'/monsters/' + loot.monster.className}>{loot.monster.name}</Link> ({loot.probability}%) {amount}<br/></div>
-                } else {
-                    return <div>Loading loot...</div>
-                }
-            });
-
+        if (this.props.rune) {
+            const {desc, className, sellPrice, name} = this.props.rune;
             let imageName = name.replace(/-/g, '');
 
             return (
@@ -46,19 +30,11 @@ class RuneDetail extends React.Component {
                     <div>
                         <h4>{className}</h4>
                         <p>{desc}</p>
-                        {isEquipment && bonus && <p className="upper">{bonus}</p>}
-                        {isEquipment && req && <p className="upper"><b>Requirements:</b> {req}</p>}
-                        {generalCategory === 'Materials' && <p className="capital"><b>Category:</b> {name}</p>}
-                        {generalCategory === 'Materials' && <p><b>Minae:</b> {points}</p>}
-                        {generalCategory === 'Consumables' && <p><b>Buy Price:</b> {price} {currency === 'nummus' && currency}</p>}
-                        {generalCategory !== 'Money' && <p><b>Sell Price:</b> {sellPrice}</p>}
-                        {isUpgradeable && <p><b>Upgrade:</b> {matReq}</p>}
-                        {generalCategory === 'Consumables' && <p>{tradable === false ? "This item is not tradable" : "This item is tradable"}</p>}
-                        {drops && drops.length > 0 && <p><b>Dropped by:</b></p>}
-                        {drops}
+                        <p><b>Sell Price:</b> {sellPrice}</p>
+                        UPGRADE TABLE HERE
                     </div>
                     <ImageContainer>
-                        {generalCategory !== 'Money' && <Image src={itemsImages[imageName]} alt={className}/>}
+                        <Image src={itemsImages[imageName]} alt={className}/>
                     </ImageContainer>
                 </DetailContainer>
             )
@@ -73,19 +49,9 @@ class RuneDetail extends React.Component {
 
 const mapStateToProps = (state, ownProps) => {
     let runeId = ownProps.match.params.runeId;
-    let item = state.items && state.items.find(item => item.itemId === runeId);
-    let loot = item && state.loot && state.loot.filter(drop => {
-        return drop.item === item.itemId
-    });
-    loot = loot && loot.map(drop => {
-        drop.monster = state.monsters && state.monsters.find(monster => {
-            return monster.lootId ? monster.lootId.includes(drop.lootId) : false;
-        });
-        return drop
-    });
+    let rune = state.runes && state.runes.find(rune => rune.itemId == runeId);
     return {
-        item: item,
-        loot: loot
+        rune: rune
     }
 };
 
