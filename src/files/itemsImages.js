@@ -251,6 +251,11 @@ const itemsImages = {
     w17: require('./../static/img/runes/w17.png'),
     w18: require('./../static/img/runes/w18.png'),
     w19: require('./../static/img/runes/w19.png'),
+    blankbootsrune: require('./../static/img/runes/blank-boots-rune.png'),
+    blankchestrune: require('./../static/img/runes/blank-chest-rune.png'),
+    blankhelmetrune: require('./../static/img/runes/blank-helmet-rune.png'),
+    blanksecondaryrune: require('./../static/img/runes/blank-secondary-rune.png'),
+    blankweaponrune: require('./../static/img/runes/blank-weapon-rune.png'),
 };
 
 export default itemsImages;
