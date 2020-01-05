@@ -12,14 +12,17 @@ import QuestList from "./components/quests/QuestList";
 import QuestDetail from "./components/quests/QuestDetail";
 import ItemDetail from "./components/items/ItemDetail";
 import ItemList from "./components/items/ItemList";
-import {fetchAbilities, fetchConditions, fetchExpTable, fetchItems, fetchLoot, fetchMonsters, fetchQuests, fetchShops} from "./actions/rootActions";
+import {fetchAbilities, fetchConditions, fetchExpTable, fetchItems, fetchLoot, fetchMonsters, fetchQuests, fetchRunes, fetchShops} from "./actions/rootActions";
 import {connect} from "react-redux";
 import MonsterList from "./components/monsters/MonsterList";
 import MonsterDetail from "./components/monsters/MonsterDetail";
+import RuneList from "./components/runes/RuneList";
+import RuneDetail from "./components/runes/RuneDetail";
 
 class App extends React.Component {
     componentDidMount() {
         this.props.fetchItems();
+        this.props.fetchRunes();
         this.props.fetchAbilities();
         this.props.fetchConditions();
         this.props.fetchExpTable();
@@ -44,6 +47,8 @@ class App extends React.Component {
                         <Route path="/quests/:quest_name" component={QuestDetail}/>
                         <Route exact path="/items" component={ItemList}/>
                         <Route path="/items/:item_name" component={ItemDetail}/>
+                        <Route exact path="/runes" component={RuneList}/>
+                        <Route path="/runes/:runeId" component={RuneDetail}/>
                         <Route path="/about" component={About}/>
                     </div>
                 </div>
@@ -56,6 +61,9 @@ const mapDispatchToProps = (dispatch) => {
     return {
         fetchItems: () => {
             dispatch(fetchItems())
+        },
+        fetchRunes: () => {
+            dispatch(fetchRunes())
         },
         fetchAbilities: () => {
             dispatch(fetchAbilities())

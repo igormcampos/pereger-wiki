@@ -1,4 +1,4 @@
-import {DO_SEARCH, FETCH_ABILITIES, FETCH_CONDITIONS, FETCH_EXP_TABLE, FETCH_ITEMS, FETCH_LOOT, FETCH_MONSTERS, FETCH_QUESTS, FETCH_SHOPS, TYPE_ON_SEARCH, UPDATE_TABS} from "./actionTypes";
+import {DO_SEARCH, FETCH_ABILITIES, FETCH_CONDITIONS, FETCH_EXP_TABLE, FETCH_ITEMS, FETCH_LOOT, FETCH_MONSTERS, FETCH_QUESTS, FETCH_RUNES, FETCH_SHOPS, TYPE_ON_SEARCH, UPDATE_TABS} from "./actionTypes";
 import JSON5 from "json5";
 import equipTypes from "../files/equipTypes";
 
@@ -152,6 +152,35 @@ export const fetchItems = () => {
                 });
 
                 dispatch({type: FETCH_ITEMS, items: items});
+            });
+        }
+    }
+};
+
+export const fetchRunes = () => {
+    return (dispatch, getState) => {
+        if (getState().runes.length === 0) {
+            fetch(itemsURL).then((response) => response.text()).then(text => {
+                const items = JSON5.parse(text);
+                const runes = items.filter(item => {
+                    // Not empty equips / miscellaneous things like xp and patron
+                    return item.className.includes('Blank') || item.category === 11
+                }).map(rune => {
+                    // Format the equips required to use the rune
+                    rune.equip = rune.equip && rune.equip.map((equip, index) => {
+                        let type = '';
+                        if (index > 0) {
+                            type = ', '
+                        }
+                        type += equipTypes.data.find(equipType => {
+                            return equipType.id === equip
+                        }).type;
+                        return type
+                    });
+                    return rune
+                });
+
+                dispatch({type: FETCH_RUNES, runes: runes});
             });
         }
     }

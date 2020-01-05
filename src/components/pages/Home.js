@@ -10,6 +10,7 @@ class Home extends React.Component {
                 <p>We are still building this page, so some things may be a little outdated or strange, please bear with it for now.</p>
                 <ul className="collection">
                     <li className="collection-item"><NavLink to='/items'>Items</NavLink></li>
+                    <li className="collection-item"><NavLink to='/runes'>Runes</NavLink></li>
                     {/*<li className="collection-item"><NavLink to='/'>Weapons</NavLink></li>*/}
                     {/*<li className="collection-item"><NavLink to='/'>Melee Weapons</NavLink></li>*/}
                     {/*<li className="collection-item"><NavLink to='/'>Ranged Weapons</NavLink></li>*/}

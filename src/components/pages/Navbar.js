@@ -52,6 +52,10 @@ class Navbar extends React.Component {
         this.props.history.push('/items')
     };
 
+    goRunes = () => {
+        this.props.history.push('/runes')
+    };
+
     goMonsters = () => {
         this.props.history.push('/monsters')
     };
@@ -83,6 +87,7 @@ class Navbar extends React.Component {
                         <ul id="nav-mobile" className="hide-on-med-and-down">
                             <li><NavLink to="/">Home</NavLink></li>
                             <li><NavLink to="/items">Items</NavLink></li>
+                            <li><NavLink to="/runes">Runes</NavLink></li>
                             <li><NavLink to="/abilities">Abilities</NavLink></li>
                             <li><NavLink to="/monsters">Monsters</NavLink></li>
                             <li><NavLink to="/quests">Quests</NavLink></li>
@@ -107,6 +112,7 @@ class Navbar extends React.Component {
                         <ul className="tabs tabs-transparent">
                             <li className="tab" onClick={this.goHome}><a href="#">Home</a></li>
                             <li className="tab" onClick={this.goItems}><a href="#">Items</a></li>
+                            <li className="tab" onClick={this.goRunes}><a href="#">Runes</a></li>
                             <li className="tab" onClick={this.goAbilities}><a href="#">Abilities</a></li>
                             <li className="tab" onClick={this.goMonsters}><a href="#">Monsters</a></li>
                             <li className="tab" onClick={this.goQuests}><a href="#">Quests</a></li>
@@ -118,6 +124,7 @@ class Navbar extends React.Component {
                 <ul className="sidenav" id="mobile-demo">
                     <li><NavLink to="/">Home</NavLink></li>
                     <li><NavLink to="/items">Items</NavLink></li>
+                    <li><NavLink to="/runes">Runes</NavLink></li>
                     <li><NavLink to="/abilities">Abilities</NavLink></li>
                     <li><NavLink to="/monsters">Monsters</NavLink></li>
                     <li><NavLink to="/quests">Quests</NavLink></li>
