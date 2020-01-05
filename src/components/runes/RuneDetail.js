@@ -10,7 +10,7 @@ const DetailContainer = styled.div({
 });
 
 const ImageContainer = styled.div({
-    alignSelf: 'center',
+    marginTop: 100,
     justifySelf: 'center'
 });
 
@@ -22,16 +22,43 @@ const Image = styled.img({
 class RuneDetail extends React.Component {
     render() {
         if (this.props.rune) {
-            const {desc, className, sellPrice, name} = this.props.rune;
-            let imageName = name.replace(/-/g, '');
+            const {desc, className, sellPrice, name, ability} = this.props.rune;
+            const imageName = name.replace(/-/g, '');
+            const upgradeTable = this.props.upgrades && this.props.upgrades.map(upgrade => {
+               return (
+                   <tr key={upgrade.id}>
+                       <td>{upgrade.T}</td>
+                       <td>{upgrade.L}</td>
+                       {upgrade.mats && upgrade.mats.length === 3 && upgrade.mats.map((mat, index) => {
+                           return <td key={index}>{mat}</td>
+                       })}
+                   </tr>
+               )
+            });
 
             return (
                 <DetailContainer>
                     <div>
                         <h4>{className}</h4>
                         <p>{desc}</p>
+                        {ability && <p>Ability: <Link to={'/abilities/' + ability}>{className}</Link></p>}
                         <p><b>Sell Price:</b> {sellPrice}</p>
-                        UPGRADE TABLE HERE
+
+                        <h5>Upgrade Table</h5>
+                        {upgradeTable && <table className='highlight responsive-table'>
+                            <thead>
+                            <tr>
+                                <th>Tier</th>
+                                <th>Level</th>
+                                <th>Minae</th>
+                                <th>Legendary</th>
+                                <th>Aurum</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {upgradeTable}
+                            </tbody>
+                        </table>}
                     </div>
                     <ImageContainer>
                         <Image src={itemsImages[imageName]} alt={className}/>
@@ -51,7 +78,8 @@ const mapStateToProps = (state, ownProps) => {
     let runeId = ownProps.match.params.runeId;
     let rune = state.runes && state.runes.find(rune => rune.itemId == runeId);
     return {
-        rune: rune
+        rune: rune,
+        upgrades: state.upgrades
     }
 };
 

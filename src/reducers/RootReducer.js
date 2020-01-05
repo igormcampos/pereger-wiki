@@ -1,4 +1,4 @@
-import {DO_SEARCH, FETCH_ABILITIES, FETCH_RUNES, FETCH_CONDITIONS, FETCH_EXP_TABLE, FETCH_ITEMS, FETCH_LOOT, FETCH_MONSTERS, FETCH_QUESTS, FETCH_SHOPS, TYPE_ON_SEARCH, UPDATE_TABS} from "../actions/actionTypes";
+import {DO_SEARCH, FETCH_ABILITIES, FETCH_RUNES, FETCH_CONDITIONS, FETCH_EXP_TABLE, FETCH_ITEMS, FETCH_LOOT, FETCH_MONSTERS, FETCH_QUESTS, FETCH_SHOPS, TYPE_ON_SEARCH, UPDATE_TABS, FETCH_UPGRADES, FETCH_SPELLS} from "../actions/actionTypes";
 import equipTypes from '../files/equipTypes'
 import itemsImages from "../files/itemsImages";
 import monstersImages from "../files/monstersImages";
@@ -6,6 +6,7 @@ import monstersImages from "../files/monstersImages";
 const initState = {
     items: [],
     runes: [],
+    upgrades: [],
     abilities: [],
     conditions: [],
     expTable: [],
@@ -108,10 +109,20 @@ const rootReducer = (state = initState, action = null) => {
                     ...state,
                     runes: action.runes
                 };
+            case FETCH_UPGRADES:
+                return {
+                    ...state,
+                    upgrades: action.upgrades
+                };
             case FETCH_ABILITIES:
                 return {
                     ...state,
                     abilities: action.abilities
+                };
+            case FETCH_SPELLS:
+                return {
+                    ...state,
+                    spells: action.spells
                 };
             case FETCH_CONDITIONS:
                 return {

@@ -7,6 +7,8 @@ export const FETCH_LOOT = "FETCH_LOOT";
 export const FETCH_MONSTERS = "FETCH_MONSTERS";
 export const FETCH_QUESTS = "FETCH_QUESTS";
 export const FETCH_SHOPS = "FETCH_SHOPS";
+export const FETCH_UPGRADES = "FETCH_UPGRADES";
+export const FETCH_SPELLS = "FETCH_SPELLS";
 
 export const TYPE_ON_SEARCH = "TYPE_ON_SEARCH";
 export const DO_SEARCH = "DO_SEARCH";

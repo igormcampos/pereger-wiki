@@ -1,15 +1,17 @@
-import {DO_SEARCH, FETCH_ABILITIES, FETCH_CONDITIONS, FETCH_EXP_TABLE, FETCH_ITEMS, FETCH_LOOT, FETCH_MONSTERS, FETCH_QUESTS, FETCH_RUNES, FETCH_SHOPS, TYPE_ON_SEARCH, UPDATE_TABS} from "./actionTypes";
+import {DO_SEARCH, FETCH_ABILITIES, FETCH_CONDITIONS, FETCH_EXP_TABLE, FETCH_ITEMS, FETCH_LOOT, FETCH_MONSTERS, FETCH_QUESTS, FETCH_RUNES, FETCH_SHOPS, TYPE_ON_SEARCH, UPDATE_TABS, FETCH_UPGRADES, FETCH_SPELLS} from "./actionTypes";
 import JSON5 from "json5";
 import equipTypes from "../files/equipTypes";
 
 const itemsURL = 'https://peregeronline.com/game-files/items.txt';
 const abilitiesURL = 'https://peregeronline.com/game-files/abilities.txt';
+const spellsURL = 'https://peregeronline.com/game-files/spells.txt';
 const monstersURL = 'https://peregeronline.com/game-files/monsters.txt';
 const questsURL = 'https://peregeronline.com/game-files/quests.txt';
 const conditionsURL = 'https://peregeronline.com/game-files/conditions.txt';
 const expURL = 'https://peregeronline.com/game-files/exp.txt';
 const shopsURL = 'https://peregeronline.com/game-files/shops.txt';
 const lootURL = 'https://peregeronline.com/game-files/loot.txt';
+const upgradesURL = 'https://peregeronline.com/game-files/upgrades.txt';
 
 export const typeOnSearch = (text) => {
     return {
@@ -181,6 +183,17 @@ export const fetchRunes = () => {
                 });
 
                 dispatch({type: FETCH_RUNES, runes: runes});
+            });
+        }
+    }
+};
+
+export const fetchUpgrades = () => {
+    return (dispatch, getState) => {
+        if (getState().upgrades.length === 0) {
+            fetch(upgradesURL).then((response) => response.text()).then(text => {
+                const upgrades = JSON5.parse(text);
+                dispatch({type: FETCH_UPGRADES, upgrades: upgrades});
             });
         }
     }

@@ -10,7 +10,7 @@ const DetailContainer = styled.div({
 });
 
 const ImageContainer = styled.div({
-    alignSelf: 'center',
+    marginTop: 100,
     justifySelf: 'center'
 });
 
