@@ -1,9 +1,0 @@
-// Pereger
-// Database file
-//---------------------------------------------------------------------------
-
-[
-{ id: 1, name: "Unmute", script: "/unmute", op: "CP_UNMUTE", auth: 2},
-{ id: 2, name: "Unban", script: "/unban", op: "CP_UNBAN", auth: 1},
-{ id: 2, name: "Warp", script: "/warp", op: "CP_WARP", auth: 1},
-]

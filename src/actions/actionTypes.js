@@ -1,4 +1,5 @@
 export const FETCH_ITEMS = "FETCH_ITEMS";
+export const FETCH_RUNES = "FETCH_RUNES";
 export const FETCH_ABILITIES = "FETCH_ABILITIES";
 export const FETCH_CONDITIONS = "FETCH_CONDITIONS";
 export const FETCH_EXP_TABLE = "FETCH_EXP_TABLE";

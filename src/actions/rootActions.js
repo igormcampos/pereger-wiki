@@ -33,7 +33,7 @@ export const fetchItems = () => {
 
                 items = items.filter(item => {
                     // Not empty equips / miscellaneous things like xp and patron / runes
-                    return item.className !== 'Empty' && item.itemId > 2000 && item.category !== 11
+                    return !item.className.includes('Empty') && !item.className.includes('Blank') && item.itemId > 2000 && item.category !== 11
                 }).map(item => {
                     // Format the equips attributes
                     item.bonus = item.bonus && Object.entries(item.bonus).map((b, index) => {

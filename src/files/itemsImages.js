@@ -30,6 +30,9 @@ const itemsImages = {
 
     // quests / miscellaneous
     letter: require('./../static/img/consumables/letter.png'),
+    note: require('./../static/img/consumables/note.png'),
+    potato: require('./../static/img/consumables/potato.png'),
+    blueberries: require('./../static/img/consumables/blueberries.png'),
     egg: require('./../static/img/consumables/egg.png'),
     amberegg: require('./../static/img/consumables/amber-egg.png'),
     iceegg: require('./../static/img/consumables/ice-egg.png'),
@@ -37,27 +40,8 @@ const itemsImages = {
     sapphireegg: require('./../static/img/consumables/sapphire-egg.png'),
 
     // materials
-    voltessence: require('./../static/img/materials/volt-essence.png'),
-    goggles: require('./../static/img/materials/goggles.png'),
-    golemheart: require('./../static/img/materials/golem-heart.png'),
-    powder: require('./../static/img/materials/powder.png'),
-    bearfur: require('./../static/img/materials/bear-fur.png'),
-    minercandle: require('./../static/img/materials/miner-candle.png'),
-    metal: require('./../static/img/materials/metal.png'),
-    raggedcloth: require('./../static/img/materials/ragged-cloth.png'),
-    beast: require('./../static/img/materials/beast.png'),
-    cloth: require('./../static/img/materials/cloth.png'),
-    goblinear: require('./../static/img/materials/goblin-ear.png'),
-    wispdust: require('./../static/img/materials/wisp-dust.png'),
-    wolfclaw: require('./../static/img/materials/wolf-claw.png'),
-    spud: require('./../static/img/materials/spud.png'),
-    wolfhide: require('./../static/img/materials/wolf-hide.png'),
-    badgerpelt: require('./../static/img/materials/badger-pelt.png'),
-    crowfeather: require('./../static/img/materials/crow-feather.png'),
-    groundchitin: require('./../static/img/materials/ground-chitin.png'),
-    legendary: require('./../static/img/materials/legendary.png'),
-    pearl: require('./../static/img/materials/pearl.png'),
-    wood: require('./../static/img/materials/wood.png'),
+    material: require('./../static/img/consumables/material.png'),
+    legendary: require('../static/img/consumables/legendary.png'),
 
     // equips
     betaring: require('./../static/img/weapons_armor/beta-ring.png'),

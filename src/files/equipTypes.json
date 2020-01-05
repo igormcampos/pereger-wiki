@@ -10,7 +10,7 @@
     },
     {
       "id": 2,
-      "type": "ThrowingKnife"
+      "type": "Throwing Knife"
     },
     {
       "id": 3,
@@ -50,15 +50,15 @@
     },
     {
       "id": 12,
-      "type": "LightArmor"
+      "type": "Light Armor"
     },
     {
       "id": 13,
-      "type": "MediumArmor"
+      "type": "Medium Armor"
     },
     {
       "id": 14,
-      "type": "HeavyArmor"
+      "type": "Heavy Armor"
     },
     {
       "id": 15,
@@ -86,11 +86,11 @@
     },
     {
       "id": 21,
-      "type": "SlingShot"
+      "type": "Sling Shot"
     },
     {
       "id": 22,
-      "type": "HandMagic"
+      "type": "Hand Magic"
     },
     {
       "id": 23,
