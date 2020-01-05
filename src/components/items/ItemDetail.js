@@ -82,7 +82,7 @@ const mapStateToProps = (state, ownProps) => {
     });
     loot = loot && loot.map(drop => {
         drop.monster = state.monsters && state.monsters.find(monster => {
-            return monster.name.toLowerCase() === drop.npc
+            return monster.lootId ? monster.lootId.includes(drop.lootId) : false;
         });
         return drop
     });

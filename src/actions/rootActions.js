@@ -1,8 +1,6 @@
 import {DO_SEARCH, FETCH_ABILITIES, FETCH_CONDITIONS, FETCH_EXP_TABLE, FETCH_ITEMS, FETCH_LOOT, FETCH_MONSTERS, FETCH_QUESTS, FETCH_SHOPS, TYPE_ON_SEARCH, UPDATE_TABS} from "./actionTypes";
-import lootTXT from "../files/loot.txt";
 import JSON5 from "json5";
 import equipTypes from "../files/equipTypes";
-
 
 const itemsURL = 'https://peregeronline.com/game-files/items.txt';
 const abilitiesURL = 'https://peregeronline.com/game-files/abilities.txt';
@@ -11,6 +9,7 @@ const questsURL = 'https://peregeronline.com/game-files/quests.txt';
 const conditionsURL = 'https://peregeronline.com/game-files/conditions.txt';
 const expURL = 'https://peregeronline.com/game-files/exp.txt';
 const shopsURL = 'https://peregeronline.com/game-files/shops.txt';
+const lootURL = 'https://peregeronline.com/game-files/loot.txt';
 
 export const typeOnSearch = (text) => {
     return {
@@ -234,7 +233,7 @@ export const fetchExpTable = () => {
 export const fetchLoot = () => {
     return (dispatch, getState) => {
         if (getState().loot.length === 0) {
-            fetch(lootTXT).then((response) => response.text()).then(text => {
+            fetch(lootURL).then((response) => response.text()).then(text => {
                 dispatch({type: FETCH_LOOT, loot: JSON5.parse(text)});
             });
         }
