@@ -25,15 +25,15 @@ class RuneDetail extends React.Component {
             const {desc, className, sellPrice, name, ability} = this.props.rune;
             const imageName = name.replace(/-/g, '');
             const upgradeTable = this.props.upgrades && this.props.upgrades.map(upgrade => {
-               return (
-                   <tr key={upgrade.id}>
-                       <td>{upgrade.T}</td>
-                       <td>{upgrade.L}</td>
-                       {upgrade.mats && upgrade.mats.length === 3 && upgrade.mats.map((mat, index) => {
-                           return <td key={index}>{mat}</td>
-                       })}
-                   </tr>
-               )
+                return (
+                    <tr key={upgrade.id}>
+                        <td>{upgrade.T}</td>
+                        <td>{upgrade.L}</td>
+                        {upgrade.mats && upgrade.mats.length === 3 && upgrade.mats.map((mat, index) => {
+                            return <td key={index}>{mat}</td>
+                        })}
+                    </tr>
+                )
             });
 
             return (
@@ -44,21 +44,23 @@ class RuneDetail extends React.Component {
                         {ability && <p>Ability: <Link to={'/abilities/' + ability}>{className}</Link></p>}
                         <p><b>Sell Price:</b> {sellPrice}</p>
 
-                        <h5>Upgrade Table</h5>
-                        {upgradeTable && <table className='highlight responsive-table'>
-                            <thead>
-                            <tr>
-                                <th>Tier</th>
-                                <th>Level</th>
-                                <th>Minae</th>
-                                <th>Legendary</th>
-                                <th>Aurum</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            {upgradeTable}
-                            </tbody>
-                        </table>}
+                        {upgradeTable && <div>
+                            <h5>Upgrade Table</h5>
+                            <table className='highlight responsive-table'>
+                                <thead>
+                                <tr>
+                                    <th>Tier</th>
+                                    <th>Level</th>
+                                    <th>Minae</th>
+                                    <th>Legendary</th>
+                                    <th>Aurum</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {upgradeTable}
+                                </tbody>
+                            </table>
+                        </div>}
                     </div>
                     <ImageContainer>
                         <Image src={itemsImages[imageName]} alt={className}/>

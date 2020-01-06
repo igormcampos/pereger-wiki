@@ -106,7 +106,7 @@ const mapStateToProps = (state, ownProps) => {
         return act
     });
     let loot = monster && state.loot && state.loot.filter(drop => {
-        return monster.lootId.includes(drop.lootId);
+        return monster.lootId && monster.lootId.includes(drop.lootId);
     });
     loot = loot && loot.map(drop => {
         drop.ref = state.items && state.items.find(item => {
