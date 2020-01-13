@@ -4,7 +4,7 @@ import {connect} from 'react-redux'
 class AbilityDetail extends React.Component {
     render() {
         if (this.props.ability) {
-            const {name, category, value, passive, desc, generalCategory, mana, equip, cool} = this.props.ability;
+            const {name, category, value, passive, desc, generalCategory, mana, equip, cool, spell} = this.props.ability;
 
             return (
                 <div>
@@ -12,10 +12,10 @@ class AbilityDetail extends React.Component {
                     <p>{desc}</p>
                     <p>{passive ? "Is a passive skill." : "Is an active skill."}</p>
                     <p>{generalCategory === 'Enemy Skills' && cool && `Has a cooldown of ${cool} seconds.`}</p>
-                    {category !== 'Enemy' && <p>Category: {category}</p>}
+                    {spell && <p>Category: {category}</p>}
                     {!['Enemy Skills', 'Active Skills'].includes(generalCategory) && value && <p>Per Level: {value}</p>}
                     {!passive && category !== 'Enemy' && <p>Mana: {mana}</p>}
-                    {category !== 'Enemy' && equip && <p>Equipment: {equip}</p>}
+                    {spell && equip && <p>Equipment: {equip}</p>}
                 </div>
             )
         }
@@ -29,8 +29,9 @@ class AbilityDetail extends React.Component {
 
 const mapStateToProps = (state, ownProps) => {
     let abilityClass = ownProps.match.params.ability_class;
+    let abilities = state.abilities.concat(state.spells);
     return {
-        ability: state.abilities && state.abilities.find(ability => ability.className === abilityClass)
+        ability: abilities && abilities.find(ability => ability.className === abilityClass)
     }
 };
 

@@ -8,6 +8,7 @@ const initState = {
     runes: [],
     upgrades: [],
     abilities: [],
+    spells: [],
     conditions: [],
     expTable: [],
     loot: [],

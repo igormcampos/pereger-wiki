@@ -215,8 +215,6 @@ export const fetchAbilities = () => {
                         ability.generalCategory = 'Enemy Condition Skills'
                     } else if (ability.id <= 12000) {
                         ability.generalCategory = 'Passive Skills'
-                    } else {
-                        ability.generalCategory = 'Active Skills'
                     }
 
                     // Format abilities values
@@ -232,8 +230,25 @@ export const fetchAbilities = () => {
                         }
                     }
 
+                    ability.spell = false;
+
+                    return ability
+                });
+                dispatch({type: FETCH_ABILITIES, abilities: abilities});
+            });
+        }
+    }
+};
+
+export const fetchSpells = () => {
+    return (dispatch, getState) => {
+        if (getState().spells.length === 0) {
+            fetch(spellsURL).then((response) => response.text()).then(text => {
+                let spells = JSON5.parse(text);
+
+                spells = spells.map(spell => {
                     // Format the equips required to use the ability
-                    ability.equip = ability.equip && ability.equip.map((equip, index) => {
+                    spell.equip = spell.equip && spell.equip.map((equip, index) => {
                         let type = '';
                         if (index > 0) {
                             type = ', '
@@ -244,9 +259,11 @@ export const fetchAbilities = () => {
                         return type
                     });
 
-                    return ability
+                    spell.spell = true;
+
+                    return spell
                 });
-                dispatch({type: FETCH_ABILITIES, abilities: abilities});
+                dispatch({type: FETCH_SPELLS, spells: spells});
             });
         }
     }

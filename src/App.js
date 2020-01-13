@@ -12,7 +12,7 @@ import QuestList from "./components/quests/QuestList";
 import QuestDetail from "./components/quests/QuestDetail";
 import ItemDetail from "./components/items/ItemDetail";
 import ItemList from "./components/items/ItemList";
-import {fetchAbilities, fetchConditions, fetchExpTable, fetchItems, fetchLoot, fetchMonsters, fetchQuests, fetchRunes, fetchShops, fetchUpgrades} from "./actions/rootActions";
+import {fetchAbilities, fetchConditions, fetchExpTable, fetchItems, fetchLoot, fetchMonsters, fetchQuests, fetchRunes, fetchShops, fetchUpgrades, fetchSpells} from "./actions/rootActions";
 import {connect} from "react-redux";
 import MonsterList from "./components/monsters/MonsterList";
 import MonsterDetail from "./components/monsters/MonsterDetail";
@@ -25,6 +25,7 @@ class App extends React.Component {
         this.props.fetchRunes();
         this.props.fetchUpgrades();
         this.props.fetchAbilities();
+        this.props.fetchSpells();
         this.props.fetchConditions();
         this.props.fetchExpTable();
         this.props.fetchLoot();
@@ -71,6 +72,9 @@ const mapDispatchToProps = (dispatch) => {
         },
         fetchAbilities: () => {
             dispatch(fetchAbilities())
+        },
+        fetchSpells: () => {
+            dispatch(fetchSpells())
         },
         fetchConditions: () => {
             dispatch(fetchConditions())
