@@ -22,13 +22,16 @@ const Image = styled.img({
 class RuneDetail extends React.Component {
     render() {
         if (this.props.rune) {
-            const {desc, className, sellPrice, name, ability} = this.props.rune;
+            const {desc, className, sellPrice, name, ability, values} = this.props.rune;
             const imageName = name.replace(/-/g, '');
             const upgradeTable = this.props.upgrades && this.props.upgrades.map(upgrade => {
                 return (
                     <tr key={upgrade.id}>
                         <td>{upgrade.T}</td>
                         <td>{upgrade.L}</td>
+                        {Object.values(values[upgrade.T-1]).map((value, index) => {
+                            return <td key={`stats${index}`}>{((upgrade.T - 1) * 5 + upgrade.L) * value}</td>
+                        })}
                         {upgrade.mats && upgrade.mats.length === 3 && upgrade.mats.map((mat, index) => {
                             return <td key={index}>{mat}</td>
                         })}
@@ -51,6 +54,9 @@ class RuneDetail extends React.Component {
                                 <tr>
                                     <th>Tier</th>
                                     <th>Level</th>
+                                    {values && Object.keys(values[0]).map(value => {
+                                        return <th key={value}>{value.toUpperCase()}</th>
+                                    })}
                                     <th>Minae</th>
                                     <th>Legendary</th>
                                     <th>Aurum</th>
