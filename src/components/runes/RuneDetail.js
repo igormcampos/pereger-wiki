@@ -20,6 +20,13 @@ const Image = styled.img({
 });
 
 class RuneDetail extends React.Component {
+    componentDidMount() {
+        Number.prototype.countDecimals = function () {
+            if(Math.floor(this.valueOf()) === this.valueOf()) return 0;
+            return this.toString().split(".")[1].length || 0;
+        }
+    }
+
     render() {
         if (this.props.rune) {
             const {desc, className, sellPrice, name, ability, values} = this.props.rune;
@@ -29,8 +36,40 @@ class RuneDetail extends React.Component {
                     <tr key={upgrade.id}>
                         <td>{upgrade.T}</td>
                         <td>{upgrade.L}</td>
-                        {Object.values(values[upgrade.T-1]).map((value, index) => {
-                            return <td key={`stats${index}`}>{((upgrade.T - 1) * 5 + upgrade.L) * value}</td>
+                        {values && Object.values(values[upgrade.T-1]).map((value, index) => {
+                            let suffix = '';
+                            let header = Object.keys(values[0])[index];
+                            if (header !== 'x') {
+                                value = (((upgrade.T - 1) * 5 + upgrade.L) * value);
+                            }
+                            if (['Turbo', 'Better Crits', 'More Crits'].includes(className)) {
+                                if (className === 'Turbo') {
+                                    value = (1 / (0.5 - value));
+                                    value = value.countDecimals() > 2 ? value.toFixed(2) : value;
+                                    value = `${value} tiles per second`;
+                                } else {
+                                    value = value * 100;
+                                    value = value.countDecimals() > 2 ? value.toFixed(2) : value;
+                                    value = `Add ${value} % to base`;
+                                }
+                            } else {
+                                switch (header) {
+                                    case 'critX':
+                                    case 'critY':
+                                    case 'per':
+                                    case 'wpn':
+                                    case 'x':
+                                        value = value * 100;
+                                        suffix = '%';
+                                        break;
+                                    case 'atkRate':
+                                    case 'dur':
+                                        suffix = 'ms';
+                                        break;
+                                }
+                                value = value.countDecimals() > 2 ? value.toFixed(2) : value;
+                            }
+                            return <td key={`stats${index}`}>{`${value} ${suffix}`}</td>
                         })}
                         {upgrade.mats && upgrade.mats.length === 3 && upgrade.mats.map((mat, index) => {
                             return <td key={index}>{mat}</td>
@@ -55,7 +94,31 @@ class RuneDetail extends React.Component {
                                     <th>Tier</th>
                                     <th>Level</th>
                                     {values && Object.keys(values[0]).map(value => {
-                                        return <th key={value}>{value.toUpperCase()}</th>
+                                        let header = value;
+                                        switch (value) {
+                                            case 'critX':
+                                                header = 'Critical Chance';
+                                                break;
+                                            case 'critY':
+                                                header = 'Critical Multiplier';
+                                                break;
+                                            case 'atkRate':
+                                                header = 'Attack Rate';
+                                                break;
+                                            case 'x':
+                                                header = 'Chance';
+                                                break;
+                                            case 'dur':
+                                                header = 'Duration';
+                                                break;
+                                            case 'per':
+                                                header = 'Percentage';
+                                                break;
+                                            case 'wpn':
+                                                header = 'Weapon Damage';
+                                                break;
+                                        }
+                                        return <th key={value}>{header.toUpperCase()}</th>
                                     })}
                                     <th>Minae</th>
                                     <th>Legendary</th>
