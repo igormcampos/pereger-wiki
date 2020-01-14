@@ -3,7 +3,7 @@ import {withRouter} from "react-router-dom";
 
 class QuestListItem extends React.Component {
     handleDetail = () => {
-        this.props.history.push('/quests/' + this.props.data.name)
+        this.props.history.push('/quests/' + this.props.data.id)
     };
 
     render() {
@@ -12,7 +12,7 @@ class QuestListItem extends React.Component {
         return (
             <tr key={id} onClick={this.handleDetail}>
                 <td>{title}</td>
-                <td>{desc}</td>
+                <td className='hide-on-med-and-down'>{desc}</td>
                 <td>{target && amount ?
                     // objective 0; quest = 1; talk = 2; kill = 3; action = 4
                     objective === 2 ?

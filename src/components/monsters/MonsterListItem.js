@@ -10,7 +10,7 @@ const MonsterImage = styled.img({
 
 class MonsterListItem extends React.Component {
     handleDetail = () => {
-        this.props.history.push('/monsters/' + this.props.data.className)
+        this.props.history.push('/monsters/' + this.props.data.monsterId)
     };
 
     render() {

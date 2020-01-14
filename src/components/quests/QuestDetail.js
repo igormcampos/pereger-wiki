@@ -9,13 +9,13 @@ class QuestDetail extends React.Component {
             const requirementsLink = <p>Requirements: {target && amount ?
                 // objective 0; quest = 1; talk = 2; kill = 3; action = 4
                 objective === 2 ?
-                    <Link to={'/monsters/' + target.name}>{'Talk to ' + target.name}</Link>
+                    <Link to={'/monsters/' + target.monsterId}>{'Talk to ' + target.name}</Link>
                     : objective === 3 ?
-                    <Link to={'/monsters/' + target.className}>{'Kill ' + amount + ' ' + target.name}</Link>
-                    : <Link to={target.category === 10 ? '/items/' + target.className : '/items/' + target.name}>{target.className + ' x ' + amount}</Link>
+                    <Link to={'/monsters/' + target.monsterId}>{'Kill ' + amount + ' ' + target.name}</Link>
+                    : <Link to={'/items/' + target.itemId}>{target.className + ' x ' + amount}</Link>
                 : ''}
             </p>;
-            const rewardLink = reward && rewardAmt && <Link to={reward.category === 10 ? '/items/' + reward.className : '/items/' + reward.name}>{reward.className}</Link>;
+            const rewardLink = reward && rewardAmt && <Link to={'/items/' + reward.itemId}>{reward.className}</Link>;
 
             return (
                 <div>
@@ -35,9 +35,9 @@ class QuestDetail extends React.Component {
 }
 
 const mapStateToProps = (state, ownProps) => {
-    let questName = ownProps.match.params.quest_name;
+    let id = ownProps.match.params.questId;
     return {
-        quest: state.quests && state.quests.find(quest => quest.name === questName)
+        quest: state.quests && state.quests.find(quest => quest.id == id)
     }
 };
 

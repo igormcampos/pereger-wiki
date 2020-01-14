@@ -10,11 +10,7 @@ const ItemImage = styled.img({
 
 class ItemListItem extends React.Component {
     handleDetail = () => {
-        if (this.props.data.generalCategory === 'Materials') {
-            this.props.history.push('/items/' + this.props.data.className)
-        } else {
-            this.props.history.push('/items/' + this.props.data.name)
-        }
+        this.props.history.push('/items/' + this.props.data.itemId)
     };
 
     render() {

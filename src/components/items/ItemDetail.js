@@ -33,7 +33,7 @@ class ItemDetail extends React.Component {
                     } else {
                         amount = 'x' + loot.quantity[0] + ' ~ x' + loot.quantity[1]
                     }
-                    return <div key={loot.monster.monsterId}><Link to={'/monsters/' + loot.monster.className}>{loot.monster.name}</Link> ({loot.probability}%) {amount}<br/></div>
+                    return <div key={loot.monster.monsterId}><Link to={'/monsters/' + loot.monster.monsterId}>{loot.monster.name}</Link> ({loot.probability}%) {amount}<br/></div>
                 } else {
                     return <div>Loading loot...</div>
                 }
@@ -72,11 +72,8 @@ class ItemDetail extends React.Component {
 }
 
 const mapStateToProps = (state, ownProps) => {
-    let itemName = ownProps.match.params.item_name;
-    let item = state.items && state.items.find(item => item.name === itemName);
-    if (item === undefined) {
-        item = state.items && state.items.find(item => item.className === itemName);
-    }
+    let id = ownProps.match.params.itemId;
+    let item = state.items && state.items.find(item => item.itemId == id);
     let loot = item && state.loot && state.loot.filter(drop => {
         return drop.item === item.itemId
     });

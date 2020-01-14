@@ -42,13 +42,13 @@ class App extends React.Component {
                     <div className="container">
                         <Route exact path="/" component={Home}/>
                         <Route exact path="/abilities" component={AbilityList}/>
-                        <Route path="/abilities/:ability_class" component={AbilityDetail}/>
+                        <Route path="/abilities/:abilityId" component={AbilityDetail}/>
                         <Route exact path="/monsters" component={MonsterList}/>
-                        <Route path="/monsters/:monster_class" component={MonsterDetail}/>
+                        <Route path="/monsters/:monsterId" component={MonsterDetail}/>
                         <Route exact path="/quests" component={QuestList}/>
-                        <Route path="/quests/:quest_name" component={QuestDetail}/>
+                        <Route path="/quests/:questId" component={QuestDetail}/>
                         <Route exact path="/items" component={ItemList}/>
-                        <Route path="/items/:item_name" component={ItemDetail}/>
+                        <Route path="/items/:itemId" component={ItemDetail}/>
                         <Route exact path="/runes" component={RuneList}/>
                         <Route path="/runes/:runeId" component={RuneDetail}/>
                         <Route path="/about" component={About}/>

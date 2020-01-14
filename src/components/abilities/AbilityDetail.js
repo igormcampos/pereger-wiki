@@ -4,17 +4,17 @@ import {connect} from 'react-redux'
 class AbilityDetail extends React.Component {
     render() {
         if (this.props.ability) {
-            const {name, category, value, passive, desc, generalCategory, mana, equip, cool, spell} = this.props.ability;
+            const {name, category, passive, desc, generalCategory, mana, equip, cool, spell} = this.props.ability;
 
             return (
                 <div>
                     <h4>{name}</h4>
                     <p>{desc}</p>
                     <p>{passive ? "Is a passive skill." : "Is an active skill."}</p>
-                    <p>{generalCategory === 'Enemy Skills' && cool && `Has a cooldown of ${cool} seconds.`}</p>
+                    {generalCategory === 'Enemy Skills' && <p>Is an enemy skill.</p>}
+                    {generalCategory === 'Enemy Skills' && cool && <p>Has a cooldown of {cool} seconds.</p>}
                     {spell && <p>Category: {category}</p>}
-                    {!['Enemy Skills', 'Active Skills'].includes(generalCategory) && value && <p>Per Level: {value}</p>}
-                    {!passive && category !== 'Enemy' && <p>Mana: {mana}</p>}
+                    {spell && <p>Mana: {mana}</p>}
                     {spell && equip && <p>Equipment: {equip}</p>}
                 </div>
             )
@@ -28,10 +28,10 @@ class AbilityDetail extends React.Component {
 }
 
 const mapStateToProps = (state, ownProps) => {
-    let abilityClass = ownProps.match.params.ability_class;
+    let id = ownProps.match.params.abilityId;
     let abilities = state.abilities.concat(state.spells);
     return {
-        ability: abilities && abilities.find(ability => ability.className === abilityClass)
+        ability: abilities && abilities.find(ability => ability.id == id)
     }
 };
 

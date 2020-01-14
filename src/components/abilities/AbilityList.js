@@ -12,21 +12,17 @@ class AbilityList extends React.Component {
 
             const abilityTables = Object.values(allAbilities).map(category => {
                 const generalCategory = category[0].generalCategory;
-                const responsiveTable = generalCategory !== 'Enemy Skills' ? 'responsive-table' : '';
-                const hideDescription = generalCategory !== 'Enemy Skills' ? 'hide-on-med-and-down' : '';
 
                 return (
                     <div key={generalCategory}>
                         <h5>{generalCategory}</h5>
-                        <table className={'highlight ' + responsiveTable}>
+                        <table className={'highlight'}>
                             <thead>
                             <tr>
                                 <th>Name</th>
-                                {generalCategory !== 'Enemy Skills' && generalCategory !== 'Active Skills' && <th>Per Level</th>}
                                 {generalCategory === 'Active Skills' && <th>Mana</th>}
-                                {generalCategory !== 'Active Skills' && generalCategory !== 'Enemy Skills' && <th>Passive?</th>}
-                                <th className={hideDescription}>Description</th>
                                 {generalCategory === 'Enemy Skills' && <th>Passive</th>}
+                                <th className='hide-on-med-and-down'>Description</th>
                                 {generalCategory === 'Enemy Skills' && <th>Cooldown</th>}
                             </tr>
                             </thead>
@@ -66,8 +62,8 @@ class AbilityList extends React.Component {
                 <div>
                     <h4 className="center">Abilities</h4>
                     <p>Every passive skill value increases your <b>current</b> stat of that skill by a percentage, it <b>doesn't</b> add it to your current stats.</p>
-                    {abilityTables}
                     {spellsTable}
+                    {abilityTables}
                 </div>
             )
         }

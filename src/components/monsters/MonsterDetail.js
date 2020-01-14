@@ -32,20 +32,20 @@ class MonsterDetail extends React.Component {
                     } else {
                         amount = 'x' + loot.quantity[0] + ' ~ x' + loot.quantity[1]
                     }
-                    return <div key={loot.ref.monsterId}><Link to={loot.ref.generalCategory === 'Materials' ? '/items/' + loot.ref.className : '/items/' + loot.ref.name}>{loot.ref.className}</Link> ({loot.probability}%) {amount}<br/></div>
+                    return <div key={loot.ref.monsterId}><Link to={'/items/' + loot.ref.itemId}>{loot.ref.className}</Link> ({loot.probability}%) {amount}<br/></div>
                 } else {
                     return <div>Loading loot...</div>
                 }
             });
             const activeAbilities = this.props.activeSkills && this.props.activeSkills.map((act, index) => {
                 if (act) {
-                    return <span key={act.id}>{index > 0 && ', '}<Link to={'/abilities/' + act.className}>{act.name}</Link>{act.level && 'LV' + act.level}</span>
+                    return <span key={act.id}>{index > 0 && ', '}<Link to={'/abilities/' + act.id}>{act.name}</Link>{act.level && 'LV' + act.level}</span>
                 }
                 return ''
             });
             const passiveAbilities = this.props.passiveSkills && this.props.passiveSkills.map((pass, index) => {
                 if (pass) {
-                    return <span key={pass.id}>{index > 0 && ', '}<Link to={'/abilities/' + pass.className}>{pass.name}</Link>{pass.level && ' LV' + pass.level}</span>
+                    return <span key={pass.id}>{index > 0 && ', '}<Link to={'/abilities/' + pass.id}>{pass.name}</Link>{pass.level && ' LV' + pass.level}</span>
                 }
                 return ''
             });
@@ -83,8 +83,8 @@ class MonsterDetail extends React.Component {
 }
 
 const mapStateToProps = (state, ownProps) => {
-    let monsterClass = ownProps.match.params.monster_class;
-    let monster = state.monsters && state.monsters.find(item => item.className === monsterClass);
+    let id = ownProps.match.params.monsterId;
+    let monster = state.monsters && state.monsters.find(monster => monster.monsterId == id);
     let passiveSkills = monster && monster.passives && monster.passives.split(';').map(pass => {
         let ability = pass.split(',');
         pass = state.abilities && state.abilities.find(ab => {
