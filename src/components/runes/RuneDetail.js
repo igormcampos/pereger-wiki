@@ -19,14 +19,12 @@ const Image = styled.img({
     height: 50
 });
 
-class RuneDetail extends React.Component {
-    componentDidMount() {
-        Number.prototype.countDecimals = function () {
-            if(Math.floor(this.valueOf()) === this.valueOf()) return 0;
-            return this.toString().split(".")[1].length || 0;
-        }
-    }
+const countDecimals = (value) => {
+    if(Math.floor(value) === value) return 0;
+    return value.toString().split(".")[1].length || 0;
+};
 
+class RuneDetail extends React.Component {
     render() {
         if (this.props.rune) {
             const {desc, className, sellPrice, name, ability, values} = this.props.rune;
@@ -45,11 +43,11 @@ class RuneDetail extends React.Component {
                             if (['Turbo', 'Better Crits', 'More Crits'].includes(className)) {
                                 if (className === 'Turbo') {
                                     value = (1 / (0.5 - value));
-                                    value = value.countDecimals() > 2 ? value.toFixed(2) : value;
+                                    value = countDecimals(value) > 2 ? value.toFixed(2) : value;
                                     value = `${value} tiles per second`;
                                 } else {
                                     value = value * 100;
-                                    value = value.countDecimals() > 2 ? value.toFixed(2) : value;
+                                    value = countDecimals(value) > 2 ? value.toFixed(2) : value;
                                     value = `Add ${value} % to base`;
                                 }
                             } else {
@@ -67,7 +65,7 @@ class RuneDetail extends React.Component {
                                         suffix = 'ms';
                                         break;
                                 }
-                                value = value.countDecimals() > 2 ? value.toFixed(2) : value;
+                                value = countDecimals(value) > 2 ? value.toFixed(2) : value;
                             }
                             return <td key={`stats${index}`}>{`${value} ${suffix}`}</td>
                         })}
