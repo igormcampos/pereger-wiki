@@ -24,6 +24,7 @@ class AbilityList extends React.Component {
                                 {generalCategory === 'Enemy Skills' && <th>Passive</th>}
                                 <th className='hide-on-med-and-down'>Description</th>
                                 {generalCategory === 'Enemy Skills' && <th>Cooldown</th>}
+                                {['Passive Skills', 'Condition Skills'].includes(generalCategory) && <th>Rune</th>}
                             </tr>
                             </thead>
                             <tbody>
@@ -61,7 +62,6 @@ class AbilityList extends React.Component {
             return (
                 <div>
                     <h4 className="center">Abilities</h4>
-                    <p>Every passive skill value increases your <b>current</b> stat of that skill by a percentage, it <b>doesn't</b> add it to your current stats.</p>
                     {spellsTable}
                     {abilityTables}
                 </div>
@@ -78,7 +78,8 @@ class AbilityList extends React.Component {
 const mapStateToProps = (state) => {
     return {
         abilities: state.abilities,
-        spells: state.spells
+        spells: state.spells,
+        runes: state.runes
     }
 };
 

@@ -1,5 +1,13 @@
 import React from 'react'
 import {withRouter} from "react-router-dom";
+import itemsImages from "../../files/itemsImages";
+import styled from "styled-components";
+import {connect} from "react-redux";
+
+const RuneImage = styled.img({
+    width: 30,
+    height: 30
+});
 
 class AbilityListItem extends React.Component {
     handleDetail = () => {
@@ -7,7 +15,7 @@ class AbilityListItem extends React.Component {
     };
 
     render() {
-        const {id, name, category, mana, passive, generalCategory, desc, equip, cool} = this.props.data;
+        const {id, name, category, mana, passive, generalCategory, desc, cool} = this.props.data;
         const hideDescription = category !== 'Enemy' ? 'hide-on-med-and-down' : '';
 
         return (
@@ -16,11 +24,17 @@ class AbilityListItem extends React.Component {
                 {!passive && generalCategory !== 'Enemy Skills' && <td>{mana}</td>}
                 {generalCategory === "Enemy Skills" && <td>{passive ? "Yes" : "No"}</td>}
                 <td className={hideDescription}>{desc}</td>
-                {!['Enemy Skills', 'Enemy Condition Skills'].includes(generalCategory) && <td>{equip}</td>}
                 {generalCategory === 'Enemy Skills' && <td>{cool ? cool + 's' : undefined}</td>}
+                {['Passive Skills', 'Condition Skills'].includes(generalCategory) && this.props.rune && <td><RuneImage src={itemsImages[this.props.rune.name]} alt={name}/></td>}
             </tr>
         )
     }
 }
 
-export default withRouter(AbilityListItem)
+const mapStateToProps = (state, ownProps) => {
+    return {
+        rune: state.runes.find(rune => rune.ability === ownProps.data.id)
+    }
+};
+
+export default connect(mapStateToProps)(withRouter(AbilityListItem))
