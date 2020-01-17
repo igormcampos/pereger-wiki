@@ -22,7 +22,6 @@ class AbilityListItem extends React.Component {
             <tr key={id} onClick={this.handleDetail}>
                 <td>{name}</td>
                 {!passive && generalCategory !== 'Enemy Skills' && <td>{mana}</td>}
-                {generalCategory === "Enemy Skills" && <td>{passive ? "Yes" : "No"}</td>}
                 <td className={hideDescription}>{desc}</td>
                 {generalCategory === 'Enemy Skills' && <td>{cool ? cool + 's' : undefined}</td>}
                 {['Passive Skills', 'Condition Skills'].includes(generalCategory) && this.props.rune && <td><RuneImage src={itemsImages[this.props.rune.name]} alt={name}/></td>}

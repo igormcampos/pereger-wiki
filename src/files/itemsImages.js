@@ -27,6 +27,7 @@ const itemsImages = {
     ticketpurple: require('./../static/img/consumables/ticket-purple.png'),
     parchmentabilityreset: require('./../static/img/consumables/parchment-ability-reset.png'),
     parchmentstatreset: require('./../static/img/consumables/parchment-stat-reset.png'),
+    spellxppotion: require('./../static/img/consumables/spell-xp-potion.png'),
 
     // quests / miscellaneous
     letter: require('./../static/img/consumables/letter.png'),

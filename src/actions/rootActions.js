@@ -1,4 +1,4 @@
-import {DO_SEARCH, FETCH_ABILITIES, FETCH_CONDITIONS, FETCH_EXP_TABLE, FETCH_ITEMS, FETCH_LOOT, FETCH_MONSTERS, FETCH_QUESTS, FETCH_RUNES, FETCH_SHOPS, TYPE_ON_SEARCH, UPDATE_TABS, FETCH_UPGRADES, FETCH_SPELLS} from "./actionTypes";
+import { DO_SEARCH, FETCH_ABILITIES, FETCH_CONDITIONS, FETCH_EXP_TABLE, FETCH_ITEMS, FETCH_LOOT, FETCH_MONSTERS, FETCH_QUESTS, FETCH_RUNES, FETCH_SHOPS, TYPE_ON_SEARCH, UPDATE_TABS, FETCH_UPGRADES, FETCH_SPELLS } from "./actionTypes";
 import JSON5 from "json5";
 import equipTypes from "../files/equipTypes";
 
@@ -153,7 +153,7 @@ export const fetchItems = () => {
                     return item
                 });
 
-                dispatch({type: FETCH_ITEMS, items: items});
+                dispatch({ type: FETCH_ITEMS, items: items });
             });
         }
     }
@@ -182,7 +182,7 @@ export const fetchRunes = () => {
                     return rune
                 });
 
-                dispatch({type: FETCH_RUNES, runes: runes});
+                dispatch({ type: FETCH_RUNES, runes: runes });
             });
         }
     }
@@ -193,7 +193,7 @@ export const fetchUpgrades = () => {
         if (getState().upgrades.length === 0) {
             fetch(upgradesURL).then((response) => response.text()).then(text => {
                 const upgrades = JSON5.parse(text);
-                dispatch({type: FETCH_UPGRADES, upgrades: upgrades});
+                dispatch({ type: FETCH_UPGRADES, upgrades: upgrades });
             });
         }
     }
@@ -234,7 +234,7 @@ export const fetchAbilities = () => {
 
                     return ability
                 });
-                dispatch({type: FETCH_ABILITIES, abilities: abilities});
+                dispatch({ type: FETCH_ABILITIES, abilities: abilities });
             });
         }
     }
@@ -263,7 +263,7 @@ export const fetchSpells = () => {
 
                     return spell
                 });
-                dispatch({type: FETCH_SPELLS, spells: spells});
+                dispatch({ type: FETCH_SPELLS, spells: spells });
             });
         }
     }
@@ -273,7 +273,7 @@ export const fetchConditions = () => {
     return (dispatch, getState) => {
         if (getState().conditions.length === 0) {
             fetch(conditionsURL).then((response) => response.text()).then(text => {
-                dispatch({type: FETCH_CONDITIONS, conditions: JSON5.parse(text)});
+                dispatch({ type: FETCH_CONDITIONS, conditions: JSON5.parse(text) });
             });
         }
     }
@@ -283,7 +283,21 @@ export const fetchExpTable = () => {
     return (dispatch, getState) => {
         if (getState().expTable.length === 0) {
             fetch(expURL).then((response) => response.text()).then(text => {
-                dispatch({type: FETCH_EXP_TABLE, expTable: JSON5.parse(text)});
+                const xpTable = JSON5.parse(text);
+                let spellsXP = [];
+                for (let i = 0; i < 12; i++) {
+                    let level = [];
+                    for (let j = 0; j < 10; j++) {
+                        let startLevel = 25 + 25 * (i + 1);
+                        let scaledLevel = Math.ceil(startLevel / 10 * j);
+                        let xpRequiredNext = xpTable.find(lv => lv.level === scaledLevel);
+                        if (typeof xpRequiredNext !== 'undefined') {
+                            level.push(xpRequiredNext.exp);
+                        }
+                    }
+                    spellsXP.push(level);
+                }
+                dispatch({ type: FETCH_EXP_TABLE, expTable: xpTable });
             });
         }
     }
@@ -293,7 +307,7 @@ export const fetchLoot = () => {
     return (dispatch, getState) => {
         if (getState().loot.length === 0) {
             fetch(lootURL).then((response) => response.text()).then(text => {
-                dispatch({type: FETCH_LOOT, loot: JSON5.parse(text)});
+                dispatch({ type: FETCH_LOOT, loot: JSON5.parse(text) });
             });
         }
     }
@@ -329,7 +343,7 @@ export const fetchMonsters = () => {
                     return monster
                 });
 
-                dispatch({type: FETCH_MONSTERS, monsters: monsters});
+                dispatch({ type: FETCH_MONSTERS, monsters: monsters });
             });
         }
     }
@@ -373,7 +387,7 @@ export const fetchQuests = () => {
                             return quest
                         });
 
-                        dispatch({type: FETCH_QUESTS, quests: quests});
+                        dispatch({ type: FETCH_QUESTS, quests: quests });
                     });
                 });
             });
@@ -385,7 +399,7 @@ export const fetchShops = () => {
     return (dispatch, getState) => {
         if (getState().shops.length === 0) {
             fetch(shopsURL).then((response) => response.text()).then(text => {
-                dispatch({type: FETCH_SHOPS, shops: JSON5.parse(text)});
+                dispatch({ type: FETCH_SHOPS, shops: JSON5.parse(text) });
             });
         }
     }
