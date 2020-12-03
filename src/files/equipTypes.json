@@ -99,6 +99,22 @@
     {
       "id": 24,
       "type": "Orb"
+    },
+    {
+      "id": 25,
+      "type": "Accessory"
+    },
+    {
+      "id": 26,
+      "type": "Pickaxe"
+    },
+    {
+      "id": 27,
+      "type": "Musical"
+    },
+    {
+      "id": 28,
+      "type": "Vambrace"
     }
   ]
 }
