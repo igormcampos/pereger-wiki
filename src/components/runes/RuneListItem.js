@@ -1,7 +1,8 @@
 import React from 'react'
 import {withRouter} from "react-router-dom";
-import itemsImages from '../../files/itemsImages'
 import styled from 'styled-components'
+import {connect} from "react-redux";
+import SpriteItem from './../images/SpriteItem'
 
 const ItemImage = styled.img({
     width: 30,
@@ -19,7 +20,7 @@ class RuneListItem extends React.Component {
 
         return (
             <tr key={itemId} onClick={this.handleDetail}>
-                <td><ItemImage src={itemsImages[imageName]} alt={className}/></td>
+                <td><SpriteItem key={this.props.sprite.filename} data={this.props.sprite}/></td>
                 <td>{className}</td>
                 <td>{sellPrice}</td>
                 <td>{equip}</td>
@@ -28,4 +29,10 @@ class RuneListItem extends React.Component {
     }
 }
 
-export default withRouter(RuneListItem)
+const mapStateToProps = (state, ownProps) => {
+    return {
+        sprite: state.sprites.frames.find(sprite => sprite.filename === ownProps.data.name)
+    }
+};
+
+export default connect(mapStateToProps)(withRouter(RuneListItem))

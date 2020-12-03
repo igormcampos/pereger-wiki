@@ -1,6 +1,6 @@
-import {DO_SEARCH, FETCH_ABILITIES, FETCH_RUNES, FETCH_CONDITIONS, FETCH_EXP_TABLE, FETCH_ITEMS, FETCH_LOOT, FETCH_MONSTERS, FETCH_QUESTS, FETCH_SHOPS, TYPE_ON_SEARCH, UPDATE_TABS, FETCH_UPGRADES, FETCH_SPELLS} from "../actions/actionTypes";
+import {DO_SEARCH, FETCH_ABILITIES, FETCH_RUNES, FETCH_CONDITIONS, FETCH_EXP_TABLE, FETCH_ITEMS, FETCH_LOOT, FETCH_MONSTERS, FETCH_QUESTS, FETCH_SHOPS,
+     TYPE_ON_SEARCH, UPDATE_TABS, FETCH_UPGRADES, FETCH_SPELLS, FETCH_SPRITESHEET} from "../actions/actionTypes";
 import equipTypes from '../files/equipTypes'
-import itemsImages from "../files/itemsImages";
 import monstersImages from "../files/monstersImages";
 
 const initState = {
@@ -15,6 +15,7 @@ const initState = {
     monsters: [],
     quests: [],
     shops: [],
+    sprites: [],
     equipTypes: equipTypes.data,
     searchResultList: {}
 };
@@ -28,10 +29,6 @@ const rootReducer = (state = initState, action = null) => {
                 let items = state.items.filter(item => {
                     return item.className.toLowerCase().includes(action.text.toLowerCase())
                 });
-                for (let i = 0; i < items.length; i++) {
-                    let imageName = items[i].name.replace(/-/g, '');
-                    result[items[i].className] = itemsImages[imageName]
-                }
                 let abilities = state.abilities.filter(ability => {
                     return ability.name.toLowerCase().includes(action.text.toLowerCase())
                 });
@@ -49,6 +46,12 @@ const rootReducer = (state = initState, action = null) => {
                 });
                 for (let i = 0; i < quests.length; i++) {
                     result[quests[i].name] = null
+                }
+                let sprites = state.spriteSheet.filter(spriteSheet => {
+                    return spriteSheet.filename.toLowerCase().includes(action.text.toLowerCase())
+                });
+                for (let i = 0; i < sprites.length; i++) {
+                    result[sprites[i].name] = null
                 }
 
                 return {
@@ -154,6 +157,11 @@ const rootReducer = (state = initState, action = null) => {
                 return {
                     ...state,
                     shops: action.shops
+                };
+            case FETCH_SPRITESHEET:
+                return {
+                    ...state,
+                    sprites: action.sprites
                 };
             case UPDATE_TABS:
                 return {

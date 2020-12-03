@@ -1,7 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {Link} from "react-router-dom";
-import itemsImages from "../../files/itemsImages";
+import SpriteItem from './../images/SpriteItem'
 import styled from "styled-components";
 
 const DetailContainer = styled.div({
@@ -37,9 +37,7 @@ class ItemDetail extends React.Component {
                 } else {
                     return <div>Loading loot...</div>
                 }
-            });
-
-            let imageName = name.replace(/-/g, '');
+            });          
 
             return (
                 <DetailContainer>
@@ -58,8 +56,9 @@ class ItemDetail extends React.Component {
                         {drops}
                     </div>
                     <ImageContainer>
-                        {generalCategory !== 'Money' && <Image src={itemsImages[imageName]} alt={className}/>}
+                        {this.props.sprite!==undefined && <td><SpriteItem key={this.props.sprite.filename} data={this.props.sprite}/></td>}
                     </ImageContainer>
+                    
                 </DetailContainer>
             )
         }
@@ -74,6 +73,7 @@ class ItemDetail extends React.Component {
 const mapStateToProps = (state, ownProps) => {
     let id = ownProps.match.params.itemId;
     let item = state.items && state.items.find(item => item.itemId == id);
+    let sprite =item && state.sprites && state.sprites.frames && state.sprites.frames.find(sprite => sprite.filename == item.name);
     let loot = item && state.loot && state.loot.filter(drop => {
         return drop.item === item.itemId
     });
@@ -85,6 +85,7 @@ const mapStateToProps = (state, ownProps) => {
     });
     return {
         item: item,
+        sprite: sprite,
         loot: loot
     }
 };

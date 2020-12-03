@@ -1,4 +1,5 @@
-import { DO_SEARCH, FETCH_ABILITIES, FETCH_CONDITIONS, FETCH_EXP_TABLE, FETCH_ITEMS, FETCH_LOOT, FETCH_MONSTERS, FETCH_QUESTS, FETCH_RUNES, FETCH_SHOPS, TYPE_ON_SEARCH, UPDATE_TABS, FETCH_UPGRADES, FETCH_SPELLS } from "./actionTypes";
+import { DO_SEARCH, FETCH_ABILITIES, FETCH_CONDITIONS, FETCH_EXP_TABLE, FETCH_ITEMS, FETCH_LOOT, FETCH_MONSTERS, FETCH_QUESTS, FETCH_RUNES, FETCH_SHOPS, 
+    TYPE_ON_SEARCH, UPDATE_TABS, FETCH_UPGRADES, FETCH_SPELLS, FETCH_SPRITESHEET } from "./actionTypes";
 import JSON5 from "json5";
 import equipTypes from "../files/equipTypes";
 
@@ -12,6 +13,8 @@ const expURL = 'https://peregeronline.com/game-files/exp.txt';
 const shopsURL = 'https://peregeronline.com/game-files/shops.txt';
 const lootURL = 'https://peregeronline.com/game-files/loot.txt';
 const upgradesURL = 'https://peregeronline.com/game-files/upgrades.txt';
+const spriteSheetURL = 'https://peregeronline.com/game-files/graphics-atlas.json';
+
 
 export const typeOnSearch = (text) => {
     return {
@@ -118,10 +121,10 @@ export const fetchItems = () => {
                             item.generalCategory = 'Boots';
                             break;
                         case 5:
-                            item.generalCategory = 'Gloves';
+                            item.generalCategory = 'Helmet';
                             break;
                         case 6:
-                            item.generalCategory = 'Helmet';
+                            item.generalCategory = 'Accessory';
                             break;
                         case 7:
                             item.generalCategory = 'Rings';
@@ -400,6 +403,16 @@ export const fetchShops = () => {
         if (getState().shops.length === 0) {
             fetch(shopsURL).then((response) => response.text()).then(text => {
                 dispatch({ type: FETCH_SHOPS, shops: JSON5.parse(text) });
+            });
+        }
+    }
+};
+
+export const fetchSpriteSheet = () => {
+    return (dispatch, getState) => {
+        if (getState().sprites.length === 0) {
+            fetch(spriteSheetURL).then((response) => response.text()).then(text => {
+                dispatch({ type: FETCH_SPRITESHEET, sprites: JSON5.parse(text) });
             });
         }
     }

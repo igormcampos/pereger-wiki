@@ -4,16 +4,18 @@
   "private": true,
   "homepage": "https://peregeronline.com/wiki/",
   "dependencies": {
-    "json5": "^2.1.0",
+    "json5": "^2.1.3",
     "materialize-css": "^1.0.0-rc.2",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "react-materialize": "^3.3.3",
-    "react-redux": "^7.1.0",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
+    "react-materialize": "^3.9.3",
+    "react-redux": "^7.2.2",
+    "react-responsive-spritesheet": "^2.3.9",
     "react-scripts": "3.0.1",
-    "redux": "^4.0.1",
+    "react-spritesheet": "^1.0.1",
+    "redux": "^4.0.5",
     "redux-thunk": "^2.3.0",
-    "underscore": "^1.9.1"
+    "underscore": "^1.12.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -37,7 +39,7 @@
     ]
   },
   "devDependencies": {
-    "react-router-dom": "^5.0.1",
-    "styled-components": "^4.3.2"
+    "react-router-dom": "^5.2.0",
+    "styled-components": "^4.4.1"
   }
 }

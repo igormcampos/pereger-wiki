@@ -37,7 +37,7 @@ class ItemList extends React.Component {
                         <table className='highlight responsive-table'>
                             <thead>
                             <tr>
-                                {ct !== 'Money' && <ImageHeader>Image</ImageHeader>}
+                                {<ImageHeader>Image</ImageHeader>}
                                 <th>Name</th>
                                 {isEquipment && <th>Bonus</th>}
                                 {isEquipment && <th>Requirements</th>}

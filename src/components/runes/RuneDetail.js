@@ -1,7 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {Link} from "react-router-dom";
-import itemsImages from "../../files/itemsImages";
+import SpriteItem from './../images/SpriteItem'
 import styled from "styled-components";
 
 const DetailContainer = styled.div({
@@ -130,7 +130,7 @@ class RuneDetail extends React.Component {
                         </div>}
                     </div>
                     <ImageContainer>
-                        <Image src={itemsImages[imageName]} alt={className}/>
+                        <SpriteItem key={this.props.sprite.filename} data={this.props.sprite}/>
                     </ImageContainer>
                 </DetailContainer>
             )
@@ -146,9 +146,11 @@ class RuneDetail extends React.Component {
 const mapStateToProps = (state, ownProps) => {
     let runeId = ownProps.match.params.runeId;
     let rune = state.runes && state.runes.find(rune => rune.itemId == runeId);
+    let sprite = state.sprites && state.sprites.frames.find(sprite => sprite.filename == rune.name);
     return {
         rune: rune,
-        upgrades: state.upgrades
+        upgrades: state.upgrades,
+        sprite: sprite
     }
 };
 

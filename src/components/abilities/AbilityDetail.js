@@ -5,21 +5,26 @@ import {Link} from "react-router-dom";
 class AbilityDetail extends React.Component {
     render() {
         if (this.props.ability) {
-            const {name, category, passive, desc, generalCategory, mana, equip, cool, spell} = this.props.ability;
-
-            return (
-                <div>
-                    <h4>{name}</h4>
-                    <p>{desc}</p>
-                    <p>{passive ? "Is a passive skill." : "Is an active skill."}</p>
-                    {generalCategory === 'Enemy Skills' && <p>Is an enemy skill.</p>}
-                    {generalCategory === 'Enemy Skills' && cool && <p>Has a cooldown of {cool} seconds.</p>}
-                    {this.props.rune && <p>Ability given by a rune: <Link to={`/runes/${this.props.rune.itemId}`}>{this.props.rune.className}</Link></p>}
-                    {spell && <p>Category: {category}</p>}
-                    {spell && <p>Mana: {mana}</p>}
-                    {spell && equip && <p>Equipment: {equip}</p>}
-                </div>
-            )
+            const {name, category, passive, desc, generalCategory, mana, equip, cool, spell, value, chance, maxLevel} = this.props.ability;
+            {
+                let modDesc = desc.replace(/\[x]+/g, (1+value)*100+'%');
+                modDesc = modDesc.replace(/\[y]+/g, (chance*100)+ '%');
+                modDesc = modDesc.replace(/\[z]+/g, maxLevel*value);
+                
+                return (
+                    <div>
+                        <h4>{name}</h4>
+                        <p>{modDesc}</p>
+                        <p>{passive ? "Is a passive skill." : "Is an active skill."}</p>
+                        {generalCategory === 'Enemy Skills' && <p>Is an enemy skill.</p>}
+                        {generalCategory === 'Enemy Skills' && cool && <p>Has a cooldown of {cool} seconds.</p>}
+                        {this.props.rune && <p>Ability given by a rune: <Link to={`/runes/${this.props.rune.itemId}`}>{this.props.rune.className}</Link></p>}
+                        {spell && <p>Category: {category}</p>}
+                        {spell && <p>Mana: {mana}</p>}
+                        {spell && equip && <p>Equipment: {equip}</p>}
+                    </div>
+                )
+            }
         }
         return (
             <div>

@@ -1,6 +1,6 @@
 import React from 'react'
 import {withRouter} from "react-router-dom";
-import itemsImages from "../../files/itemsImages";
+import SpriteItem from './../images/SpriteItem'
 import styled from "styled-components";
 import {connect} from "react-redux";
 
@@ -24,15 +24,20 @@ class AbilityListItem extends React.Component {
                 {!passive && generalCategory !== 'Enemy Skills' && <td>{mana}</td>}
                 <td className={hideDescription}>{desc}</td>
                 {generalCategory === 'Enemy Skills' && <td>{cool ? cool + 's' : undefined}</td>}
-                {['Passive Skills', 'Condition Skills'].includes(generalCategory) && this.props.rune && <td><RuneImage src={itemsImages[this.props.rune.name]} alt={name}/></td>}
+                {['Passive Skills', 'Condition Skills'].includes(generalCategory) && this.props.rune && 
+                this.props.sprite!==undefined && <td><SpriteItem key={this.props.sprite.filename} data={this.props.sprite}/></td>}
             </tr>
         )
     }
 }
 
 const mapStateToProps = (state, ownProps) => {
+    let rune = state.runes.find(rune => rune.ability === ownProps.data.id);
+    let sprite = rune && state.sprites && state.sprites.frames && state.sprites.frames.find(sprite => sprite.filename == rune.name);
+
     return {
-        rune: state.runes.find(rune => rune.ability === ownProps.data.id)
+        rune: rune,
+        sprite: sprite
     }
 };
 
