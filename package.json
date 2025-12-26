@@ -11,7 +11,7 @@
     "react-materialize": "^3.9.3",
     "react-redux": "^7.2.2",
     "react-responsive-spritesheet": "^2.3.9",
-    "react-scripts": "3.0.1",
+    "react-scripts": "5.0.1",
     "react-spritesheet": "^1.0.1",
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0",
